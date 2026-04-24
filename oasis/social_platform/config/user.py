@@ -123,10 +123,11 @@ Please perform actions by tool calling.
         description_string = ""
         if self.name is not None:
             name_string = f"Your name is {self.name}."
+        description = name_string
         if self.profile is None:
-            description = name_string
+            pass
         elif "other_info" not in self.profile:
-            description = name_string
+            pass
         elif "user_profile" in self.profile["other_info"]:
             if self.profile["other_info"]["user_profile"] is not None:
                 user_profile = self.profile["other_info"]["user_profile"]
@@ -152,10 +153,11 @@ Please perform actions by tool calling.
         description_string = ""
         if self.name is not None:
             name_string = f"Your name is {self.name}."
+        description = name_string
         if self.profile is None:
-            description = name_string
+            pass
         elif "other_info" not in self.profile:
-            description = name_string
+            pass
         elif "user_profile" in self.profile["other_info"]:
             if self.profile["other_info"]["user_profile"] is not None:
                 user_profile = self.profile["other_info"]["user_profile"]
@@ -181,10 +183,11 @@ Please perform actions by tool calling.
         description_string = ""
         if self.name is not None:
             name_string = f"Your name is {self.name}."
+        description = name_string
         if self.profile is None:
-            description = name_string
+            pass
         elif "other_info" not in self.profile:
-            description = name_string
+            pass
         elif "user_profile" in self.profile["other_info"]:
             if self.profile["other_info"]["user_profile"] is not None:
                 user_profile = self.profile["other_info"]["user_profile"]
@@ -210,10 +213,11 @@ Please perform actions by tool calling.
         description_string = ""
         if self.name is not None:
             name_string = f"Your name is {self.name}."
+        description = name_string
         if self.profile is None:
-            description = name_string
+            pass
         elif "other_info" not in self.profile:
-            description = name_string
+            pass
         elif "user_profile" in self.profile["other_info"]:
             if self.profile["other_info"]["user_profile"] is not None:
                 user_profile = self.profile["other_info"]["user_profile"]

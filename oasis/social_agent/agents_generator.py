@@ -658,7 +658,7 @@ async def generate_linkedin_agent_graph(
     """Generate an AgentGraph from a LinkedIn user profile CSV file.
 
     The CSV must have columns: user_id, name, username,
-    following_agentid_list, previous_tweets, user_char, description.
+    following_agentid_list, previous_posts, user_char, description.
 
     Args:
         profile_path (str): Path to the CSV file with user profiles.
@@ -712,7 +712,7 @@ async def generate_facebook_agent_graph(
     """Generate an AgentGraph from a Facebook user profile CSV file.
 
     The CSV must have columns: user_id, name, username,
-    following_agentid_list, previous_tweets, user_char, description.
+    following_agentid_list, previous_posts, user_char, description.
 
     Args:
         profile_path (str): Path to the CSV file with user profiles.
@@ -766,7 +766,7 @@ async def generate_instagram_agent_graph(
     """Generate an AgentGraph from an Instagram user profile CSV file.
 
     The CSV must have columns: user_id, name, username,
-    following_agentid_list, previous_tweets, user_char, description.
+    following_agentid_list, previous_posts, user_char, description.
 
     Args:
         profile_path (str): Path to the CSV file with user profiles.
@@ -820,7 +820,7 @@ async def generate_whatsapp_agent_graph(
     """Generate an AgentGraph from a WhatsApp user profile CSV file.
 
     The CSV must have columns: user_id, name, username,
-    following_agentid_list, previous_tweets, user_char, description.
+    following_agentid_list, previous_posts, user_char, description.
 
     Args:
         profile_path (str): Path to the CSV file with user profiles.
