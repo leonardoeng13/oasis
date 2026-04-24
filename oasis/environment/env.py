@@ -96,10 +96,58 @@ class OasisEnv:
                     refresh_rec_post_count=5,
                 )
                 self.platform_type = DefaultPlatformType.REDDIT
+            elif platform == DefaultPlatformType.LINKEDIN:
+                self.channel = Channel()
+                self.platform = Platform(
+                    db_path=database_path,
+                    channel=self.channel,
+                    recsys_type="linkedin",
+                    allow_self_rating=False,
+                    show_score=False,
+                    max_rec_post_len=20,
+                    refresh_rec_post_count=3,
+                )
+                self.platform_type = DefaultPlatformType.LINKEDIN
+            elif platform == DefaultPlatformType.FACEBOOK:
+                self.channel = Channel()
+                self.platform = Platform(
+                    db_path=database_path,
+                    channel=self.channel,
+                    recsys_type="facebook",
+                    allow_self_rating=False,
+                    show_score=False,
+                    max_rec_post_len=50,
+                    refresh_rec_post_count=5,
+                )
+                self.platform_type = DefaultPlatformType.FACEBOOK
+            elif platform == DefaultPlatformType.INSTAGRAM:
+                self.channel = Channel()
+                self.platform = Platform(
+                    db_path=database_path,
+                    channel=self.channel,
+                    recsys_type="instagram",
+                    allow_self_rating=False,
+                    show_score=False,
+                    max_rec_post_len=30,
+                    refresh_rec_post_count=4,
+                )
+                self.platform_type = DefaultPlatformType.INSTAGRAM
+            elif platform == DefaultPlatformType.WHATSAPP:
+                self.channel = Channel()
+                self.platform = Platform(
+                    db_path=database_path,
+                    channel=self.channel,
+                    recsys_type="whatsapp",
+                    allow_self_rating=False,
+                    show_score=False,
+                    max_rec_post_len=10,
+                    refresh_rec_post_count=1,
+                )
+                self.platform_type = DefaultPlatformType.WHATSAPP
             else:
-                raise ValueError(f"Invalid platform: {platform}. Only "
-                                 "DefaultPlatformType.TWITTER or "
-                                 "DefaultPlatformType.REDDIT are supported.")
+                raise ValueError(
+                    f"Invalid platform: {platform}. Supported types are: "
+                    + ", ".join(t.name for t in DefaultPlatformType))
         elif isinstance(platform, Platform):
             if database_path != platform.db_path:
                 env_log.warning("database_path is not the same as the "
@@ -108,6 +156,14 @@ class OasisEnv:
             self.channel = platform.channel
             if platform.recsys_type == RecsysType.REDDIT:
                 self.platform_type = DefaultPlatformType.REDDIT
+            elif platform.recsys_type == RecsysType.LINKEDIN:
+                self.platform_type = DefaultPlatformType.LINKEDIN
+            elif platform.recsys_type == RecsysType.FACEBOOK:
+                self.platform_type = DefaultPlatformType.FACEBOOK
+            elif platform.recsys_type == RecsysType.INSTAGRAM:
+                self.platform_type = DefaultPlatformType.INSTAGRAM
+            elif platform.recsys_type == RecsysType.WHATSAPP:
+                self.platform_type = DefaultPlatformType.WHATSAPP
             else:
                 self.platform_type = DefaultPlatformType.TWITTER
         else:

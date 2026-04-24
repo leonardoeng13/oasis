@@ -1,0 +1,11 @@
+,user_id,name,username,following_agentid_list,previous_tweets,user_char,description
+0,1,Maria Garcia,mariagarcia,[1],[],"Stay-at-home mom of three, loves cooking and sharing family recipes.",Mom | Cook | Family Life
+1,2,John Taylor,johntaylor,[0],[],Sports fan and amateur photographer. Follows football and basketball closely.,Sports Fan | Photographer | Dad
+2,3,Susan Anderson,susananderson,[0],[],Retired teacher who loves gardening and local community events.,Retired Teacher | Gardener | Community Volunteer
+3,4,Michael Thomas,michaelthomas,[1],[],Local business owner running a small bakery. Shares daily specials and community news.,Bakery Owner | Local Business | Community
+4,5,Linda Jackson,lindajackson,[3],[],Travel enthusiast and food blogger. Has visited 40+ countries.,Travel | Food | Blogger
+5,6,Robert White,robertwhite,[4],[],DIY home improvement hobbyist. Shares project tips and weekend builds.,DIY | Home Improvement | Woodworking
+6,7,Patricia Harris,patriciaharris,[5],[],Nurse practitioner passionate about public health and wellness tips.,Nurse | Public Health | Wellness
+7,8,James Martin,jamesmartin,[6],[],High school teacher and football coach. Shares motivational content and sports updates.,Teacher | Coach | Mentor
+8,9,Barbara Thompson,barbarathompson,[7],[],"Book club organizer, avid reader, and local library volunteer.",Reader | Book Club | Library Volunteer
+9,10,William Garcia,williamgarcia,[8],[],"Freelance graphic designer, loves street art and urban culture.",Designer | Street Art | Urban Culture

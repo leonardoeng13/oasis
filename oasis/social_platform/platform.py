@@ -376,6 +376,14 @@ class Platform:
         elif self.recsys_type == RecsysType.REDDIT:
             new_rec_matrix = rec_sys_reddit(post_table, rec_matrix,
                                             self.max_rec_post_len)
+        elif self.recsys_type in (
+            RecsysType.LINKEDIN,
+            RecsysType.FACEBOOK,
+            RecsysType.INSTAGRAM,
+            RecsysType.WHATSAPP,
+        ):
+            new_rec_matrix = rec_sys_random(post_table, rec_matrix,
+                                            self.max_rec_post_len)
         else:
             raise ValueError("Unsupported recommendation system type, please "
                              "check the `RecsysType`.")

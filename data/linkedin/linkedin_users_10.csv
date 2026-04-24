@@ -1,0 +1,11 @@
+,user_id,name,username,following_agentid_list,previous_tweets,user_char,description
+0,1,Alice Chen,alicechen,[1],[],Senior Software Engineer at a cloud computing company with 8 years of experience in distributed systems.,Senior Software Engineer passionate about distributed systems and open source.
+1,2,Bob Martinez,bobmartinez,[0],[],Product Manager with a background in fintech. Interested in AI and startup ecosystems.,Product Manager | Fintech | AI Enthusiast
+2,3,Carol Smith,carolsmith,[3],[],Data Scientist specializing in NLP and machine learning. PhD in Computer Science.,Data Scientist | NLP | ML Researcher
+3,4,David Lee,davidlee,[2],[],Startup founder and entrepreneur. Previously VP Engineering at two unicorn startups.,Founder & CEO | Ex-VP Eng | Building the future
+4,5,Emma Johnson,emmajohnson,[],[],UX Designer focused on accessibility and inclusive design. Speaker at design conferences.,UX Designer | Accessibility Advocate | Speaker
+5,6,Frank Williams,frankwilliams,[4],[],Venture capitalist investing in B2B SaaS. Partner at a top-tier VC fund.,VC Partner | B2B SaaS | Early-stage investor
+6,7,Grace Kim,gracekim,[5],[],Head of Marketing at a Series B startup. Expert in growth hacking and content strategy.,Head of Marketing | Growth | Content
+7,8,Henry Brown,henrybrown,[6],[],"Cloud architect with certifications in AWS, Azure, and GCP. DevOps enthusiast.",Cloud Architect | AWS | Azure | GCP
+8,9,Iris Davis,irisdavis,[7],[],AI researcher at a leading university. Focus on ethical AI and fairness in machine learning.,AI Researcher | Ethical AI | Fairness
+9,10,Jack Wilson,jackwilson,[8],[],Full-stack developer and open source contributor. Maintainer of several popular npm packages.,Full-Stack Dev | Open Source | JS Enthusiast

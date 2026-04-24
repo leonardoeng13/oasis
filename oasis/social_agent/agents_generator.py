@@ -647,3 +647,219 @@ async def generate_twitter_agent_graph(
 
         agent_graph.add_agent(agent)
     return agent_graph
+
+
+async def generate_linkedin_agent_graph(
+    profile_path: str,
+    model: Optional[Union[BaseModelBackend, List[BaseModelBackend],
+                          ModelManager]] = None,
+    available_actions: list[ActionType] = None,
+) -> AgentGraph:
+    """Generate an AgentGraph from a LinkedIn user profile CSV file.
+
+    The CSV must have columns: user_id, name, username,
+    following_agentid_list, previous_tweets, user_char, description.
+
+    Args:
+        profile_path (str): Path to the CSV file with user profiles.
+        model: LLM model(s) for the agents.
+        available_actions: Actions available to agents. Defaults to
+            :meth:`ActionType.get_default_linkedin_actions`.
+
+    Returns:
+        AgentGraph: The populated agent graph.
+    """
+    if available_actions is None:
+        available_actions = ActionType.get_default_linkedin_actions()
+
+    agent_info = pd.read_csv(profile_path)
+    agent_graph = AgentGraph()
+
+    for agent_id in range(len(agent_info)):
+        profile = {
+            "nodes": [],
+            "edges": [],
+            "other_info": {},
+        }
+        profile["other_info"]["user_profile"] = agent_info["user_char"][
+            agent_id]
+
+        user_info = UserInfo(
+            name=agent_info["username"][agent_id],
+            description=agent_info["description"][agent_id],
+            profile=profile,
+            recsys_type='linkedin',
+        )
+
+        agent = SocialAgent(
+            agent_id=agent_id,
+            user_info=user_info,
+            model=model,
+            agent_graph=agent_graph,
+            available_actions=available_actions,
+        )
+
+        agent_graph.add_agent(agent)
+    return agent_graph
+
+
+async def generate_facebook_agent_graph(
+    profile_path: str,
+    model: Optional[Union[BaseModelBackend, List[BaseModelBackend],
+                          ModelManager]] = None,
+    available_actions: list[ActionType] = None,
+) -> AgentGraph:
+    """Generate an AgentGraph from a Facebook user profile CSV file.
+
+    The CSV must have columns: user_id, name, username,
+    following_agentid_list, previous_tweets, user_char, description.
+
+    Args:
+        profile_path (str): Path to the CSV file with user profiles.
+        model: LLM model(s) for the agents.
+        available_actions: Actions available to agents. Defaults to
+            :meth:`ActionType.get_default_facebook_actions`.
+
+    Returns:
+        AgentGraph: The populated agent graph.
+    """
+    if available_actions is None:
+        available_actions = ActionType.get_default_facebook_actions()
+
+    agent_info = pd.read_csv(profile_path)
+    agent_graph = AgentGraph()
+
+    for agent_id in range(len(agent_info)):
+        profile = {
+            "nodes": [],
+            "edges": [],
+            "other_info": {},
+        }
+        profile["other_info"]["user_profile"] = agent_info["user_char"][
+            agent_id]
+
+        user_info = UserInfo(
+            name=agent_info["username"][agent_id],
+            description=agent_info["description"][agent_id],
+            profile=profile,
+            recsys_type='facebook',
+        )
+
+        agent = SocialAgent(
+            agent_id=agent_id,
+            user_info=user_info,
+            model=model,
+            agent_graph=agent_graph,
+            available_actions=available_actions,
+        )
+
+        agent_graph.add_agent(agent)
+    return agent_graph
+
+
+async def generate_instagram_agent_graph(
+    profile_path: str,
+    model: Optional[Union[BaseModelBackend, List[BaseModelBackend],
+                          ModelManager]] = None,
+    available_actions: list[ActionType] = None,
+) -> AgentGraph:
+    """Generate an AgentGraph from an Instagram user profile CSV file.
+
+    The CSV must have columns: user_id, name, username,
+    following_agentid_list, previous_tweets, user_char, description.
+
+    Args:
+        profile_path (str): Path to the CSV file with user profiles.
+        model: LLM model(s) for the agents.
+        available_actions: Actions available to agents. Defaults to
+            :meth:`ActionType.get_default_instagram_actions`.
+
+    Returns:
+        AgentGraph: The populated agent graph.
+    """
+    if available_actions is None:
+        available_actions = ActionType.get_default_instagram_actions()
+
+    agent_info = pd.read_csv(profile_path)
+    agent_graph = AgentGraph()
+
+    for agent_id in range(len(agent_info)):
+        profile = {
+            "nodes": [],
+            "edges": [],
+            "other_info": {},
+        }
+        profile["other_info"]["user_profile"] = agent_info["user_char"][
+            agent_id]
+
+        user_info = UserInfo(
+            name=agent_info["username"][agent_id],
+            description=agent_info["description"][agent_id],
+            profile=profile,
+            recsys_type='instagram',
+        )
+
+        agent = SocialAgent(
+            agent_id=agent_id,
+            user_info=user_info,
+            model=model,
+            agent_graph=agent_graph,
+            available_actions=available_actions,
+        )
+
+        agent_graph.add_agent(agent)
+    return agent_graph
+
+
+async def generate_whatsapp_agent_graph(
+    profile_path: str,
+    model: Optional[Union[BaseModelBackend, List[BaseModelBackend],
+                          ModelManager]] = None,
+    available_actions: list[ActionType] = None,
+) -> AgentGraph:
+    """Generate an AgentGraph from a WhatsApp user profile CSV file.
+
+    The CSV must have columns: user_id, name, username,
+    following_agentid_list, previous_tweets, user_char, description.
+
+    Args:
+        profile_path (str): Path to the CSV file with user profiles.
+        model: LLM model(s) for the agents.
+        available_actions: Actions available to agents. Defaults to
+            :meth:`ActionType.get_default_whatsapp_actions`.
+
+    Returns:
+        AgentGraph: The populated agent graph.
+    """
+    if available_actions is None:
+        available_actions = ActionType.get_default_whatsapp_actions()
+
+    agent_info = pd.read_csv(profile_path)
+    agent_graph = AgentGraph()
+
+    for agent_id in range(len(agent_info)):
+        profile = {
+            "nodes": [],
+            "edges": [],
+            "other_info": {},
+        }
+        profile["other_info"]["user_profile"] = agent_info["user_char"][
+            agent_id]
+
+        user_info = UserInfo(
+            name=agent_info["username"][agent_id],
+            description=agent_info["description"][agent_id],
+            profile=profile,
+            recsys_type='whatsapp',
+        )
+
+        agent = SocialAgent(
+            agent_id=agent_id,
+            user_info=user_info,
+            model=model,
+            agent_graph=agent_graph,
+            available_actions=available_actions,
+        )
+
+        agent_graph.add_agent(agent)
+    return agent_graph

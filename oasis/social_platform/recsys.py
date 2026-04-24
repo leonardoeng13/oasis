@@ -105,8 +105,14 @@ def get_recsys_model(recsys_type: str = None):
         twhin_tokenizer, twhin_model = load_model("Twitter/twhin-bert-base")
         models = (twhin_tokenizer, twhin_model)
         return models
-    elif (recsys_type == RecsysType.REDDIT.value
-          or recsys_type == RecsysType.RANDOM.value):
+    elif recsys_type in (
+        RecsysType.REDDIT.value,
+        RecsysType.RANDOM.value,
+        RecsysType.LINKEDIN.value,
+        RecsysType.FACEBOOK.value,
+        RecsysType.INSTAGRAM.value,
+        RecsysType.WHATSAPP.value,
+    ):
         return None
     else:
         raise ValueError(f"Unknown recsys type: {recsys_type}")

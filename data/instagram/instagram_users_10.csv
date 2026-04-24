@@ -1,0 +1,11 @@
+,user_id,name,username,following_agentid_list,previous_tweets,user_char,description
+0,1,Sofia Rossi,sofiarossi,[1],[],"Fashion and lifestyle content creator. Shares daily outfits, beauty tips, and travel vlogs.",✨ Fashion | Beauty | Lifestyle | DMs open
+1,2,Luca Bianchi,lucabianchi,[0],[],Street photographer based in Milan. Captures urban life and architecture.,📷 Street Photography | Urban | Milan
+2,3,Mia Johnson,miajohnson,[1],[],Fitness coach and wellness advocate. Posts workout routines and healthy recipes.,💪 Fitness | Wellness | Healthy Living
+3,4,Noah Williams,noahwilliams,[2],[],Surf and outdoor adventure enthusiast. Shares beach and nature photography.,🌊 Surf | Outdoors | Nature
+4,5,Ava Brown,avabrown,[3],[],Food photographer and recipe developer. Obsessed with plant-based cuisine.,🌿 Food | Plant-Based | Recipe Creator
+5,6,Ethan Davis,ethandavis,[4],[],"Music producer and DJ. Shares studio sessions, gigs, and music recommendations.",🎵 Music | DJ | Producer
+6,7,Olivia Miller,oliviamiller,[5],[],Interior design enthusiast. Posts home decor inspiration and DIY room makeovers.,🏠 Interior Design | Home Decor | DIY
+7,8,Aiden Wilson,aidenwilson,[6],[],Travel photographer visiting a new country every month. Adventure seeker.,✈️ Travel | Photography | Adventure
+8,9,Emma Moore,emmamoore,[7],[],Skincare and makeup artist. Reviews products and shares tutorials.,💄 Makeup | Skincare | Beauty Tips
+9,10,Logan Taylor,logantaylor,[8],[],Skateboarder and streetwear collector. Documents skate culture and urban style.,🛹 Skate | Streetwear | Urban Style

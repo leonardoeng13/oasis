@@ -1,0 +1,11 @@
+,user_id,name,username,following_agentid_list,previous_tweets,user_char,description
+0,1,Ana Silva,anasilva,[1],[],University student studying medicine. Part of a study group chat.,Med student | Study group organizer
+1,2,Carlos Pereira,carlospereira,[0],[],Software developer who coordinates a tech discussion group with colleagues.,Dev | Tech enthusiast | Group admin
+2,3,Beatriz Santos,beatrizsantos,[0],[],Teacher who manages a parents-and-teachers WhatsApp group for her class.,Teacher | Parent coordinator
+3,4,Pedro Oliveira,pedrooliveira,[2],[],Small business owner using group chats to coordinate with suppliers and staff.,Business owner | Logistics coordinator
+4,5,Julia Costa,juliacosta,[3],[],Event planner who organizes group trips and social gatherings via group chat.,Event planner | Social organizer
+5,6,Rafael Almeida,rafaelalmeida,[4],[],Football team captain who coordinates training schedules via group chat.,Sports captain | Team organizer
+6,7,Camila Rodrigues,camilarodrigues,[5],[],Family group admin who keeps relatives connected and shares news.,Family connector | Community builder
+7,8,Thiago Fernandes,thiagofernandes,[6],[],IT support technician who answers technical questions in work group chats.,IT Support | Help desk | Tech advisor
+8,9,Larissa Lima,larissalima,[7],[],Yoga instructor who shares class schedules and wellness tips in a community group.,Yoga instructor | Wellness | Community
+9,10,Bruno Carvalho,brunocarvalho,[8],[],Journalist who coordinates a breaking news group with fellow reporters.,Journalist | News coordinator | Reporter
