@@ -658,7 +658,7 @@ async def generate_linkedin_agent_graph(
     """Generate an AgentGraph from a LinkedIn user profile file.
 
     Accepts either a CSV (columns: user_id, name, username,
-    following_agentid_list, previous_posts, user_char, description) or a
+    following_agentid_list, previous_tweets, user_char, description) or a
     JSON array of profile dicts (keys: username, realname, persona, …).
 
     Args:
@@ -743,7 +743,7 @@ async def generate_facebook_agent_graph(
     """Generate an AgentGraph from a Facebook user profile file.
 
     Accepts either a CSV (columns: user_id, name, username,
-    following_agentid_list, previous_posts, user_char, description) or a
+    following_agentid_list, previous_tweets, user_char, description) or a
     JSON array of profile dicts (keys: username, realname, persona, …).
 
     Args:
@@ -828,7 +828,7 @@ async def generate_instagram_agent_graph(
     """Generate an AgentGraph from an Instagram user profile file.
 
     Accepts either a CSV (columns: user_id, name, username,
-    following_agentid_list, previous_posts, user_char, description) or a
+    following_agentid_list, previous_tweets, user_char, description) or a
     JSON array of profile dicts (keys: username, realname, persona, …).
 
     Args:
@@ -912,7 +912,7 @@ async def generate_whatsapp_agent_graph(
     """Generate an AgentGraph from a WhatsApp user profile file.
 
     Accepts either a CSV (columns: user_id, name, username,
-    following_agentid_list, previous_posts, user_char, description) or a
+    following_agentid_list, previous_tweets, user_char, description) or a
     JSON array of profile dicts (keys: username, realname, persona, …).
 
     Args:
