@@ -175,13 +175,28 @@ class Platform:
     def run(self):
         asyncio.run(self.running())
 
+    def _get_current_time(self):
+        r"""Return the current simulation time.
+
+        Platforms that model real-world timestamps (Reddit, LinkedIn,
+        Facebook, Instagram, WhatsApp) use wall-clock time mapped through
+        ``sandbox_clock.time_transfer``.  Pure simulation platforms
+        (Twitter / TWHIN / RANDOM) use the integer time-step counter.
+        """
+        if self.recsys_type in (
+            RecsysType.REDDIT,
+            RecsysType.LINKEDIN,
+            RecsysType.FACEBOOK,
+            RecsysType.INSTAGRAM,
+            RecsysType.WHATSAPP,
+        ):
+            return self.sandbox_clock.time_transfer(datetime.now(),
+                                                    self.start_time)
+        return self.sandbox_clock.get_time_step()
+
     async def sign_up(self, agent_id, user_message):
         user_name, name, bio = user_message
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_insert_query = (
                 "INSERT INTO user (user_id, agent_id, user_name, name, "
@@ -219,11 +234,7 @@ class Platform:
 
     async def purchase_product(self, agent_id, purchase_message):
         product_name, purchase_num = purchase_message
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         # try:
         user_id = agent_id
         # Check if a like record already exists
@@ -257,11 +268,7 @@ class Platform:
 
     async def refresh(self, agent_id: int):
         # Retrieve posts for a specific id from the rec table
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
             # Retrieve all post_ids for a given user_id from the rec table
@@ -277,7 +284,7 @@ class Platform:
                 selected_post_ids = random.sample(selected_post_ids,
                                                   self.refresh_rec_post_count)
 
-            if self.recsys_type != RecsysType.REDDIT:
+            if self.recsys_type not in (RecsysType.REDDIT, RecsysType.WHATSAPP):
                 # Retrieve posts from following (in network)
                 # Modify the SQL query so that the refresh gets posts from
                 # people the user follows, sorted by the number of likes on
@@ -406,11 +413,7 @@ class Platform:
         )
 
     async def create_post(self, agent_id: int, content: str):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
@@ -436,11 +439,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def repost(self, agent_id: int, post_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
@@ -511,11 +510,7 @@ class Platform:
 
     async def quote_post(self, agent_id: int, quote_message: tuple):
         post_id, quote_content = quote_message
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
@@ -569,11 +564,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def like_post(self, agent_id: int, post_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             post_type_result = self.pl_utils._get_post_type(post_id)
             if post_type_result['type'] == 'repost':
@@ -673,11 +664,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def dislike_post(self, agent_id: int, post_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             post_type_result = self.pl_utils._get_post_type(post_id)
             if post_type_result['type'] == 'repost':
@@ -865,11 +852,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def follow(self, agent_id: int, followee_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
             # Check if a follow record already exists
@@ -972,11 +955,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def mute(self, agent_id: int, mutee_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
             # Check if a mute record already exists
@@ -1039,15 +1018,13 @@ class Platform:
         """
         Get the top K trending posts in the last num_days days.
         """
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
             # Calculate the start time for the search
-            if self.recsys_type == RecsysType.REDDIT:
+            if self.recsys_type in (
+                RecsysType.REDDIT, RecsysType.LINKEDIN, RecsysType.FACEBOOK,
+                RecsysType.INSTAGRAM, RecsysType.WHATSAPP):
                 start_time = current_time - timedelta(days=self.trend_num_days)
             else:
                 start_time = int(current_time) - self.trend_num_days * 24 * 60
@@ -1086,11 +1063,7 @@ class Platform:
 
     async def create_comment(self, agent_id: int, comment_message: tuple):
         post_id, content = comment_message
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             post_type_result = self.pl_utils._get_post_type(post_id)
             if post_type_result['type'] == 'repost':
@@ -1119,11 +1092,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def like_comment(self, agent_id: int, comment_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
@@ -1227,11 +1196,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def dislike_comment(self, agent_id: int, comment_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
@@ -1286,11 +1251,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def undo_dislike_comment(self, agent_id: int, comment_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
@@ -1338,11 +1299,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def do_nothing(self, agent_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
@@ -1364,11 +1321,7 @@ class Platform:
         Returns:
             dict: A dictionary with success status.
         """
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
@@ -1401,11 +1354,7 @@ class Platform:
 
     async def report_post(self, agent_id: int, report_message: tuple):
         post_id, report_reason = report_message
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
             post_type_result = self.pl_utils._get_post_type(post_id)
@@ -1455,11 +1404,7 @@ class Platform:
 
     async def send_to_group(self, agent_id: int, message: tuple):
         group_id, content = message
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
             # check if user is a member of the group
@@ -1503,11 +1448,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def create_group(self, agent_id: int, group_name: str):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
@@ -1537,11 +1478,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def join_group(self, agent_id: int, group_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
