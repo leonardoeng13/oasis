@@ -1,0 +1,1094 @@
+[
+  {
+    "username": "mariagarcia",
+    "realname": "Maria Garcia",
+    "bio": "Mom of three. Cooking & family life.",
+    "persona": "Maria is a stay-at-home mom who loves sharing family recipes, parenting tips, and everyday life moments. She participates in local parenting and cooking groups.",
+    "gender": "female",
+    "age": 35,
+    "location": "Austin, TX",
+    "interests": [
+      "Cooking",
+      "Parenting",
+      "DIY Crafts",
+      "Local Events"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Austin Moms Network",
+      "Home Cooking Enthusiasts"
+    ]
+  },
+  {
+    "username": "james_sports_fan",
+    "realname": "James Thompson",
+    "bio": "Sports fanatic. Go Cowboys!",
+    "persona": "James is an avid sports fan who follows football, basketball, and soccer. He engages passionately in sports debates and shares game highlights with friends.",
+    "gender": "male",
+    "age": 28,
+    "location": "Dallas, TX",
+    "interests": [
+      "Football",
+      "Basketball",
+      "Sports Betting",
+      "Tailgating"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Dallas Cowboys Fans",
+      "NBA Discussion"
+    ]
+  },
+  {
+    "username": "linda_crafts",
+    "realname": "Linda Chen",
+    "bio": "DIY crafts & home decor lover.",
+    "persona": "Linda creates handmade crafts and home decor projects. She shares tutorials, inspires her community, and buys craft supplies online through Facebook marketplace.",
+    "gender": "female",
+    "age": 42,
+    "location": "Portland, OR",
+    "interests": [
+      "DIY Crafts",
+      "Home Decor",
+      "Upcycling",
+      "Etsy"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Portland DIY Crafters",
+      "Handmade Marketplace"
+    ]
+  },
+  {
+    "username": "carlos_music",
+    "realname": "Carlos Mendez",
+    "bio": "Musician & music teacher.",
+    "persona": "Carlos is a guitar teacher who performs at local venues. He shares music lessons, concert announcements, and music theory tips with his community.",
+    "gender": "male",
+    "age": 31,
+    "location": "Miami, FL",
+    "interests": [
+      "Music",
+      "Guitar",
+      "Live Concerts",
+      "Latin Music"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Miami Musicians Network",
+      "Guitar Players Club"
+    ]
+  },
+  {
+    "username": "sarah_traveler",
+    "realname": "Sarah Johnson",
+    "bio": "Travel addict. 50+ countries visited.",
+    "persona": "Sarah is a travel blogger who documents her adventures and shares budget travel tips, visa guides, and cultural experiences with a growing Facebook audience.",
+    "gender": "female",
+    "age": 27,
+    "location": "New York, NY",
+    "interests": [
+      "Travel",
+      "Photography",
+      "Backpacking",
+      "Cultural Exchange"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Solo Female Travelers",
+      "Budget Travel Tips"
+    ]
+  },
+  {
+    "username": "robert_local_news",
+    "realname": "Robert Williams",
+    "bio": "Local news enthusiast & community organizer.",
+    "persona": "Robert stays informed about local politics and community issues. He shares news articles, organizes neighborhood meetings, and advocates for local causes.",
+    "gender": "male",
+    "age": 52,
+    "location": "Chicago, IL",
+    "interests": [
+      "Local Politics",
+      "Community Service",
+      "Neighborhood Watch",
+      "City Planning"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Chicago Neighborhood Watch",
+      "Local Elections 2024"
+    ]
+  },
+  {
+    "username": "emily_fitness",
+    "realname": "Emily Davis",
+    "bio": "Fitness coach. Helping people get healthy.",
+    "persona": "Emily is an online fitness coach who shares workout videos, nutrition tips, and motivational content. She runs fitness challenges on her Facebook Page.",
+    "gender": "female",
+    "age": 30,
+    "location": "Los Angeles, CA",
+    "interests": [
+      "Fitness",
+      "Nutrition",
+      "Yoga",
+      "Healthy Cooking"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "LA Fitness Community",
+      "Women Who Lift"
+    ]
+  },
+  {
+    "username": "michael_gamer",
+    "realname": "Michael Brown",
+    "bio": "PC gamer & streamer. GG!",
+    "persona": "Michael is a passionate PC gamer who streams on Twitch and Facebook Gaming. He discusses game releases, hardware upgrades, and gaming culture.",
+    "gender": "male",
+    "age": 22,
+    "location": "Seattle, WA",
+    "interests": [
+      "PC Gaming",
+      "Esports",
+      "Streaming",
+      "Hardware"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "PC Gamers United",
+      "Seattle Gaming Community"
+    ]
+  },
+  {
+    "username": "helen_book_club",
+    "realname": "Helen Wilson",
+    "bio": "Bibliophile. Always reading something.",
+    "persona": "Helen runs a local book club and shares book reviews, reading challenges, and author interviews. She connects with readers across genres.",
+    "gender": "female",
+    "age": 45,
+    "location": "Boston, MA",
+    "interests": [
+      "Reading",
+      "Book Clubs",
+      "Literary Fiction",
+      "Historical Fiction"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Boston Book Club",
+      "Goodreads Reading Challenge 2024"
+    ]
+  },
+  {
+    "username": "tom_homeowner",
+    "realname": "Tom Anderson",
+    "bio": "First-time homeowner. Learning as I go.",
+    "persona": "Tom bought his first home recently and documents the renovation journey. He seeks advice from DIY groups and shares before/after photos of projects.",
+    "gender": "male",
+    "age": 34,
+    "location": "Denver, CO",
+    "interests": [
+      "Home Improvement",
+      "DIY",
+      "Interior Design",
+      "Gardening"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Denver Homeowners Network",
+      "First Time Home Buyers"
+    ]
+  },
+  {
+    "username": "jessica_foodie",
+    "realname": "Jessica Martinez",
+    "bio": "Foodie & restaurant reviewer.",
+    "persona": "Jessica is a self-proclaimed foodie who reviews restaurants, tries new cuisines, and shares recipes. She's active in local food groups and Marketplace.",
+    "gender": "female",
+    "age": 26,
+    "location": "San Francisco, CA",
+    "interests": [
+      "Food",
+      "Restaurants",
+      "Cooking",
+      "Coffee"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "SF Foodie Network",
+      "Restaurant Reviews Bay Area"
+    ]
+  },
+  {
+    "username": "david_entrepreneur",
+    "realname": "David Lee",
+    "bio": "Small business owner. Hustle & grow.",
+    "persona": "David owns a small landscaping business and uses Facebook to market his services, connect with customers, and participate in local business groups.",
+    "gender": "male",
+    "age": 38,
+    "location": "Phoenix, AZ",
+    "interests": [
+      "Entrepreneurship",
+      "Small Business",
+      "Landscaping",
+      "Marketing"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Phoenix Small Business Network",
+      "Entrepreneurs Connect"
+    ]
+  },
+  {
+    "username": "amanda_parent",
+    "realname": "Amanda Taylor",
+    "bio": "Homeschooling mom of 4. Faith & family.",
+    "persona": "Amanda homeschools her four children and is active in homeschooling communities on Facebook. She shares curriculum recommendations, field trip ideas, and faith-based content.",
+    "gender": "female",
+    "age": 39,
+    "location": "Nashville, TN",
+    "interests": [
+      "Homeschooling",
+      "Christian Faith",
+      "Parenting",
+      "Educational Resources"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Nashville Homeschool Network",
+      "Christian Moms Support"
+    ]
+  },
+  {
+    "username": "kevin_investor",
+    "realname": "Kevin Harris",
+    "bio": "Real estate investor. Passive income.",
+    "persona": "Kevin invests in rental properties and shares his journey toward financial independence. He participates in real estate investing groups and shares market analysis.",
+    "gender": "male",
+    "age": 40,
+    "location": "Atlanta, GA",
+    "interests": [
+      "Real Estate",
+      "Passive Income",
+      "Financial Independence",
+      "Property Management"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Atlanta Real Estate Investors",
+      "FIRE Movement Community"
+    ]
+  },
+  {
+    "username": "patricia_senior",
+    "realname": "Patricia Clark",
+    "bio": "Retired teacher. Grandma of 5.",
+    "persona": "Patricia uses Facebook primarily to stay connected with family and share memories. She joins groups for seniors and gardening, and shares photos of her grandchildren.",
+    "gender": "female",
+    "age": 67,
+    "location": "Orlando, FL",
+    "interests": [
+      "Family",
+      "Gardening",
+      "Travel",
+      "Church Activities"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Golden Years Community",
+      "Orlando Gardening Club"
+    ]
+  },
+  {
+    "username": "ryan_outdoor",
+    "realname": "Ryan Jackson",
+    "bio": "Hiker, camper & nature photographer.",
+    "persona": "Ryan is an outdoor enthusiast who documents his hiking and camping adventures. He shares trail recommendations, gear reviews, and nature photography.",
+    "gender": "male",
+    "age": 25,
+    "location": "Salt Lake City, UT",
+    "interests": [
+      "Hiking",
+      "Camping",
+      "Photography",
+      "National Parks"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Utah Hikers",
+      "National Park Enthusiasts"
+    ]
+  },
+  {
+    "username": "laura_fashionista",
+    "realname": "Laura White",
+    "bio": "Fashion blogger. Sustainable style.",
+    "persona": "Laura advocates for sustainable fashion and shares ethical brand recommendations, thrift hauls, and style tips. She connects with the sustainable fashion community.",
+    "gender": "female",
+    "age": 24,
+    "location": "New York, NY",
+    "interests": [
+      "Fashion",
+      "Sustainability",
+      "Thrifting",
+      "Beauty"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Sustainable Fashion Network",
+      "Thrift Store Finds NYC"
+    ]
+  },
+  {
+    "username": "mark_techie",
+    "realname": "Mark Robinson",
+    "bio": "Tech news addict. Always upgrading.",
+    "persona": "Mark follows the latest in tech, buys and sells gadgets on Marketplace, and participates in technology enthusiast groups. He reviews new devices and shares tech news.",
+    "gender": "male",
+    "age": 33,
+    "location": "San Jose, CA",
+    "interests": [
+      "Technology",
+      "Gadgets",
+      "Smart Home",
+      "Electric Vehicles"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Tech Enthusiasts Bay Area",
+      "EV Owners Network"
+    ]
+  },
+  {
+    "username": "lisa_wellness",
+    "realname": "Lisa Young",
+    "bio": "Holistic health coach. Mind & body.",
+    "persona": "Lisa is a certified wellness coach who shares mindfulness practices, herbal remedies, and holistic health tips. She runs virtual wellness workshops and challenges.",
+    "gender": "female",
+    "age": 36,
+    "location": "Boulder, CO",
+    "interests": [
+      "Wellness",
+      "Mindfulness",
+      "Yoga",
+      "Holistic Health"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Boulder Wellness Community",
+      "Mindful Living Network"
+    ]
+  },
+  {
+    "username": "john_veteran",
+    "realname": "John Thomas",
+    "bio": "Army veteran. Proud American.",
+    "persona": "John is a veteran who advocates for veteran rights and connects with fellow servicemembers on Facebook. He shares patriotic content, veteran resources, and community events.",
+    "gender": "male",
+    "age": 48,
+    "location": "Fayetteville, NC",
+    "interests": [
+      "Veterans Affairs",
+      "American History",
+      "Fishing",
+      "Football"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Veterans Support Network",
+      "Army Veterans Community"
+    ]
+  },
+  {
+    "username": "nina_yoga_instructor",
+    "realname": "Nina Patel",
+    "bio": "Yoga instructor & meditation guide.",
+    "persona": "Nina teaches yoga online and in-person. She shares sequences, meditation scripts, and the philosophy of yoga with a community of wellness seekers.",
+    "gender": "female",
+    "age": 29,
+    "location": "Scottsdale, AZ",
+    "interests": [
+      "Yoga",
+      "Meditation",
+      "Holistic Wellness",
+      "Ayurveda"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Phoenix Yoga Community",
+      "Online Yoga Teachers"
+    ]
+  },
+  {
+    "username": "brian_comedy",
+    "realname": "Brian Scott",
+    "bio": "Stand-up comedian. Laughing through life.",
+    "persona": "Brian is an amateur stand-up comedian who shares jokes, memes, and observations about everyday life. He promotes local comedy shows and engages with humor pages.",
+    "gender": "male",
+    "age": 32,
+    "location": "Chicago, IL",
+    "interests": [
+      "Comedy",
+      "Stand-up",
+      "Memes",
+      "Entertainment"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Chicago Comedy Scene",
+      "Memes & Humor Nation"
+    ]
+  },
+  {
+    "username": "carol_pets",
+    "realname": "Carol Adams",
+    "bio": "Dog mom x3. Animal rescue advocate.",
+    "persona": "Carol is passionate about animal rescue and shares her three rescue dogs on Facebook. She promotes adoption, shares pet care tips, and raises money for local shelters.",
+    "gender": "female",
+    "age": 41,
+    "location": "Charlotte, NC",
+    "interests": [
+      "Animal Rescue",
+      "Dog Training",
+      "Pet Health",
+      "Volunteering"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Charlotte Animal Rescue",
+      "Dog Lovers United"
+    ]
+  },
+  {
+    "username": "paul_golf",
+    "realname": "Paul Evans",
+    "bio": "Weekend golfer. 22 handicap & proud.",
+    "persona": "Paul is a recreational golfer who plays on weekends and follows the PGA Tour. He buys and sells golf equipment on Marketplace and connects with local golfers.",
+    "gender": "male",
+    "age": 50,
+    "location": "Scottsdale, AZ",
+    "interests": [
+      "Golf",
+      "Sports",
+      "Outdoor Activities",
+      "Retirement Planning"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Scottsdale Golf Club",
+      "PGA Tour Fans"
+    ]
+  },
+  {
+    "username": "diana_volunteer",
+    "realname": "Diana Turner",
+    "bio": "Community volunteer. Change starts local.",
+    "persona": "Diana volunteers at food banks and community centers. She uses Facebook to organize volunteering events, share social causes, and mobilize community support.",
+    "gender": "female",
+    "age": 44,
+    "location": "Minneapolis, MN",
+    "interests": [
+      "Volunteering",
+      "Community Service",
+      "Social Justice",
+      "Non-profit"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Minneapolis Volunteers Network",
+      "Community Action MN"
+    ]
+  },
+  {
+    "username": "ethan_student",
+    "realname": "Ethan Mitchell",
+    "bio": "College freshman. Figuring it all out.",
+    "persona": "Ethan is a first-year college student using Facebook to stay connected with high school friends and join college organizations. He follows music and sports pages.",
+    "gender": "male",
+    "age": 18,
+    "location": "Columbus, OH",
+    "interests": [
+      "College Life",
+      "Music",
+      "Basketball",
+      "Gaming"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Ohio State Class of 2028",
+      "Freshman Connections"
+    ]
+  },
+  {
+    "username": "sandra_momblog",
+    "realname": "Sandra Nelson",
+    "bio": "Mom blogger. Real talk on parenting.",
+    "persona": "Sandra writes candidly about the challenges and joys of parenting teenagers. Her authentic voice resonates with fellow parents and she's grown a significant following.",
+    "gender": "female",
+    "age": 43,
+    "location": "Houston, TX",
+    "interests": [
+      "Parenting Teens",
+      "Blogging",
+      "Mental Health",
+      "Family Travel"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Parenting Teens Support",
+      "Houston Mom Bloggers"
+    ]
+  },
+  {
+    "username": "alan_history_buff",
+    "realname": "Alan Carter",
+    "bio": "History teacher & history enthusiast.",
+    "persona": "Alan is a high school history teacher who shares historical facts, documentaries, and debates. He participates in history groups and promotes historical literacy.",
+    "gender": "male",
+    "age": 47,
+    "location": "Philadelphia, PA",
+    "interests": [
+      "History",
+      "Politics",
+      "Documentaries",
+      "Reading"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "History Buffs Society",
+      "Philadelphia Educators Network"
+    ]
+  },
+  {
+    "username": "olivia_art",
+    "realname": "Olivia Harris",
+    "bio": "Artist & art teacher. Spreading creativity.",
+    "persona": "Olivia creates watercolor art and teaches workshops. She shares her work on Facebook, sells prints via Marketplace, and builds community with fellow artists.",
+    "gender": "female",
+    "age": 38,
+    "location": "Asheville, NC",
+    "interests": [
+      "Watercolor",
+      "Art Teaching",
+      "Creativity",
+      "Local Art Scene"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Asheville Artists Network",
+      "Watercolor Painters Group"
+    ]
+  },
+  {
+    "username": "fred_politics",
+    "realname": "Fred Mitchell",
+    "bio": "Political commentator. Democracy matters.",
+    "persona": "Fred is an engaged citizen who follows political news closely and participates in political discussions. He shares articles, debates issues, and encourages civic participation.",
+    "gender": "male",
+    "age": 55,
+    "location": "Washington, DC",
+    "interests": [
+      "Politics",
+      "Current Events",
+      "Democracy",
+      "Policy"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Political Discussion Forum",
+      "DC Civic Engagement"
+    ]
+  },
+  {
+    "username": "tiffany_beauty",
+    "realname": "Tiffany Brooks",
+    "bio": "Makeup artist & beauty content creator.",
+    "persona": "Tiffany is a professional makeup artist who shares tutorials, product reviews, and behind-the-scenes wedding prep. She promotes her booking services through Facebook.",
+    "gender": "female",
+    "age": 26,
+    "location": "Las Vegas, NV",
+    "interests": [
+      "Makeup",
+      "Beauty",
+      "Wedding Planning",
+      "Content Creation"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Las Vegas Makeup Artists",
+      "Beauty & Glam Community"
+    ]
+  },
+  {
+    "username": "greg_finance_coach",
+    "realname": "Greg Peterson",
+    "bio": "Personal finance coach. Debt-free living.",
+    "persona": "Greg paid off $80K in debt and now coaches others toward financial freedom. He shares budgeting templates, debt payoff strategies, and savings challenges.",
+    "gender": "male",
+    "age": 36,
+    "location": "Kansas City, MO",
+    "interests": [
+      "Personal Finance",
+      "Debt Free",
+      "Budgeting",
+      "FIRE"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Dave Ramsey Baby Steps Community",
+      "Financial Freedom Network"
+    ]
+  },
+  {
+    "username": "nancy_nurse",
+    "realname": "Nancy Collins",
+    "bio": "Pediatric nurse. Healthcare hero.",
+    "persona": "Nancy is a pediatric nurse who shares healthcare awareness, child health tips, and nursing career advice. She participates in nursing support communities.",
+    "gender": "female",
+    "age": 34,
+    "location": "Cincinnati, OH",
+    "interests": [
+      "Nursing",
+      "Pediatric Health",
+      "Healthcare Advocacy",
+      "Work-Life Balance"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Nurses Support Network",
+      "Pediatric Nursing Community"
+    ]
+  },
+  {
+    "username": "victor_chef",
+    "realname": "Victor Morales",
+    "bio": "Self-taught chef. Weekend BBQ king.",
+    "persona": "Victor is passionate about BBQ and grilling. He documents cook sessions, shares recipes, and participates in competitive BBQ culture online.",
+    "gender": "male",
+    "age": 44,
+    "location": "Memphis, TN",
+    "interests": [
+      "BBQ",
+      "Grilling",
+      "Food",
+      "Cooking Competitions"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Memphis BBQ Pitmasters",
+      "BBQ Competition Circuit"
+    ]
+  },
+  {
+    "username": "hannah_mental_health",
+    "realname": "Hannah Stewart",
+    "bio": "Mental health advocate. You are not alone.",
+    "persona": "Hannah is a mental health advocate who shares destigmatization content, personal coping strategies, and mental health resources. She provides community support.",
+    "gender": "female",
+    "age": 30,
+    "location": "Portland, OR",
+    "interests": [
+      "Mental Health",
+      "Wellness",
+      "Advocacy",
+      "Support Communities"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Mental Health Support Circle",
+      "Anxiety & Depression Community"
+    ]
+  },
+  {
+    "username": "larry_retiree",
+    "realname": "Larry Sanders",
+    "bio": "Retired. Enjoying every day.",
+    "persona": "Larry retired after 35 years in manufacturing and now travels, gardens, and connects with old friends on Facebook. He follows local news and family pages.",
+    "gender": "male",
+    "age": 65,
+    "location": "Tampa, FL",
+    "interests": [
+      "Retirement",
+      "Travel",
+      "Gardening",
+      "Fishing"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Tampa Retirees Network",
+      "Florida Fishing Community"
+    ]
+  },
+  {
+    "username": "ashley_sustainability",
+    "realname": "Ashley Ward",
+    "bio": "Zero-waste lifestyle. Planet first.",
+    "persona": "Ashley advocates for zero-waste living and shares tips on reducing plastic, composting, and sustainable purchasing. She organizes community clean-up events.",
+    "gender": "female",
+    "age": 28,
+    "location": "Austin, TX",
+    "interests": [
+      "Zero Waste",
+      "Sustainability",
+      "Environmental Activism",
+      "Minimalism"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Zero Waste Austin",
+      "Eco Warriors Community"
+    ]
+  },
+  {
+    "username": "ron_tech_support",
+    "realname": "Ron Bailey",
+    "bio": "IT support guy. Fixing tech for family & friends.",
+    "persona": "Ron is the go-to tech person in his family and community. He shares tech tips, software recommendations, and helps people avoid online scams through Facebook groups.",
+    "gender": "male",
+    "age": 38,
+    "location": "Detroit, MI",
+    "interests": [
+      "Technology",
+      "Cybersecurity",
+      "Computer Help",
+      "Scam Awareness"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Tech Help Community",
+      "Digital Safety Awareness"
+    ]
+  },
+  {
+    "username": "brenda_churchwomen",
+    "realname": "Brenda Griffin",
+    "bio": "Church leader. Faith & community.",
+    "persona": "Brenda leads the women's ministry at her church and uses Facebook to connect her congregation, share Bible verses, and organize charity drives.",
+    "gender": "female",
+    "age": 50,
+    "location": "Birmingham, AL",
+    "interests": [
+      "Christian Faith",
+      "Church Ministry",
+      "Community Service",
+      "Bible Study"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Women of Faith Community",
+      "Birmingham Church Network"
+    ]
+  },
+  {
+    "username": "steven_realtor",
+    "realname": "Steven Price",
+    "bio": "Top real estate agent. Buy/Sell with me.",
+    "persona": "Steven is a top-performing real estate agent who uses Facebook to market listings, share market reports, and build client relationships through targeted community groups.",
+    "gender": "male",
+    "age": 41,
+    "location": "Dallas, TX",
+    "interests": [
+      "Real Estate",
+      "Housing Market",
+      "Home Staging",
+      "Investment Properties"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Dallas Real Estate Community",
+      "Texas Home Buyers Group"
+    ]
+  },
+  {
+    "username": "cindy_partyplanner",
+    "realname": "Cindy Rogers",
+    "bio": "Event planner & party decorator extraordinaire.",
+    "persona": "Cindy plans events from kids' birthday parties to corporate functions. She shares party inspiration, vendor recommendations, and showcases her portfolio.",
+    "gender": "female",
+    "age": 32,
+    "location": "Sacramento, CA",
+    "interests": [
+      "Event Planning",
+      "Party Decorations",
+      "Catering",
+      "DIY Crafts"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Sacramento Event Planners",
+      "Party Planning Ideas"
+    ]
+  },
+  {
+    "username": "mike_trucker",
+    "realname": "Mike Foster",
+    "bio": "Long-haul trucker. Miles of road & stories.",
+    "persona": "Mike is a long-haul truck driver who shares life on the road, trucker humor, and connects with other drivers. He participates in trucking groups and shares road safety tips.",
+    "gender": "male",
+    "age": 46,
+    "location": "Nashville, TN",
+    "interests": [
+      "Trucking",
+      "Road Trips",
+      "Country Music",
+      "American Culture"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Truckers Nation",
+      "Long Haul Truckers Community"
+    ]
+  },
+  {
+    "username": "vanessa_latinx",
+    "realname": "Vanessa Ramirez",
+    "bio": "Latina entrepreneur. Representing.",
+    "persona": "Vanessa runs a small clothing boutique and advocates for Latinx entrepreneurship. She connects with the Hispanic business community and shares cultural content.",
+    "gender": "female",
+    "age": 29,
+    "location": "San Antonio, TX",
+    "interests": [
+      "Latina Entrepreneurship",
+      "Fashion",
+      "Latin Culture",
+      "Small Business"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Latina Business Network",
+      "San Antonio Hispanic Chamber"
+    ]
+  },
+  {
+    "username": "doug_political_center",
+    "realname": "Doug Barnes",
+    "bio": "Moderate. Let us find common ground.",
+    "persona": "Doug is a moderate who participates in political discussions seeking reasonable debate. He shares fact-checked news and pushes back on polarizing content.",
+    "gender": "male",
+    "age": 52,
+    "location": "Columbus, OH",
+    "interests": [
+      "Politics",
+      "Bipartisanship",
+      "Fact Checking",
+      "Civic Education"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Civil Political Discussion",
+      "Moderate Voices USA"
+    ]
+  },
+  {
+    "username": "tara_baking",
+    "realname": "Tara Powell",
+    "bio": "Homemade baker. Sourdough obsessed.",
+    "persona": "Tara is obsessed with sourdough baking and fermentation. She shares recipes, starter guides, and connects with the sourdough community across Facebook groups.",
+    "gender": "female",
+    "age": 33,
+    "location": "Portland, OR",
+    "interests": [
+      "Baking",
+      "Sourdough",
+      "Fermentation",
+      "Farmers Markets"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Sourdough Bakers Community",
+      "Portland Baking & Pastry"
+    ]
+  },
+  {
+    "username": "clyde_hunting",
+    "realname": "Clyde Hunter",
+    "bio": "Hunter & fisherman. Conservation matters.",
+    "persona": "Clyde is a passionate outdoorsman who hunts and fishes. He shares wildlife conservation posts, hunting season updates, and gear reviews with fellow sportsmen.",
+    "gender": "male",
+    "age": 45,
+    "location": "Boise, ID",
+    "interests": [
+      "Hunting",
+      "Fishing",
+      "Wildlife Conservation",
+      "Outdoor Sports"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Idaho Hunters & Anglers",
+      "Conservation Nation"
+    ]
+  },
+  {
+    "username": "monica_cancer_survivor",
+    "realname": "Monica Rivera",
+    "bio": "Cancer survivor. Thriving not just surviving.",
+    "persona": "Monica shares her cancer survivor journey and advocates for early detection. She connects with other survivors and uses Facebook to fundraise for cancer research.",
+    "gender": "female",
+    "age": 43,
+    "location": "Miami, FL",
+    "interests": [
+      "Cancer Awareness",
+      "Health Advocacy",
+      "Survivor Community",
+      "Fundraising"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Cancer Survivors Unite",
+      "Pink Ribbon Community"
+    ]
+  },
+  {
+    "username": "theo_car_enthusiast",
+    "realname": "Theodore Cooper",
+    "bio": "Car guy. Classic cars & weekend track days.",
+    "persona": "Theo is a classic car restorer and weekend track-day participant. He shares restoration projects, car show announcements, and automotive knowledge with fellow enthusiasts.",
+    "gender": "male",
+    "age": 39,
+    "location": "Cleveland, OH",
+    "interests": [
+      "Classic Cars",
+      "Car Restoration",
+      "Racing",
+      "Automotive History"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Classic Car Enthusiasts",
+      "Northeast Ohio Auto Club"
+    ]
+  },
+  {
+    "username": "natalie_teacher",
+    "realname": "Natalie Long",
+    "bio": "Elementary school teacher. Making a difference.",
+    "persona": "Natalie is a dedicated elementary school teacher who shares classroom ideas, educational resources, and teacher wellness content. She connects with other educators.",
+    "gender": "female",
+    "age": 31,
+    "location": "Raleigh, NC",
+    "interests": [
+      "Education",
+      "Classroom Innovation",
+      "Teacher Wellness",
+      "Reading"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Teachers Connect",
+      "North Carolina Educators"
+    ]
+  },
+  {
+    "username": "jerome_sneakerhead",
+    "realname": "Jerome Washington",
+    "bio": "Sneakerhead. Exclusive drops only.",
+    "persona": "Jerome is passionate about sneaker culture. He buys, sells, and trades limited-edition sneakers on Facebook Marketplace and connects with the sneakerhead community.",
+    "gender": "male",
+    "age": 23,
+    "location": "New York, NY",
+    "interests": [
+      "Sneakers",
+      "Streetwear",
+      "Hip-Hop Culture",
+      "Reselling"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "NYC Sneakerheads",
+      "Sneaker Marketplace"
+    ]
+  },
+  {
+    "username": "betty_crafts_senior",
+    "realname": "Betty Campbell",
+    "bio": "Quilter & seamstress. Keeping traditions alive.",
+    "persona": "Betty is a retired seamstress who quilts and teaches sewing workshops. She shares finished projects, patterns, and connects with the quilting community through Facebook groups.",
+    "gender": "female",
+    "age": 68,
+    "location": "Knoxville, TN",
+    "interests": [
+      "Quilting",
+      "Sewing",
+      "Crafts",
+      "Family History"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Tennessee Quilters Guild",
+      "Senior Crafters Community"
+    ]
+  },
+  {
+    "username": "alex_startup_dev",
+    "realname": "Alex Ross",
+    "bio": "Indie developer. Building my SaaS dream.",
+    "persona": "Alex is an indie developer bootstrapping a SaaS product. He shares the build-in-public journey, celebrates milestones, and connects with fellow indie founders.",
+    "gender": "male",
+    "age": 27,
+    "location": "Austin, TX",
+    "interests": [
+      "Indie Hacking",
+      "SaaS",
+      "Programming",
+      "Entrepreneurship"
+    ],
+    "friends": [],
+    "previous_posts": [],
+    "groups": [
+      "Indie Hackers Austin",
+      "SaaS Founders Community"
+    ]
+  }
+]

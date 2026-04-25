@@ -47,6 +47,13 @@ class ActionType(Enum):
     SEND_TO_GROUP = "send_to_group"
     CREATE_GROUP = "create_group"
     LISTEN_FROM_GROUP = "listen_from_group"
+    REACT_POST = "react_post"
+    CONNECT = "connect"
+    SAVE_POST = "save_post"
+    SEND_DIRECT_MESSAGE = "send_direct_message"
+    READ_DIRECT_MESSAGES = "read_direct_messages"
+    CREATE_PAGE = "create_page"
+    FOLLOW_PAGE = "follow_page"
 
     @classmethod
     def get_default_twitter_actions(cls):
@@ -77,14 +84,70 @@ class ActionType(Enum):
             cls.MUTE,
         ]
 
+    @classmethod
+    def get_default_linkedin_actions(cls):
+        return [
+            cls.CREATE_POST,
+            cls.LIKE_POST,
+            cls.REPOST,
+            cls.CREATE_COMMENT,
+            cls.LIKE_COMMENT,
+            cls.FOLLOW,
+            cls.DO_NOTHING,
+        ]
+
+    @classmethod
+    def get_default_facebook_actions(cls):
+        return [
+            cls.CREATE_POST,
+            cls.LIKE_POST,
+            cls.CREATE_COMMENT,
+            cls.LIKE_COMMENT,
+            cls.FOLLOW,
+            cls.JOIN_GROUP,
+            cls.SEND_TO_GROUP,
+            cls.CREATE_GROUP,
+            cls.DO_NOTHING,
+        ]
+
+    @classmethod
+    def get_default_instagram_actions(cls):
+        return [
+            cls.CREATE_POST,
+            cls.LIKE_POST,
+            cls.CREATE_COMMENT,
+            cls.LIKE_COMMENT,
+            cls.FOLLOW,
+            cls.REPOST,
+            cls.DO_NOTHING,
+        ]
+
+    @classmethod
+    def get_default_whatsapp_actions(cls):
+        return [
+            cls.JOIN_GROUP,
+            cls.SEND_TO_GROUP,
+            cls.CREATE_GROUP,
+            cls.LISTEN_FROM_GROUP,
+            cls.DO_NOTHING,
+        ]
+
 
 class RecsysType(Enum):
     TWITTER = "twitter"
     TWHIN = "twhin-bert"
     REDDIT = "reddit"
     RANDOM = "random"
+    LINKEDIN = "linkedin"
+    FACEBOOK = "facebook"
+    INSTAGRAM = "instagram"
+    WHATSAPP = "whatsapp"
 
 
 class DefaultPlatformType(Enum):
     TWITTER = "twitter"
     REDDIT = "reddit"
+    LINKEDIN = "linkedin"
+    FACEBOOK = "facebook"
+    INSTAGRAM = "instagram"
+    WHATSAPP = "whatsapp"

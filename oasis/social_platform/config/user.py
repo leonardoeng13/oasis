@@ -42,10 +42,18 @@ class UserInfo:
         return user_info_template.format(**self.profile)
 
     def to_system_message(self) -> str:
-        if self.recsys_type != "reddit":
-            return self.to_twitter_system_message()
-        else:
+        if self.recsys_type == "reddit":
             return self.to_reddit_system_message()
+        elif self.recsys_type == "linkedin":
+            return self.to_linkedin_system_message()
+        elif self.recsys_type == "facebook":
+            return self.to_facebook_system_message()
+        elif self.recsys_type == "instagram":
+            return self.to_instagram_system_message()
+        elif self.recsys_type == "whatsapp":
+            return self.to_whatsapp_system_message()
+        else:
+            return self.to_twitter_system_message()
 
     def to_twitter_system_message(self) -> str:
         name_string = ""
@@ -100,6 +108,126 @@ Please perform actions by tool calling.
         system_content = f"""
 # OBJECTIVE
 You're a Reddit user, and I'll present you with some posts. After you see the posts, choose some actions from the following functions.
+
+# SELF-DESCRIPTION
+Your actions should be consistent with your self-description and personality.
+{description}
+
+# RESPONSE METHOD
+Please perform actions by tool calling.
+"""
+        return system_content
+
+    def to_linkedin_system_message(self) -> str:
+        name_string = ""
+        description_string = ""
+        if self.name is not None:
+            name_string = f"Your name is {self.name}."
+        description = name_string
+        if self.profile is None:
+            pass
+        elif "other_info" not in self.profile:
+            pass
+        elif "user_profile" in self.profile["other_info"]:
+            if self.profile["other_info"]["user_profile"] is not None:
+                user_profile = self.profile["other_info"]["user_profile"]
+                description_string = f"Your professional profile: {user_profile}."
+                description = f"{name_string}\n{description_string}"
+
+        system_content = f"""
+# OBJECTIVE
+You're a LinkedIn user, and I'll present you with some posts from your professional network. \
+After you see the posts, choose some actions from the following functions.
+
+# SELF-DESCRIPTION
+Your actions should be consistent with your professional background and personality.
+{description}
+
+# RESPONSE METHOD
+Please perform actions by tool calling.
+"""
+        return system_content
+
+    def to_facebook_system_message(self) -> str:
+        name_string = ""
+        description_string = ""
+        if self.name is not None:
+            name_string = f"Your name is {self.name}."
+        description = name_string
+        if self.profile is None:
+            pass
+        elif "other_info" not in self.profile:
+            pass
+        elif "user_profile" in self.profile["other_info"]:
+            if self.profile["other_info"]["user_profile"] is not None:
+                user_profile = self.profile["other_info"]["user_profile"]
+                description_string = f"Your profile: {user_profile}."
+                description = f"{name_string}\n{description_string}"
+
+        system_content = f"""
+# OBJECTIVE
+You're a Facebook user, and I'll present you with some posts from your feed. \
+After you see the posts, choose some actions from the following functions.
+
+# SELF-DESCRIPTION
+Your actions should be consistent with your self-description and personality.
+{description}
+
+# RESPONSE METHOD
+Please perform actions by tool calling.
+"""
+        return system_content
+
+    def to_instagram_system_message(self) -> str:
+        name_string = ""
+        description_string = ""
+        if self.name is not None:
+            name_string = f"Your name is {self.name}."
+        description = name_string
+        if self.profile is None:
+            pass
+        elif "other_info" not in self.profile:
+            pass
+        elif "user_profile" in self.profile["other_info"]:
+            if self.profile["other_info"]["user_profile"] is not None:
+                user_profile = self.profile["other_info"]["user_profile"]
+                description_string = f"Your profile: {user_profile}."
+                description = f"{name_string}\n{description_string}"
+
+        system_content = f"""
+# OBJECTIVE
+You're an Instagram user, and I'll present you with some posts from your feed. \
+After you see the posts, choose some actions from the following functions.
+
+# SELF-DESCRIPTION
+Your actions should be consistent with your self-description and personality.
+{description}
+
+# RESPONSE METHOD
+Please perform actions by tool calling.
+"""
+        return system_content
+
+    def to_whatsapp_system_message(self) -> str:
+        name_string = ""
+        description_string = ""
+        if self.name is not None:
+            name_string = f"Your name is {self.name}."
+        description = name_string
+        if self.profile is None:
+            pass
+        elif "other_info" not in self.profile:
+            pass
+        elif "user_profile" in self.profile["other_info"]:
+            if self.profile["other_info"]["user_profile"] is not None:
+                user_profile = self.profile["other_info"]["user_profile"]
+                description_string = f"Your profile: {user_profile}."
+                description = f"{name_string}\n{description_string}"
+
+        system_content = f"""
+# OBJECTIVE
+You're a WhatsApp user participating in group chats. \
+After receiving messages from the group, choose some actions from the following functions.
 
 # SELF-DESCRIPTION
 Your actions should be consistent with your self-description and personality.

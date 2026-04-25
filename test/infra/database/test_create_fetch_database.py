@@ -87,6 +87,7 @@ def test_user_operations():
             "created_at": "2024-04-21 22:02:42",
             "num_followings": 0,
             "num_followers": 0,
+            "is_page": 0,
         },
         {
             "user_id": 2,
@@ -97,6 +98,7 @@ def test_user_operations():
             "created_at": "2024-05-21 22:02:42",
             "num_followings": 0,
             "num_followers": 0,
+            "is_page": 0,
         },
     ]
 

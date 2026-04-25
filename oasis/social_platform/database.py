@@ -38,6 +38,12 @@ PRODUCT_SCHEMA_SQL = "product.sql"
 GROUP_SCHEMA_SQL = "chat_group.sql"
 GROUP_MEMBER_SCHEMA_SQL = "group_member.sql"
 GROUP_MESSAGE_SCHEMA_SQL = "group_message.sql"
+DIRECT_MESSAGE_SCHEMA_SQL = "direct_message.sql"
+REACTION_SCHEMA_SQL = "reaction.sql"
+CONNECTION_SCHEMA_SQL = "connection.sql"
+HASHTAG_SCHEMA_SQL = "hashtag.sql"
+SAVED_SCHEMA_SQL = "saved.sql"
+GROUP_JOIN_REQUEST_SCHEMA_SQL = "group_join_request.sql"
 
 TABLE_NAMES = {
     "user",
@@ -191,6 +197,42 @@ def create_db(db_path: str | None = None):
         with open(group_message_sql_path, "r") as sql_file:
             group_message_sql_script = sql_file.read()
         cursor.executescript(group_message_sql_script)
+
+        # Read and execute the direct_message table SQL script:
+        dm_sql_path = osp.join(schema_dir, DIRECT_MESSAGE_SCHEMA_SQL)
+        with open(dm_sql_path, "r") as sql_file:
+            dm_sql_script = sql_file.read()
+        cursor.executescript(dm_sql_script)
+
+        # Read and execute the reaction table SQL script:
+        reaction_sql_path = osp.join(schema_dir, REACTION_SCHEMA_SQL)
+        with open(reaction_sql_path, "r") as sql_file:
+            reaction_sql_script = sql_file.read()
+        cursor.executescript(reaction_sql_script)
+
+        # Read and execute the connection table SQL script:
+        connection_sql_path = osp.join(schema_dir, CONNECTION_SCHEMA_SQL)
+        with open(connection_sql_path, "r") as sql_file:
+            connection_sql_script = sql_file.read()
+        cursor.executescript(connection_sql_script)
+
+        # Read and execute the hashtag table SQL script:
+        hashtag_sql_path = osp.join(schema_dir, HASHTAG_SCHEMA_SQL)
+        with open(hashtag_sql_path, "r") as sql_file:
+            hashtag_sql_script = sql_file.read()
+        cursor.executescript(hashtag_sql_script)
+
+        # Read and execute the saved table SQL script:
+        saved_sql_path = osp.join(schema_dir, SAVED_SCHEMA_SQL)
+        with open(saved_sql_path, "r") as sql_file:
+            saved_sql_script = sql_file.read()
+        cursor.executescript(saved_sql_script)
+
+        # Read and execute the group_join_request table SQL script:
+        gjr_sql_path = osp.join(schema_dir, GROUP_JOIN_REQUEST_SCHEMA_SQL)
+        with open(gjr_sql_path, "r") as sql_file:
+            gjr_sql_script = sql_file.read()
+        cursor.executescript(gjr_sql_script)
 
         # Commit the changes:
         conn.commit()

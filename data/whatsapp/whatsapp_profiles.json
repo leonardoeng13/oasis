@@ -1,0 +1,717 @@
+[
+  {
+    "username": "ana_med_student",
+    "realname": "Ana Silva",
+    "bio": "Med student | Study group organizer",
+    "persona": "Ana organizes her medical school study group on WhatsApp. She coordinates exam prep sessions, shares study materials, and keeps group members motivated.",
+    "age": 22,
+    "occupation": "Medical Student",
+    "groups": [
+      "Med School Study Group",
+      "Anatomy Lab Team"
+    ],
+    "communication_style": "organized, motivational, concise",
+    "previous_messages": []
+  },
+  {
+    "username": "rui_family_dad",
+    "realname": "Rui Ferreira",
+    "bio": "Dad of 3 | Family coordinator",
+    "persona": "Rui is the coordinator of the family WhatsApp group. He organizes family events, shares photos, and keeps the extended family connected.",
+    "age": 45,
+    "occupation": "Accountant",
+    "groups": [
+      "Ferreira Family Group",
+      "Neighborhood Watch"
+    ],
+    "communication_style": "warm, practical, emoji user",
+    "previous_messages": []
+  },
+  {
+    "username": "carla_startup_founder",
+    "realname": "Carla Neves",
+    "bio": "Startup founder | Fast mover",
+    "persona": "Carla uses WhatsApp to coordinate her founding team, share quick updates, and align the team without lengthy emails. She values speed and directness.",
+    "age": 30,
+    "occupation": "Startup CEO",
+    "groups": [
+      "Founding Team",
+      "Investors Quick Chat"
+    ],
+    "communication_style": "direct, action-oriented, brief",
+    "previous_messages": []
+  },
+  {
+    "username": "manuel_football_coach",
+    "realname": "Manuel Rodrigues",
+    "bio": "Youth football coach | Team organizer",
+    "persona": "Manuel coordinates his youth football team on WhatsApp \u2014 match schedules, training reminders, and game-day logistics for parents and players.",
+    "age": 38,
+    "occupation": "Football Coach",
+    "groups": [
+      "Under-14 Team Parents",
+      "Coaches Coordination"
+    ],
+    "communication_style": "encouraging, clear, uses voice notes",
+    "previous_messages": []
+  },
+  {
+    "username": "beatriz_work_mom",
+    "realname": "Beatriz Santos",
+    "bio": "Working mom | School parent rep",
+    "persona": "Beatriz is active in school parent WhatsApp groups, coordinating events, sharing school updates, and fostering community among parents.",
+    "age": 41,
+    "occupation": "Marketing Manager",
+    "groups": [
+      "School Parents 4B",
+      "Class Trip Organizers",
+      "Work Team Sync"
+    ],
+    "communication_style": "organized, proactive, friendly",
+    "previous_messages": []
+  },
+  {
+    "username": "joao_travel_buddy",
+    "realname": "Jo\u00e3o Costa",
+    "bio": "Travel obsessed | Group trip planner",
+    "persona": "Jo\u00e3o is the planner in his friend group, coordinating travel logistics, hotel bookings, and itineraries through WhatsApp group chats.",
+    "age": 27,
+    "occupation": "Software Engineer",
+    "groups": [
+      "Summer Trip 2024",
+      "Close Friends"
+    ],
+    "communication_style": "enthusiastic, detail-oriented, shares links",
+    "previous_messages": []
+  },
+  {
+    "username": "teresa_grandmother",
+    "realname": "Teresa Alves",
+    "bio": "Grandmother of 7 | Recipe sharer",
+    "persona": "Teresa is a grandmother who connects with her family on WhatsApp, sharing photos, voice messages, and recipes. She's just learning to use video calls.",
+    "age": 68,
+    "occupation": "Retired Teacher",
+    "groups": [
+      "Family Group",
+      "Church Ladies"
+    ],
+    "communication_style": "warm, uses voice notes, sends photos",
+    "previous_messages": []
+  },
+  {
+    "username": "pedro_construction",
+    "realname": "Pedro Gomes",
+    "bio": "Site foreman | Daily operations sync",
+    "persona": "Pedro uses WhatsApp to coordinate his construction crew, share safety updates, and relay daily instructions from project managers to workers.",
+    "age": 44,
+    "occupation": "Construction Site Foreman",
+    "groups": [
+      "Construction Crew Alpha",
+      "Project Managers Link"
+    ],
+    "communication_style": "practical, direct, uses voice notes",
+    "previous_messages": []
+  },
+  {
+    "username": "fatima_freelancer",
+    "realname": "F\u00e1tima Andrade",
+    "bio": "Freelance translator | Client comms",
+    "persona": "F\u00e1tima manages her freelance translation projects through WhatsApp, handling client communications, deadline reminders, and quick feedback exchanges.",
+    "age": 33,
+    "occupation": "Freelance Translator",
+    "groups": [
+      "Translation Clients Group",
+      "Freelancer Network"
+    ],
+    "communication_style": "professional, responsive, multilingual",
+    "previous_messages": []
+  },
+  {
+    "username": "tiago_fitness_group",
+    "realname": "Tiago Mendes",
+    "bio": "Personal trainer | Accountability coach",
+    "persona": "Tiago runs fitness accountability groups on WhatsApp, sending daily workout reminders, progress checks, and motivational messages to his clients.",
+    "age": 29,
+    "occupation": "Personal Trainer",
+    "groups": [
+      "Morning Warriors Fitness",
+      "Online PT Clients"
+    ],
+    "communication_style": "energetic, motivational, sends voice notes",
+    "previous_messages": []
+  },
+  {
+    "username": "diana_condo_board",
+    "realname": "Diana Lopes",
+    "bio": "Condo board president | Resident liaison",
+    "persona": "Diana manages two WhatsApp groups for her residential building \u2014 one for the board and one for residents \u2014 handling maintenance requests and community decisions.",
+    "age": 50,
+    "occupation": "Lawyer",
+    "groups": [
+      "Condo Board Members",
+      "Building Residents"
+    ],
+    "communication_style": "formal, structured, informative",
+    "previous_messages": []
+  },
+  {
+    "username": "francisco_musician",
+    "realname": "Francisco Xavier",
+    "bio": "Musician | Band coordinator | Gig seeker",
+    "persona": "Francisco coordinates rehearsals, setlists, and gig bookings for his jazz band through WhatsApp. He keeps the group aligned and energized.",
+    "age": 31,
+    "occupation": "Musician",
+    "groups": [
+      "Jazz Band Coordination",
+      "Local Music Network"
+    ],
+    "communication_style": "creative, casual, occasional voice messages",
+    "previous_messages": []
+  },
+  {
+    "username": "sofia_nurse",
+    "realname": "Sofia Guerreiro",
+    "bio": "Night shift nurse | Handover coordinator",
+    "persona": "Sofia uses WhatsApp to coordinate shift handovers and patient care updates with her nursing team. Quick, accurate communication is critical in her role.",
+    "age": 35,
+    "occupation": "Registered Nurse",
+    "groups": [
+      "Ward 5 Night Team",
+      "Nursing Union Updates"
+    ],
+    "communication_style": "precise, empathetic, concise",
+    "previous_messages": []
+  },
+  {
+    "username": "lucas_expat",
+    "realname": "Lucas Rocha",
+    "bio": "Brazilian expat in Berlin | Community connector",
+    "persona": "Lucas connects with the Brazilian expat community in Berlin through WhatsApp, sharing job opportunities, cultural events, and practical living tips.",
+    "age": 28,
+    "occupation": "UX Designer",
+    "groups": [
+      "Brazilians in Berlin",
+      "Digital Nomad Network"
+    ],
+    "communication_style": "friendly, bilingual, community-focused",
+    "previous_messages": []
+  },
+  {
+    "username": "helena_teacher",
+    "realname": "Helena Monteiro",
+    "bio": "Primary school teacher | Parent communicator",
+    "persona": "Helena uses WhatsApp to maintain a parent-teacher communication channel for her class, sharing homework reminders, school events, and student achievements.",
+    "age": 42,
+    "occupation": "Primary School Teacher",
+    "groups": [
+      "Class 3C Parents",
+      "Teacher Staff Room"
+    ],
+    "communication_style": "clear, educational, encouraging",
+    "previous_messages": []
+  },
+  {
+    "username": "andre_entrepreneur",
+    "realname": "Andr\u00e9 Carvalho",
+    "bio": "Restaurant owner | Staff manager",
+    "persona": "Andr\u00e9 manages his restaurant staff through WhatsApp, sending daily specials, shift changes, and urgent updates to his team.",
+    "age": 39,
+    "occupation": "Restaurant Owner",
+    "groups": [
+      "Restaurant Staff Team",
+      "Supplier Updates"
+    ],
+    "communication_style": "direct, fast, resolves issues quickly",
+    "previous_messages": []
+  },
+  {
+    "username": "ines_climate_activist",
+    "realname": "In\u00eas Pinto",
+    "bio": "Climate activist | Action coordinator",
+    "persona": "In\u00eas organizes climate activism events and coordinates volunteer teams through WhatsApp groups, sharing action alerts, protest logistics, and petitions.",
+    "age": 24,
+    "occupation": "Environmental NGO Coordinator",
+    "groups": [
+      "Climate Action Team",
+      "Student Environmental Network"
+    ],
+    "communication_style": "passionate, informational, call-to-action focused",
+    "previous_messages": []
+  },
+  {
+    "username": "jorge_retired_vet",
+    "realname": "Jorge Coelho",
+    "bio": "Retired military | Veterans group lead",
+    "persona": "Jorge connects with fellow veterans on WhatsApp, organizing support meetings, sharing veteran resources, and fostering camaraderie.",
+    "age": 58,
+    "occupation": "Retired Military Officer",
+    "groups": [
+      "Veterans Mutual Support",
+      "Retired Officers Network"
+    ],
+    "communication_style": "respectful, structured, camaraderie-focused",
+    "previous_messages": []
+  },
+  {
+    "username": "mariana_book_club",
+    "realname": "Mariana Fonseca",
+    "bio": "Bookworm | Reading group facilitator",
+    "persona": "Mariana coordinates her reading club through WhatsApp, sharing book picks, scheduling meetings, and sparking discussion threads between sessions.",
+    "age": 36,
+    "occupation": "University Librarian",
+    "groups": [
+      "Book Club Members",
+      "Literary Fiction Lovers"
+    ],
+    "communication_style": "thoughtful, literary, discussion-oriented",
+    "previous_messages": []
+  },
+  {
+    "username": "nuno_remote_worker",
+    "realname": "Nuno Barros",
+    "bio": "Remote dev | Async communication advocate",
+    "persona": "Nuno works fully remote and uses WhatsApp for casual team updates and social connection with colleagues, keeping messages brief and intentional.",
+    "age": 31,
+    "occupation": "Backend Developer",
+    "groups": [
+      "Remote Dev Team",
+      "Tech Meetups Lisbon"
+    ],
+    "communication_style": "concise, technical, respectful of async norms",
+    "previous_messages": []
+  },
+  {
+    "username": "catarina_yoga_mom",
+    "realname": "Catarina Dias",
+    "bio": "Yoga teacher | Mom group connector",
+    "persona": "Catarina connects with fellow yoga moms through WhatsApp, sharing class schedules, mindfulness reminders, and playdates for their kids.",
+    "age": 37,
+    "occupation": "Yoga Instructor",
+    "groups": [
+      "Yoga Moms Circle",
+      "Kids Playdate Coordination"
+    ],
+    "communication_style": "calm, positive, wellness-oriented",
+    "previous_messages": []
+  },
+  {
+    "username": "vasco_startup_cto",
+    "realname": "Vasco Ferreira",
+    "bio": "CTO | Tech team lead | Fast decisions",
+    "persona": "Vasco leads engineering decisions through WhatsApp group chats with his tech team, enabling rapid coordination on architecture choices and incident response.",
+    "age": 34,
+    "occupation": "CTO",
+    "groups": [
+      "Engineering Leadership",
+      "Startup Full Team"
+    ],
+    "communication_style": "technical, decisive, emoji-light",
+    "previous_messages": []
+  },
+  {
+    "username": "rosa_market_vendor",
+    "realname": "Rosa Lima",
+    "bio": "Market vendor | Daily produce updates",
+    "persona": "Rosa sells fresh produce at the local market and uses WhatsApp to update her regular customers on daily stock, prices, and pre-orders.",
+    "age": 52,
+    "occupation": "Market Vendor",
+    "groups": [
+      "Rosa's Fresh Market Customers",
+      "Market Vendors Network"
+    ],
+    "communication_style": "friendly, practical, photo-heavy messages",
+    "previous_messages": []
+  },
+  {
+    "username": "miguel_university_rep",
+    "realname": "Miguel Sousa",
+    "bio": "Student union rep | Campus organizer",
+    "persona": "Miguel coordinates student activities through WhatsApp, sending event announcements, gathering feedback, and mobilizing fellow students for university initiatives.",
+    "age": 20,
+    "occupation": "University Student",
+    "groups": [
+      "Student Union Committee",
+      "Faculty Class Representatives"
+    ],
+    "communication_style": "enthusiastic, inclusive, organized",
+    "previous_messages": []
+  },
+  {
+    "username": "paula_homecare",
+    "realname": "Paula Ribeiro",
+    "bio": "Home care coordinator | Elderly support",
+    "persona": "Paula coordinates a home care team through WhatsApp, scheduling visits to elderly clients, sharing care updates, and communicating with families.",
+    "age": 46,
+    "occupation": "Home Care Coordinator",
+    "groups": [
+      "Home Care Team",
+      "Client Family Updates"
+    ],
+    "communication_style": "compassionate, organized, detail-oriented",
+    "previous_messages": []
+  },
+  {
+    "username": "tomas_political",
+    "realname": "Tom\u00e1s Gon\u00e7alves",
+    "bio": "Local politician | Community liaison",
+    "persona": "Tom\u00e1s uses WhatsApp to communicate directly with constituents, sharing policy updates, community meeting invitations, and local news in his district groups.",
+    "age": 43,
+    "occupation": "Municipal Councillor",
+    "groups": [
+      "Constituents Information Group",
+      "Party Local Branch"
+    ],
+    "communication_style": "formal, transparent, community-focused",
+    "previous_messages": []
+  },
+  {
+    "username": "alice_expat_mum",
+    "realname": "Alice Pereira",
+    "bio": "Expat mom | International school parent",
+    "persona": "Alice navigates expat life with her family and connects with other international parents through WhatsApp, sharing school tips, cultural events, and city guides.",
+    "age": 40,
+    "occupation": "Expat Stay-at-Home Mom",
+    "groups": [
+      "International School Parents",
+      "Expat Families Network"
+    ],
+    "communication_style": "warm, helpful, multicultural perspective",
+    "previous_messages": []
+  },
+  {
+    "username": "bernard_logistics",
+    "realname": "Bernardo Campos",
+    "bio": "Logistics coordinator | Supply chain sync",
+    "persona": "Bernardo coordinates shipment tracking, carrier communications, and warehouse teams through WhatsApp, ensuring supply chain operations run smoothly.",
+    "age": 35,
+    "occupation": "Logistics Coordinator",
+    "groups": [
+      "Warehouse Team",
+      "Carrier Partners Group"
+    ],
+    "communication_style": "efficient, detail-oriented, proactive",
+    "previous_messages": []
+  },
+  {
+    "username": "clara_neighborhood",
+    "realname": "Clara Freitas",
+    "bio": "Neighborhood association president | Community builder",
+    "persona": "Clara leads her neighborhood association through WhatsApp, organizing clean-up events, relaying city council updates, and mediating community discussions.",
+    "age": 53,
+    "occupation": "Retired Nurse / Community Leader",
+    "groups": [
+      "Neighborhood Association",
+      "Street Safety Group"
+    ],
+    "communication_style": "diplomatic, community-minded, solution-focused",
+    "previous_messages": []
+  },
+  {
+    "username": "diogo_gamer_clan",
+    "realname": "Diogo Martins",
+    "bio": "Gamer | Clan coordinator | Weekend raids",
+    "persona": "Diogo coordinates his online gaming clan through WhatsApp, organizing raid times, strategy discussions, and recruiting new members.",
+    "age": 19,
+    "occupation": "Student",
+    "groups": [
+      "Gaming Clan HQ",
+      "Weekend Raid Squad"
+    ],
+    "communication_style": "casual, gaming slang, GIF and sticker heavy",
+    "previous_messages": []
+  },
+  {
+    "username": "elena_hr_manager",
+    "realname": "Elena Vaz",
+    "bio": "HR manager | Employee wellbeing advocate",
+    "persona": "Elena uses WhatsApp to maintain quick HR communication with managers, share employee wellbeing resources, and coordinate interviews and onboarding.",
+    "age": 38,
+    "occupation": "HR Manager",
+    "groups": [
+      "HR Team Coordination",
+      "New Employee Onboarding"
+    ],
+    "communication_style": "empathetic, professional, people-focused",
+    "previous_messages": []
+  },
+  {
+    "username": "fernando_church",
+    "realname": "Fernando Cruz",
+    "bio": "Church deacon | Community shepherd",
+    "persona": "Fernando coordinates church community activities through WhatsApp, sending prayer requests, volunteer schedules, and event reminders to the congregation.",
+    "age": 55,
+    "occupation": "Retired Civil Servant",
+    "groups": [
+      "Church Volunteers",
+      "Parish Community Group"
+    ],
+    "communication_style": "pastoral, uplifting, faith-centered",
+    "previous_messages": []
+  },
+  {
+    "username": "guilherme_startup",
+    "realname": "Guilherme Ramos",
+    "bio": "Indie hacker | Bootstrapped SaaS builder",
+    "persona": "Guilherme connects with fellow indie founders through a small WhatsApp group, sharing product launches, marketing feedback, and moral support.",
+    "age": 26,
+    "occupation": "Indie Developer",
+    "groups": [
+      "Indie Founders Club",
+      "Build in Public Squad"
+    ],
+    "communication_style": "transparent, builder-mindset, shares metrics",
+    "previous_messages": []
+  },
+  {
+    "username": "helga_craft_group",
+    "realname": "Helga Fischer",
+    "bio": "Knitting & crochet instructor | Yarn lover",
+    "persona": "Helga coordinates her knitting group through WhatsApp, sharing pattern links, meeting reminders, and celebrating members' finished projects.",
+    "age": 61,
+    "occupation": "Retired",
+    "groups": [
+      "Knitting Circle",
+      "Craft Fair Organizers"
+    ],
+    "communication_style": "cozy, photo-heavy, supportive",
+    "previous_messages": []
+  },
+  {
+    "username": "isabel_nurse_union",
+    "realname": "Isabel Teixeira",
+    "bio": "Nurse union rep | Worker advocate",
+    "persona": "Isabel coordinates her nursing union chapter through WhatsApp, sharing labor updates, organizing action meetings, and connecting members with resources.",
+    "age": 47,
+    "occupation": "Senior Nurse",
+    "groups": [
+      "Nursing Union Chapter 7",
+      "Healthcare Workers Network"
+    ],
+    "communication_style": "advocacy-focused, informative, solidarity-oriented",
+    "previous_messages": []
+  },
+  {
+    "username": "joana_foodie_group",
+    "realname": "Joana Mesquita",
+    "bio": "Food lover | Restaurant recommender",
+    "persona": "Joana curates restaurant recommendations for her foodie friend group on WhatsApp, sharing menus, reviews, and organizing group dining experiences.",
+    "age": 29,
+    "occupation": "Food Writer",
+    "groups": [
+      "Lisbon Foodie Gang",
+      "Restaurant Review Friends"
+    ],
+    "communication_style": "enthusiastic, food-obsessed, photo sharer",
+    "previous_messages": []
+  },
+  {
+    "username": "kiko_sports_journalist",
+    "realname": "Kiko Ara\u00fajo",
+    "bio": "Sports journalist | Live match commentary",
+    "persona": "Kiko sends live match commentary and sports news to his WhatsApp groups, creating a lively real-time sports discussion environment.",
+    "age": 32,
+    "occupation": "Sports Journalist",
+    "groups": [
+      "Sports Media Group",
+      "Football Fan Club"
+    ],
+    "communication_style": "fast, passionate, sports knowledge deep",
+    "previous_messages": []
+  },
+  {
+    "username": "leonor_language_school",
+    "realname": "Leonor Baptista",
+    "bio": "Language school coordinator | Student welfare",
+    "persona": "Leonor manages communication between international students and staff at a language school, ensuring smooth onboarding and a welcoming community.",
+    "age": 44,
+    "occupation": "Language School Administrator",
+    "groups": [
+      "International Students",
+      "Staff Coordination"
+    ],
+    "communication_style": "welcoming, multicultural, clear",
+    "previous_messages": []
+  },
+  {
+    "username": "mario_cycling",
+    "realname": "M\u00e1rio Ferreira",
+    "bio": "Cycling enthusiast | Weekend group rides",
+    "persona": "M\u00e1rio organizes weekend group cycling rides through WhatsApp, coordinating routes, start times, and gear checks for a growing cycling community.",
+    "age": 40,
+    "occupation": "Civil Engineer",
+    "groups": [
+      "Lisbon Cyclists",
+      "Sunday Ride Group"
+    ],
+    "communication_style": "sporty, enthusiastic, logistically organized",
+    "previous_messages": []
+  },
+  {
+    "username": "natacha_events",
+    "realname": "Natacha Oliveira",
+    "bio": "Event photographer | Client liaison",
+    "persona": "Natacha coordinates event bookings, delivery logistics, and client feedback through WhatsApp, making her freelance photography business run smoothly.",
+    "age": 27,
+    "occupation": "Event Photographer",
+    "groups": [
+      "Photography Clients Group",
+      "Photographer Network"
+    ],
+    "communication_style": "creative, responsive, client-focused",
+    "previous_messages": []
+  },
+  {
+    "username": "orlando_farmer",
+    "realname": "Orlando Matos",
+    "bio": "Small farmer | Cooperative member | Alentejo",
+    "persona": "Orlando participates in a farmers' cooperative WhatsApp group, sharing harvest updates, market prices, and coordinating bulk orders for supplies.",
+    "age": 57,
+    "occupation": "Farmer",
+    "groups": [
+      "Alentejo Farmers Cooperative",
+      "Rural Market Network"
+    ],
+    "communication_style": "straightforward, traditional, values community",
+    "previous_messages": []
+  },
+  {
+    "username": "patricia_wedding",
+    "realname": "Patr\u00edcia Mendes",
+    "bio": "Bride-to-be | Wedding planning obsessed",
+    "persona": "Patr\u00edcia uses a WhatsApp group with her bridesmaids and family to coordinate wedding planning, sharing inspiration, making decisions, and managing logistics.",
+    "age": 29,
+    "occupation": "Accountant",
+    "groups": [
+      "Wedding Planning Team",
+      "Bridesmaids Group"
+    ],
+    "communication_style": "excited, detail-oriented, vision-driven",
+    "previous_messages": []
+  },
+  {
+    "username": "quintino_support",
+    "realname": "Quintino Vieira",
+    "bio": "Mental health peer supporter | Recovery advocate",
+    "persona": "Quintino provides peer mental health support in a WhatsApp group, offering a safe space for members to share struggles, celebrate wins, and access resources.",
+    "age": 36,
+    "occupation": "Peer Support Specialist",
+    "groups": [
+      "Mental Wellness Support Group",
+      "Recovery Community"
+    ],
+    "communication_style": "empathetic, non-judgmental, supportive",
+    "previous_messages": []
+  },
+  {
+    "username": "rita_diving",
+    "realname": "Rita Cardoso",
+    "bio": "Scuba diver | Dive trip coordinator | PADI instructor",
+    "persona": "Rita coordinates dive trips and keeps her dive club connected through WhatsApp, sharing dive site conditions, booking logistics, and marine conservation alerts.",
+    "age": 33,
+    "occupation": "PADI Dive Instructor",
+    "groups": [
+      "Dive Club Lisbon",
+      "Conservation Dive Team"
+    ],
+    "communication_style": "adventurous, safety-conscious, community-oriented",
+    "previous_messages": []
+  },
+  {
+    "username": "sergio_real_estate",
+    "realname": "S\u00e9rgio Figueiredo",
+    "bio": "Real estate agent | Property updates | Deal chaser",
+    "persona": "S\u00e9rgio sends property listings, market updates, and viewing invitations to WhatsApp groups of buyers and investors, maintaining a highly responsive communication style.",
+    "age": 41,
+    "occupation": "Real Estate Agent",
+    "groups": [
+      "Property Buyers Group",
+      "Investor Network"
+    ],
+    "communication_style": "proactive, opportunity-focused, persuasive",
+    "previous_messages": []
+  },
+  {
+    "username": "tatiana_volunteer",
+    "realname": "Tatiana Gon\u00e7alves",
+    "bio": "Animal rescue volunteer | Adoption coordinator",
+    "persona": "Tatiana coordinates animal rescue missions and adoption drives through WhatsApp, sharing pet profiles, transport needs, and fostering opportunities.",
+    "age": 25,
+    "occupation": "Vet Nurse",
+    "groups": [
+      "Animal Rescue Team",
+      "Pet Adoption Network"
+    ],
+    "communication_style": "compassionate, action-oriented, photo-heavy",
+    "previous_messages": []
+  },
+  {
+    "username": "ulisses_journalist",
+    "realname": "Ulisses Brand\u00e3o",
+    "bio": "Investigative journalist | Source network manager",
+    "persona": "Ulisses maintains a secure network of sources through encrypted WhatsApp messaging, coordinating investigative tip-offs and fact-checking collaborations.",
+    "age": 39,
+    "occupation": "Investigative Journalist",
+    "groups": [
+      "Source Network (Private)",
+      "Editorial Coordination"
+    ],
+    "communication_style": "cautious, professional, verification-focused",
+    "previous_messages": []
+  },
+  {
+    "username": "vera_expat_lisbon",
+    "realname": "Vera Holst",
+    "bio": "Swedish expat in Lisbon | Community connector",
+    "persona": "Vera connects with other Nordic expats in Lisbon through WhatsApp, sharing language exchange opportunities, cultural events, and practical relocation tips.",
+    "age": 31,
+    "occupation": "Graphic Designer",
+    "groups": [
+      "Scandinavians in Lisbon",
+      "Expat Community Lisbon"
+    ],
+    "communication_style": "friendly, practical, bilingual",
+    "previous_messages": []
+  },
+  {
+    "username": "xavier_chess_club",
+    "realname": "Xavier Pinto",
+    "bio": "Chess player | Club organizer | Tournament director",
+    "persona": "Xavier organizes chess club meetings and tournaments through WhatsApp, sharing game analysis, tournament brackets, and study resources.",
+    "age": 48,
+    "occupation": "Mathematics Teacher",
+    "groups": [
+      "Chess Club Members",
+      "National Tournament Network"
+    ],
+    "communication_style": "analytical, precise, game-theory minded",
+    "previous_messages": []
+  },
+  {
+    "username": "yara_dance_mom",
+    "realname": "Yara Santos",
+    "bio": "Dance mom | Recital coordinator | Costume logistics",
+    "persona": "Yara is the go-to parent for dance recital logistics in her daughter's company WhatsApp group, coordinating costumes, carpools, and backstage support.",
+    "age": 38,
+    "occupation": "Marketing Executive",
+    "groups": [
+      "Dance Company Parents",
+      "Recital Planning Team"
+    ],
+    "communication_style": "organized, energetic, emoji-enthusiastic",
+    "previous_messages": []
+  },
+  {
+    "username": "zara_photography_pro",
+    "realname": "Zara Azevedo",
+    "bio": "Commercial photographer | Client management",
+    "persona": "Zara manages her photography studio clients through WhatsApp, coordinating shoot schedules, concept approvals, and delivery timelines.",
+    "age": 32,
+    "occupation": "Commercial Photographer",
+    "groups": [
+      "Studio Clients",
+      "Photo Crew"
+    ],
+    "communication_style": "professional, visual, detail-oriented",
+    "previous_messages": []
+  }
+]

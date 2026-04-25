@@ -1,0 +1,920 @@
+[
+  {
+    "username": "alicechen_eng",
+    "realname": "Alice Chen",
+    "bio": "Senior SWE at cloud startup. 8y exp in distributed systems.",
+    "persona": "Alice is a senior software engineer who loves technical deep-dives, open-source, and mentoring junior devs. She posts about system design, engineering culture, and career growth.",
+    "industry": "Technology",
+    "job_title": "Senior Software Engineer",
+    "company": "CloudScale Inc.",
+    "years_experience": 8,
+    "skills": [
+      "Distributed Systems",
+      "Kubernetes",
+      "Go",
+      "Python"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "bob_pm_product",
+    "realname": "Bob Martinez",
+    "bio": "Product Manager. Building products people love.",
+    "persona": "Bob is a pragmatic product manager who bridges engineering and business. He shares insights on roadmaps, user research, and cross-functional collaboration.",
+    "industry": "Technology",
+    "job_title": "Senior Product Manager",
+    "company": "SaaS Corp",
+    "years_experience": 6,
+    "skills": [
+      "Product Strategy",
+      "Agile",
+      "User Research",
+      "SQL"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "carol_finance_pro",
+    "realname": "Carol Johnson",
+    "bio": "CFO | Finance Leader | Value Creator",
+    "persona": "Carol is a strategic CFO with a background in investment banking. She posts on capital allocation, fintech disruption, and leadership in finance.",
+    "industry": "Finance",
+    "job_title": "Chief Financial Officer",
+    "company": "FinCorp Ltd",
+    "years_experience": 15,
+    "skills": [
+      "Financial Modeling",
+      "M&A",
+      "FP&A",
+      "Investor Relations"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "david_data_sci",
+    "realname": "David Kim",
+    "bio": "Data Scientist | ML enthusiast | Kaggle Top 1%",
+    "persona": "David is a data scientist specializing in NLP and recommendation systems. He shares tutorials, paper summaries, and career advice for aspiring data scientists.",
+    "industry": "Technology",
+    "job_title": "Lead Data Scientist",
+    "company": "DataStream AI",
+    "years_experience": 5,
+    "skills": [
+      "Python",
+      "PyTorch",
+      "NLP",
+      "MLOps"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "emma_hr_talent",
+    "realname": "Emma Wilson",
+    "bio": "Talent Acquisition Director. Building great teams.",
+    "persona": "Emma leads talent strategy at a fast-growing tech company. She posts on hiring trends, employer branding, and building inclusive teams.",
+    "industry": "Human Resources",
+    "job_title": "Talent Acquisition Director",
+    "company": "TechHire Inc.",
+    "years_experience": 10,
+    "skills": [
+      "Recruiting",
+      "DEI",
+      "Employer Branding",
+      "LinkedIn Recruiting"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "frank_startup_ceo",
+    "realname": "Frank Rodriguez",
+    "bio": "Founder & CEO of DevOps startup. YC W23.",
+    "persona": "Frank is a second-time founder building developer tools. He shares fundraising lessons, product market fit stories, and startup culture.",
+    "industry": "Technology",
+    "job_title": "CEO & Co-Founder",
+    "company": "DevFlow Inc.",
+    "years_experience": 7,
+    "skills": [
+      "Leadership",
+      "Fundraising",
+      "Product Management",
+      "DevOps"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "grace_marketing_vp",
+    "realname": "Grace Lee",
+    "bio": "VP Marketing | B2B SaaS | Growth hacker",
+    "persona": "Grace drives B2B SaaS marketing with a data-driven approach. She posts on demand gen, ABM, content strategy, and marketing attribution.",
+    "industry": "Marketing",
+    "job_title": "VP of Marketing",
+    "company": "GrowthSaaS Co.",
+    "years_experience": 9,
+    "skills": [
+      "Growth Marketing",
+      "ABM",
+      "Content Strategy",
+      "HubSpot"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "henry_consulting_mgr",
+    "realname": "Henry Taylor",
+    "bio": "McKinsey Manager | Strategy & Ops",
+    "persona": "Henry is a management consultant at McKinsey focused on digital transformation for Fortune 500 clients. He writes about strategic frameworks and organizational change.",
+    "industry": "Consulting",
+    "job_title": "Engagement Manager",
+    "company": "McKinsey & Company",
+    "years_experience": 8,
+    "skills": [
+      "Strategy",
+      "Operations",
+      "Digital Transformation",
+      "Change Management"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "iris_ux_designer",
+    "realname": "Iris Patel",
+    "bio": "UX Lead | Human-centred design | Figma advocate",
+    "persona": "Iris creates intuitive user experiences for complex enterprise software. She shares design systems, accessibility best practices, and career paths in UX.",
+    "industry": "Design",
+    "job_title": "UX Design Lead",
+    "company": "UXcraft Studio",
+    "years_experience": 7,
+    "skills": [
+      "Figma",
+      "User Research",
+      "Design Systems",
+      "Prototyping"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "jack_backend_arch",
+    "realname": "Jack White",
+    "bio": "Principal Engineer | API design | Open source",
+    "persona": "Jack is a principal backend engineer passionate about API design, event-driven architectures, and mentoring. He contributes to several open-source projects.",
+    "industry": "Technology",
+    "job_title": "Principal Software Engineer",
+    "company": "OpenAPI Corp",
+    "years_experience": 12,
+    "skills": [
+      "Java",
+      "API Design",
+      "Event Streaming",
+      "Kafka"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "karen_esg_lead",
+    "realname": "Karen Brown",
+    "bio": "ESG & Sustainability Director | Net Zero by 2030",
+    "persona": "Karen leads corporate sustainability at a global manufacturer. She advocates for science-based targets, responsible supply chains, and green finance.",
+    "industry": "Sustainability",
+    "job_title": "ESG Director",
+    "company": "GreenMfg Ltd",
+    "years_experience": 11,
+    "skills": [
+      "ESG Reporting",
+      "Carbon Accounting",
+      "Stakeholder Engagement",
+      "TCFD"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "leo_blockchain_dev",
+    "realname": "Leo Garcia",
+    "bio": "Blockchain Engineer | Web3 builder | DeFi curious",
+    "persona": "Leo builds smart contracts and DeFi protocols. He shares technical tutorials on Solidity, Layer 2 scaling solutions, and the evolving Web3 landscape.",
+    "industry": "Technology",
+    "job_title": "Blockchain Engineer",
+    "company": "ChainLabs",
+    "years_experience": 4,
+    "skills": [
+      "Solidity",
+      "Ethereum",
+      "Web3.js",
+      "DeFi"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "mia_sales_director",
+    "realname": "Mia Thompson",
+    "bio": "Enterprise Sales Director | SaaS | $50M+ pipeline",
+    "persona": "Mia leads enterprise sales and has consistently exceeded quotas. She shares sales strategies, customer success stories, and leadership in remote sales teams.",
+    "industry": "Sales",
+    "job_title": "Enterprise Sales Director",
+    "company": "SaaSGrowth Inc.",
+    "years_experience": 10,
+    "skills": [
+      "Enterprise Sales",
+      "CRM",
+      "Negotiation",
+      "Salesforce"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "noah_research_lead",
+    "realname": "Noah Clark",
+    "bio": "AI Research Lead | NeurIPS publications | PhD MIT",
+    "persona": "Noah leads AI research with a focus on reinforcement learning and multi-agent systems. He publishes at top conferences and mentors PhD students.",
+    "industry": "Research",
+    "job_title": "AI Research Lead",
+    "company": "DeepMind Lab (academic)",
+    "years_experience": 6,
+    "skills": [
+      "Reinforcement Learning",
+      "PyTorch",
+      "Research",
+      "Multi-agent Systems"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "olivia_legal_tech",
+    "realname": "Olivia Harris",
+    "bio": "Legal Counsel | LegalTech | Contract Automation",
+    "persona": "Olivia is corporate counsel focused on legal operations and technology. She advocates for contract lifecycle management, e-discovery, and AI in law.",
+    "industry": "Legal",
+    "job_title": "Associate General Counsel",
+    "company": "LexTech Corp",
+    "years_experience": 9,
+    "skills": [
+      "Contract Law",
+      "Legal Operations",
+      "CLM",
+      "Data Privacy"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "peter_infra_eng",
+    "realname": "Peter Davis",
+    "bio": "Infrastructure Engineer | AWS expert | Cost optimization",
+    "persona": "Peter optimizes cloud infrastructure costs and reliability for high-traffic applications. He shares AWS architecture patterns, FinOps practices, and reliability engineering.",
+    "industry": "Technology",
+    "job_title": "Staff Infrastructure Engineer",
+    "company": "CloudCost Inc.",
+    "years_experience": 11,
+    "skills": [
+      "AWS",
+      "Terraform",
+      "FinOps",
+      "Site Reliability Engineering"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "quinn_investor_vc",
+    "realname": "Quinn Allen",
+    "bio": "VC Partner @ Sequoia-backed fund | B2B SaaS focus",
+    "persona": "Quinn invests in early-stage B2B SaaS startups. She shares due diligence frameworks, market analysis, and founder advice from both sides of the table.",
+    "industry": "Venture Capital",
+    "job_title": "General Partner",
+    "company": "NorthStar Ventures",
+    "years_experience": 10,
+    "skills": [
+      "Venture Capital",
+      "Due Diligence",
+      "Portfolio Management",
+      "Market Analysis"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "ryan_cybersec_expert",
+    "realname": "Ryan Nelson",
+    "bio": "CISO | Zero trust | Red team & Blue team",
+    "persona": "Ryan is a cybersecurity executive who has built security programs at scale. He shares threat intelligence, zero-trust architectures, and security culture.",
+    "industry": "Cybersecurity",
+    "job_title": "Chief Information Security Officer",
+    "company": "SecureOps Ltd",
+    "years_experience": 14,
+    "skills": [
+      "Zero Trust",
+      "Incident Response",
+      "Cloud Security",
+      "CISSP"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "sara_devrel_eng",
+    "realname": "Sara Young",
+    "bio": "Developer Advocate | OSS community | Public speaker",
+    "persona": "Sara bridges engineering and community as a developer advocate. She shares talks, tutorials, and community-building strategies for open-source projects.",
+    "industry": "Technology",
+    "job_title": "Senior Developer Advocate",
+    "company": "OpenDev Foundation",
+    "years_experience": 5,
+    "skills": [
+      "Public Speaking",
+      "Developer Relations",
+      "Technical Writing",
+      "Community"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "tom_manufacturing_vp",
+    "realname": "Tom Wright",
+    "bio": "VP Operations | Lean Six Sigma | Manufacturing 4.0",
+    "persona": "Tom drives operational excellence at a precision manufacturing company. He champions Industry 4.0 adoption, lean methodology, and supply chain resilience.",
+    "industry": "Manufacturing",
+    "job_title": "VP of Operations",
+    "company": "PrecisionMfg Corp",
+    "years_experience": 16,
+    "skills": [
+      "Lean Six Sigma",
+      "Supply Chain",
+      "Industry 4.0",
+      "Operations Management"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "uma_biotech_sci",
+    "realname": "Uma Patel",
+    "bio": "Biotech Research Scientist | mRNA therapeutics | PhD Cambridge",
+    "persona": "Uma is a research scientist specializing in mRNA therapeutics and drug delivery. She shares advances in biotech, career advice in life sciences, and diversity in STEM.",
+    "industry": "Biotechnology",
+    "job_title": "Research Scientist III",
+    "company": "BioPharm Labs",
+    "years_experience": 5,
+    "skills": [
+      "mRNA Technology",
+      "Drug Delivery",
+      "Molecular Biology",
+      "Clinical Research"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "victor_cto_startup",
+    "realname": "Victor Santos",
+    "bio": "CTO | Full-stack | Scaling from 0 to 1M users",
+    "persona": "Victor is a hands-on CTO who has scaled engineering teams and products from zero to millions of users. He shares technical leadership, architecture decisions, and hiring strategies.",
+    "industry": "Technology",
+    "job_title": "Chief Technology Officer",
+    "company": "ScaleUp Inc.",
+    "years_experience": 10,
+    "skills": [
+      "System Architecture",
+      "Engineering Leadership",
+      "React",
+      "Node.js"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "wendy_edtech_coo",
+    "realname": "Wendy Moore",
+    "bio": "COO EdTech startup | K12 innovation | EdTech pioneer",
+    "persona": "Wendy leads operations at an EdTech company changing K-12 education. She shares insights on ed-tech adoption, teacher experience, and learning outcomes research.",
+    "industry": "Education Technology",
+    "job_title": "Chief Operating Officer",
+    "company": "LearnTech Inc.",
+    "years_experience": 8,
+    "skills": [
+      "EdTech",
+      "Operations",
+      "K12 Education",
+      "Change Management"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "xander_devops_eng",
+    "realname": "Alexander Turner",
+    "bio": "DevOps Engineer | CI/CD | Platform engineering",
+    "persona": "Xander builds platform engineering systems that help developer teams ship faster and more safely. He shares DevOps metrics, CI/CD patterns, and platform culture.",
+    "industry": "Technology",
+    "job_title": "Senior DevOps Engineer",
+    "company": "PlatformOps Ltd",
+    "years_experience": 7,
+    "skills": [
+      "CI/CD",
+      "GitHub Actions",
+      "Docker",
+      "Kubernetes"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "yuki_growth_analyst",
+    "realname": "Yuki Tanaka",
+    "bio": "Growth Analyst | SaaS metrics | PLG",
+    "persona": "Yuki analyzes growth data for a product-led growth SaaS company. She shares analysis on conversion funnels, churn, and north-star metrics.",
+    "industry": "Technology",
+    "job_title": "Growth Analyst",
+    "company": "PLGMetrics",
+    "years_experience": 3,
+    "skills": [
+      "SQL",
+      "Analytics",
+      "Amplitude",
+      "A/B Testing"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "zoe_healthcare_cmo",
+    "realname": "Zoe Anderson",
+    "bio": "CMO HealthTech | Patient-centric marketing | HIPAA",
+    "persona": "Zoe markets digital health products with compliance and empathy at the forefront. She posts on patient engagement, health literacy, and HIPAA-compliant marketing.",
+    "industry": "Healthcare Technology",
+    "job_title": "Chief Marketing Officer",
+    "company": "HealthDigital Inc.",
+    "years_experience": 11,
+    "skills": [
+      "Healthcare Marketing",
+      "Patient Engagement",
+      "HIPAA",
+      "Digital Health"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "aaron_ml_engineer",
+    "realname": "Aaron Lee",
+    "bio": "ML Engineer | MLOps | Serving at scale",
+    "persona": "Aaron builds machine learning pipelines and model serving infrastructure. He shares practical MLOps guides, model monitoring strategies, and LLM deployment patterns.",
+    "industry": "Technology",
+    "job_title": "Senior ML Engineer",
+    "company": "ML Infra Corp",
+    "years_experience": 6,
+    "skills": [
+      "MLOps",
+      "Kubeflow",
+      "TensorFlow",
+      "Model Serving"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "bella_hr_analytics",
+    "realname": "Bella Flores",
+    "bio": "People Analytics Lead | HRIS | Workforce planning",
+    "persona": "Bella uses data to drive people strategy at a global corporation. She shares workforce analytics, HR tech stack recommendations, and evidence-based HR practices.",
+    "industry": "Human Resources",
+    "job_title": "People Analytics Lead",
+    "company": "GlobalHR Corp",
+    "years_experience": 7,
+    "skills": [
+      "People Analytics",
+      "Workday",
+      "Power BI",
+      "Organizational Design"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "carlos_iot_architect",
+    "realname": "Carlos Mendez",
+    "bio": "IoT Architect | Edge computing | Smart factories",
+    "persona": "Carlos designs IoT solutions for industrial clients and shares insights on edge computing, MQTT protocols, and digital twin implementations.",
+    "industry": "IoT / Industrial Tech",
+    "job_title": "IoT Solutions Architect",
+    "company": "EdgeTech Systems",
+    "years_experience": 9,
+    "skills": [
+      "IoT",
+      "Edge Computing",
+      "MQTT",
+      "Azure IoT"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "diana_scrum_master",
+    "realname": "Diana Scott",
+    "bio": "Agile Coach | SAFe | Enabling high-performing teams",
+    "persona": "Diana is a certified Agile Coach who helps organizations adopt SAFe and Scrum at scale. She shares retrospective formats, agile metrics, and team health strategies.",
+    "industry": "Technology",
+    "job_title": "Senior Agile Coach",
+    "company": "AgileCraft Ltd",
+    "years_experience": 8,
+    "skills": [
+      "Scrum",
+      "SAFe",
+      "Agile Coaching",
+      "Kanban"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "ethan_quant_trader",
+    "realname": "Ethan Green",
+    "bio": "Quant Trader | Systematic strategies | Options",
+    "persona": "Ethan develops quantitative trading strategies at a hedge fund. He shares risk management concepts, factor investing research, and career paths in quantitative finance.",
+    "industry": "Finance",
+    "job_title": "Quantitative Trader",
+    "company": "Sigma Capital",
+    "years_experience": 6,
+    "skills": [
+      "Quantitative Finance",
+      "Python",
+      "Statistics",
+      "Risk Management"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "fiona_content_dir",
+    "realname": "Fiona Collins",
+    "bio": "Content Director | SEO | Thought leadership strategy",
+    "persona": "Fiona builds thought leadership programs for B2B tech companies. She shares SEO strategies, content ROI measurement, and editorial calendar frameworks.",
+    "industry": "Marketing",
+    "job_title": "Content Marketing Director",
+    "company": "ContentFirst Agency",
+    "years_experience": 9,
+    "skills": [
+      "Content Strategy",
+      "SEO",
+      "Thought Leadership",
+      "Editorial Planning"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "george_supply_chain",
+    "realname": "George Baker",
+    "bio": "Supply Chain Director | S&OP | Resilience",
+    "persona": "George leads global supply chain operations and has navigated multiple disruptions. He shares S&OP best practices, supplier risk management, and digital supply chain tools.",
+    "industry": "Supply Chain",
+    "job_title": "Global Supply Chain Director",
+    "company": "SupplyChain Pro",
+    "years_experience": 13,
+    "skills": [
+      "S&OP",
+      "Supply Chain Risk",
+      "SAP SCM",
+      "Procurement"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "helen_audit_partner",
+    "realname": "Helen Reed",
+    "bio": "Audit Partner | Big 4 | Internal controls | Risk",
+    "persona": "Helen is a Big 4 audit partner specializing in technology and financial services audits. She posts on internal controls, regulatory trends, and audit innovation.",
+    "industry": "Audit & Assurance",
+    "job_title": "Audit Partner",
+    "company": "Deloitte",
+    "years_experience": 18,
+    "skills": [
+      "External Audit",
+      "SOX Compliance",
+      "Risk Assessment",
+      "PCAOB"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "ivan_frontend_lead",
+    "realname": "Ivan Kowalski",
+    "bio": "Frontend Lead | React | Web Performance",
+    "persona": "Ivan leads frontend engineering at a fintech scale-up. He shares web performance optimization techniques, React patterns, and micro-frontend architectures.",
+    "industry": "Technology",
+    "job_title": "Frontend Engineering Lead",
+    "company": "FinTech Scale",
+    "years_experience": 8,
+    "skills": [
+      "React",
+      "TypeScript",
+      "Web Performance",
+      "Micro-frontends"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "julia_elearning_lxd",
+    "realname": "Julia Fox",
+    "bio": "Learning Experience Designer | Instructional design | L&D",
+    "persona": "Julia designs digital learning programs for corporate upskilling. She shares instructional design principles, LMS recommendations, and learner engagement strategies.",
+    "industry": "Learning & Development",
+    "job_title": "Senior Learning Experience Designer",
+    "company": "LearningFwd Inc.",
+    "years_experience": 7,
+    "skills": [
+      "Instructional Design",
+      "Articulate Storyline",
+      "LMS",
+      "Adult Learning Theory"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "kevin_real_estate",
+    "realname": "Kevin Morris",
+    "bio": "CRE Broker | PropTech | Commercial real estate",
+    "persona": "Kevin is a commercial real estate broker who embraces PropTech. He shares market analysis, office leasing trends, and how technology is reshaping the CRE industry.",
+    "industry": "Real Estate",
+    "job_title": "Senior Commercial Real Estate Broker",
+    "company": "CRE Partners",
+    "years_experience": 12,
+    "skills": [
+      "CRE Brokerage",
+      "PropTech",
+      "Market Analysis",
+      "Lease Negotiation"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "laura_it_director",
+    "realname": "Laura Price",
+    "bio": "IT Director | Digital transformation | ERP rollouts",
+    "persona": "Laura oversees IT strategy and large-scale ERP implementations. She shares lessons learned from major transformation programs, vendor management, and IT governance.",
+    "industry": "Information Technology",
+    "job_title": "IT Director",
+    "company": "EnterpriseTech Corp",
+    "years_experience": 14,
+    "skills": [
+      "ERP",
+      "SAP",
+      "IT Governance",
+      "Digital Transformation"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "marcus_growth_hacker",
+    "realname": "Marcus Reed",
+    "bio": "Growth Hacker | D2C brands | Viral loops",
+    "persona": "Marcus builds growth engines for direct-to-consumer brands. He shares viral loop mechanics, referral program designs, and lifecycle marketing automation.",
+    "industry": "Marketing",
+    "job_title": "Head of Growth",
+    "company": "D2C Growth Co.",
+    "years_experience": 5,
+    "skills": [
+      "Growth Hacking",
+      "Referral Marketing",
+      "Lifecycle Marketing",
+      "Mixpanel"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "nadia_legal_startup",
+    "realname": "Nadia Cooper",
+    "bio": "Startup lawyer | Equity | VC term sheets | SAFE",
+    "persona": "Nadia advises founders on formation, equity structures, VC term sheets, and employment law. She demystifies startup legal on LinkedIn with plain-English posts.",
+    "industry": "Legal",
+    "job_title": "Startup & VC Attorney",
+    "company": "Founders Law Group",
+    "years_experience": 8,
+    "skills": [
+      "Startup Law",
+      "Equity Compensation",
+      "VC Financing",
+      "Employment Law"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "omar_network_arch",
+    "realname": "Omar Hussein",
+    "bio": "Network Architect | SD-WAN | Zero trust networking",
+    "persona": "Omar designs enterprise networking solutions for Fortune 500 companies. He shares SD-WAN deployments, zero-trust network access strategies, and SASE adoption lessons.",
+    "industry": "Technology",
+    "job_title": "Principal Network Architect",
+    "company": "NetArch Solutions",
+    "years_experience": 13,
+    "skills": [
+      "SD-WAN",
+      "SASE",
+      "Zero Trust Networking",
+      "Cisco"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "priya_strategy_consultant",
+    "realname": "Priya Shah",
+    "bio": "Strategy Consultant | BCG | Healthcare & Life Sciences",
+    "persona": "Priya advises biopharma and hospital systems on commercial strategy and market access. She shares healthcare industry insights and career advice for aspiring consultants.",
+    "industry": "Consulting",
+    "job_title": "Principal Consultant",
+    "company": "BCG Health",
+    "years_experience": 9,
+    "skills": [
+      "Healthcare Strategy",
+      "Market Access",
+      "Business Development",
+      "Financial Modeling"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "rick_robotics_eng",
+    "realname": "Rick Porter",
+    "bio": "Robotics Engineer | ROS2 | Autonomous systems",
+    "persona": "Rick develops autonomous robotic systems for warehouse logistics. He shares ROS2 tutorials, sensor fusion techniques, and the future of collaborative robots.",
+    "industry": "Robotics",
+    "job_title": "Robotics Software Engineer",
+    "company": "AutoBots Robotics",
+    "years_experience": 6,
+    "skills": [
+      "ROS2",
+      "Python",
+      "Autonomous Systems",
+      "Computer Vision"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "sophie_brand_strategy",
+    "realname": "Sophie Walsh",
+    "bio": "Brand Strategist | Purpose-led brands | B Corp",
+    "persona": "Sophie builds purpose-led brand strategies for consumer companies seeking B Corp certification. She shares brand positioning, ESG communication, and consumer insights.",
+    "industry": "Marketing",
+    "job_title": "Brand Strategy Director",
+    "company": "PurposeBrand Agency",
+    "years_experience": 10,
+    "skills": [
+      "Brand Strategy",
+      "ESG Communication",
+      "Consumer Insights",
+      "B Corp"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "travis_devops_cloud",
+    "realname": "Travis Evans",
+    "bio": "Cloud Solutions Architect | Multicloud | FinOps",
+    "persona": "Travis designs multicloud architectures for enterprise clients transitioning from on-prem. He shares cost optimization frameworks, cloud migration patterns, and multicloud governance.",
+    "industry": "Technology",
+    "job_title": "Cloud Solutions Architect",
+    "company": "MultiCloud Pro",
+    "years_experience": 10,
+    "skills": [
+      "AWS",
+      "Azure",
+      "GCP",
+      "FinOps"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "ursula_csr_manager",
+    "realname": "Ursula Jensen",
+    "bio": "CSR Manager | Social impact | Community investment",
+    "persona": "Ursula runs corporate social responsibility programs at a global bank. She shares grant-making strategies, employee volunteering programs, and measuring social impact.",
+    "industry": "Corporate Social Responsibility",
+    "job_title": "CSR Program Manager",
+    "company": "GlobalBank",
+    "years_experience": 8,
+    "skills": [
+      "CSR Strategy",
+      "Social Impact Measurement",
+      "Community Investment",
+      "Grant Management"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "vince_backend_eng",
+    "realname": "Vincent Black",
+    "bio": "Backend Engineer | Golang | High-throughput APIs",
+    "persona": "Vince builds high-throughput backend services in Go. He shares performance optimization patterns, API design principles, and distributed systems lessons learned.",
+    "industry": "Technology",
+    "job_title": "Senior Backend Engineer",
+    "company": "HighThroughput Inc.",
+    "years_experience": 7,
+    "skills": [
+      "Go",
+      "gRPC",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "wanda_recruiting_mgr",
+    "realname": "Wanda Hughes",
+    "bio": "Technical Recruiting Manager | Engineering hiring at scale",
+    "persona": "Wanda builds technical recruiting pipelines for hyper-growth startups. She shares sourcing strategies, technical interview design, and unconscious bias in hiring.",
+    "industry": "Human Resources",
+    "job_title": "Technical Recruiting Manager",
+    "company": "HireScale LLC",
+    "years_experience": 8,
+    "skills": [
+      "Technical Recruiting",
+      "Sourcing",
+      "Interview Design",
+      "ATS"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "xavier_ai_product",
+    "realname": "Xavier Brown",
+    "bio": "AI Product Manager | LLM products | Responsible AI",
+    "persona": "Xavier leads product for AI-powered enterprise tools. He navigates the tension between AI capability and responsible deployment, sharing product frameworks for LLM apps.",
+    "industry": "Technology",
+    "job_title": "Principal AI Product Manager",
+    "company": "AI Works Inc.",
+    "years_experience": 7,
+    "skills": [
+      "AI Product Management",
+      "LLMs",
+      "Responsible AI",
+      "Product Strategy"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "yolanda_tax_partner",
+    "realname": "Yolanda Rivera",
+    "bio": "Tax Partner | International tax | Transfer pricing | Big 4",
+    "persona": "Yolanda advises multinational clients on international tax strategy and transfer pricing. She keeps followers updated on global tax reform, OECD Pillar 2, and BEPS.",
+    "industry": "Tax & Accounting",
+    "job_title": "Tax Partner",
+    "company": "Ernst & Young",
+    "years_experience": 20,
+    "skills": [
+      "Transfer Pricing",
+      "International Tax",
+      "OECD BEPS",
+      "Tax Advisory"
+    ],
+    "connections": [],
+    "previous_posts": []
+  },
+  {
+    "username": "zack_saas_growth",
+    "realname": "Zack Peterson",
+    "bio": "SaaS Growth Lead | Expansion revenue | CS-led growth",
+    "persona": "Zack drives net revenue retention at a SaaS company through customer success-led expansion. He shares NRR strategies, QBR frameworks, and upsell motion design.",
+    "industry": "Technology",
+    "job_title": "Growth & Expansion Lead",
+    "company": "RetentionSaaS",
+    "years_experience": 6,
+    "skills": [
+      "Net Revenue Retention",
+      "Customer Success",
+      "Upsell Motions",
+      "Gainsight"
+    ],
+    "connections": [],
+    "previous_posts": []
+  }
+]

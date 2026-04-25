@@ -105,8 +105,14 @@ def get_recsys_model(recsys_type: str = None):
         twhin_tokenizer, twhin_model = load_model("Twitter/twhin-bert-base")
         models = (twhin_tokenizer, twhin_model)
         return models
-    elif (recsys_type == RecsysType.REDDIT.value
-          or recsys_type == RecsysType.RANDOM.value):
+    elif recsys_type in (
+        RecsysType.REDDIT.value,
+        RecsysType.RANDOM.value,
+        RecsysType.LINKEDIN.value,
+        RecsysType.FACEBOOK.value,
+        RecsysType.INSTAGRAM.value,
+        RecsysType.WHATSAPP.value,
+    ):
         return None
     else:
         raise ValueError(f"Unknown recsys type: {recsys_type}")
@@ -794,4 +800,352 @@ def rec_sys_personalized_with_trace(
             new_rec_matrix.append(rec_post_ids)
     end_time = time.time()
     print(f'Personalized recommendation time: {end_time - start_time:.6f}s')
+    return new_rec_matrix
+
+
+# ---------------------------------------------------------------------------
+# LinkedIn recsys
+# ---------------------------------------------------------------------------
+
+def rec_sys_linkedin(
+    user_table: List[Dict[str, Any]],
+    post_table: List[Dict[str, Any]],
+    rec_matrix: List[List],
+    max_rec_post_len: int,
+    db_cursor,
+    likes_weight: float = 1.0,
+    comment_weight: float = 1.5,
+    time_decay_lambda: float = 0.000005,
+) -> List[List]:
+    r"""LinkedIn recommendation algorithm.
+
+    Scores each post with::
+
+        score = likes_weight * num_likes
+                + comment_weight * num_comments
+                + 1 / log(connection_distance + 2)
+                * exp(-lambda * age_seconds)
+
+    where ``connection_distance`` is the number of hops from the viewing
+    user to the post author in the ``follow`` graph (1 = direct connection,
+    2 = second-degree, 3 = stranger).
+
+    Args:
+        user_table: Rows from the ``user`` table.
+        post_table: Rows from the ``post`` table.
+        rec_matrix: Current per-user recommendation lists.
+        max_rec_post_len: Maximum number of posts per user.
+        db_cursor: SQLite cursor for follow/comment lookups.
+        likes_weight: Weight applied to ``num_likes``.
+        comment_weight: Weight applied to comment count.
+        time_decay_lambda: Decay constant λ (smaller → slower decay).
+
+    Returns:
+        Updated ``rec_matrix`` with LinkedIn-scored posts.
+    """
+    import math
+
+    now = datetime.now()
+
+    # Build comment counts per post
+    try:
+        db_cursor.execute(
+            "SELECT post_id, COUNT(*) FROM comment GROUP BY post_id")
+        comment_counts = dict(db_cursor.fetchall())
+    except Exception:
+        comment_counts = {}
+
+    # Build post age in seconds
+    def _age_seconds(created_at):
+        try:
+            if isinstance(created_at, (int, float)):
+                return float(created_at)
+            ts = datetime.fromisoformat(str(created_at))
+            return max((now - ts).total_seconds(), 0)
+        except Exception:
+            return 0.0
+
+    new_rec_matrix: List[List] = []
+    for user in user_table:
+        uid = user["user_id"]
+
+        # Get direct connections (1st degree)
+        try:
+            db_cursor.execute(
+                "SELECT followee_id FROM follow WHERE follower_id=?", (uid,))
+            first_degree = {r[0] for r in db_cursor.fetchall()}
+        except Exception:
+            first_degree = set()
+
+        # Get 2nd-degree connections
+        second_degree = set()
+        try:
+            for fid in first_degree:
+                db_cursor.execute(
+                    "SELECT followee_id FROM follow WHERE follower_id=?",
+                    (fid,))
+                second_degree.update(r[0] for r in db_cursor.fetchall())
+            second_degree -= first_degree
+            second_degree.discard(uid)
+        except Exception:
+            pass
+
+        scored: List[tuple] = []
+        for post in post_table:
+            pid = post["post_id"]
+            author = post.get("user_id", 0)
+            if author == uid:
+                continue
+
+            n_likes = post.get("num_likes", 0) or 0
+            n_comments = comment_counts.get(pid, 0)
+            age = _age_seconds(post.get("created_at", 0))
+            decay = math.exp(-time_decay_lambda * age)
+
+            if author in first_degree:
+                dist = 1
+            elif author in second_degree:
+                dist = 2
+            else:
+                dist = 3
+
+            proximity = 1.0 / math.log(dist + 2)
+            score = (likes_weight * n_likes
+                     + comment_weight * n_comments
+                     + proximity) * decay
+            scored.append((score, pid))
+
+        scored.sort(key=lambda x: -x[0])
+        rec_post_ids = [pid for _, pid in scored[:max_rec_post_len]]
+        new_rec_matrix.append(rec_post_ids)
+
+    return new_rec_matrix
+
+
+# ---------------------------------------------------------------------------
+# Facebook recsys (EdgeRank)
+# ---------------------------------------------------------------------------
+
+def rec_sys_facebook(
+    user_table: List[Dict[str, Any]],
+    post_table: List[Dict[str, Any]],
+    trace_table: List[Dict[str, Any]],
+    rec_matrix: List[List],
+    max_rec_post_len: int,
+    db_cursor,
+    time_decay_lambda: float = 0.00001,
+    group_boost: float = 1.5,
+) -> List[List]:
+    r"""Facebook EdgeRank recommendation algorithm.
+
+    ``score = affinity(u, v) × edge_weight × time_decay``
+
+    * ``affinity(u, v)`` – number of recent interactions (likes / comments /
+      reposts) between viewer ``u`` and post author ``v`` in the ``trace``
+      table.
+    * ``edge_weight`` – post type weight: ``post=1``, ``photo=1.2``,
+      ``video=1.5``.
+    * ``time_decay = exp(-λ × age_seconds)`` with a smaller λ than Twitter so
+      content survives more days.
+    * Posts from groups the user belongs to receive an additional
+      ``group_boost`` multiplier.
+
+    Args:
+        user_table: Rows from the ``user`` table.
+        post_table: Rows from the ``post`` table.
+        trace_table: Rows from the ``trace`` table.
+        rec_matrix: Current per-user recommendation lists.
+        max_rec_post_len: Maximum posts per user.
+        db_cursor: SQLite cursor for group membership lookups.
+        time_decay_lambda: Decay constant λ.
+        group_boost: Score multiplier for group posts.
+
+    Returns:
+        Updated ``rec_matrix``.
+    """
+    import json
+    import math
+
+    now = datetime.now()
+    EDGE_WEIGHTS = {"post": 1.0, "photo": 1.2, "reel": 1.3, "video": 1.5,
+                    "story": 0.8}
+
+    # Build affinity map: {(viewer_id, author_id): count}
+    affinity: dict = {}
+    for row in trace_table:
+        viewer = row.get("user_id")
+        info_raw = row.get("info", "{}")
+        try:
+            info = json.loads(info_raw) if isinstance(info_raw, str) else {}
+        except Exception:
+            info = {}
+        pid = info.get("post_id")
+        if pid is None:
+            continue
+        # Find author of that post
+        author = next(
+            (p["user_id"] for p in post_table if p["post_id"] == pid), None)
+        if author is None:
+            continue
+        key = (viewer, author)
+        affinity[key] = affinity.get(key, 0) + 1
+
+    def _age_seconds(created_at):
+        try:
+            if isinstance(created_at, (int, float)):
+                return float(created_at)
+            ts = datetime.fromisoformat(str(created_at))
+            return max((now - ts).total_seconds(), 0)
+        except Exception:
+            return 0.0
+
+    new_rec_matrix: List[List] = []
+    for user in user_table:
+        uid = user["user_id"]
+
+        # Groups the user belongs to
+        try:
+            db_cursor.execute(
+                "SELECT group_id FROM group_members WHERE agent_id=?", (uid,))
+            user_groups = {r[0] for r in db_cursor.fetchall()}
+        except Exception:
+            user_groups = set()
+
+        # Posts from those groups (via group_messages)
+        group_post_ids: set = set()
+        for gid in user_groups:
+            try:
+                db_cursor.execute(
+                    "SELECT DISTINCT post_id FROM group_messages "
+                    "WHERE group_id=? AND post_id IS NOT NULL", (gid,))
+                group_post_ids.update(r[0] for r in db_cursor.fetchall())
+            except Exception:
+                pass
+
+        scored: List[tuple] = []
+        for post in post_table:
+            pid = post["post_id"]
+            author = post.get("user_id", 0)
+            if author == uid:
+                continue
+
+            aff = affinity.get((uid, author), 0) + 1  # +1 to avoid 0
+            media = post.get("media_type", "post") or "post"
+            ew = EDGE_WEIGHTS.get(media, 1.0)
+            age = _age_seconds(post.get("created_at", 0))
+            decay = math.exp(-time_decay_lambda * age)
+            score = aff * ew * decay
+            if pid in group_post_ids:
+                score *= group_boost
+            scored.append((score, pid))
+
+        scored.sort(key=lambda x: -x[0])
+        rec_post_ids = [pid for _, pid in scored[:max_rec_post_len]]
+        new_rec_matrix.append(rec_post_ids)
+
+    return new_rec_matrix
+
+
+# ---------------------------------------------------------------------------
+# Instagram recsys
+# ---------------------------------------------------------------------------
+
+def rec_sys_instagram(
+    user_table: List[Dict[str, Any]],
+    post_table: List[Dict[str, Any]],
+    rec_matrix: List[List],
+    max_rec_post_len: int,
+    db_cursor,
+    following_ratio: float = 0.7,
+) -> List[List]:
+    r"""Instagram recommendation algorithm.
+
+    Feed composition:
+
+    * ``following_ratio`` (default 70 %) – posts from users the viewer
+      follows, ordered by engagement rate.
+    * Remaining slots – discovery posts from any author, also by engagement
+      rate.
+
+    ``engagement_rate = (num_likes + num_comments) / max(num_followers, 1)``
+
+    Expired stories (``media_type='story'`` and ``expires_at < now``) are
+    filtered out before ranking.
+
+    Args:
+        user_table: Rows from the ``user`` table.
+        post_table: Rows from the ``post`` table.
+        rec_matrix: Current per-user recommendation lists.
+        max_rec_post_len: Maximum posts per user.
+        db_cursor: SQLite cursor for follow/comment/hashtag lookups.
+        following_ratio: Fraction of slots reserved for followed-user posts.
+
+    Returns:
+        Updated ``rec_matrix``.
+    """
+    now = datetime.now()
+
+    # Build comment counts per post
+    try:
+        db_cursor.execute(
+            "SELECT post_id, COUNT(*) FROM comment GROUP BY post_id")
+        comment_counts = dict(db_cursor.fetchall())
+    except Exception:
+        comment_counts = {}
+
+    # Build follower counts per user
+    follower_map = {u["user_id"]: max(u.get("num_followers", 1), 1)
+                    for u in user_table}
+
+    def _is_expired(post):
+        if post.get("media_type") != "story":
+            return False
+        exp = post.get("expires_at")
+        if not exp:
+            return False
+        try:
+            exp_dt = datetime.fromisoformat(str(exp))
+            return exp_dt < now
+        except Exception:
+            return False
+
+    def _engagement_rate(post):
+        pid = post["post_id"]
+        author = post.get("user_id", 0)
+        n_likes = post.get("num_likes", 0) or 0
+        n_comments = comment_counts.get(pid, 0)
+        followers = follower_map.get(author, 1)
+        return (n_likes + n_comments) / followers
+
+    # Filter out expired stories
+    valid_posts = [p for p in post_table if not _is_expired(p)]
+
+    new_rec_matrix: List[List] = []
+    for user in user_table:
+        uid = user["user_id"]
+
+        # Get followed user IDs
+        try:
+            db_cursor.execute(
+                "SELECT followee_id FROM follow WHERE follower_id=?", (uid,))
+            following_ids = {r[0] for r in db_cursor.fetchall()}
+        except Exception:
+            following_ids = set()
+
+        following_posts = sorted(
+            [p for p in valid_posts if p.get("user_id") in following_ids
+             and p.get("user_id") != uid],
+            key=_engagement_rate, reverse=True)
+        discovery_posts = sorted(
+            [p for p in valid_posts if p.get("user_id") not in following_ids
+             and p.get("user_id") != uid],
+            key=_engagement_rate, reverse=True)
+
+        n_following = int(max_rec_post_len * following_ratio)
+        n_discovery = max_rec_post_len - n_following
+
+        selected = ([p["post_id"] for p in following_posts[:n_following]]
+                    + [p["post_id"] for p in discovery_posts[:n_discovery]])
+        new_rec_matrix.append(selected)
+
     return new_rec_matrix

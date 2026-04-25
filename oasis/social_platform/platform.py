@@ -30,7 +30,9 @@ from oasis.social_platform.database import (create_db,
 from oasis.social_platform.platform_utils import PlatformUtils
 from oasis.social_platform.recsys import (rec_sys_personalized_twh,
                                           rec_sys_personalized_with_trace,
-                                          rec_sys_random, rec_sys_reddit)
+                                          rec_sys_random, rec_sys_reddit,
+                                          rec_sys_linkedin, rec_sys_facebook,
+                                          rec_sys_instagram)
 from oasis.social_platform.typing import ActionType, RecsysType
 
 # Create log directory if it doesn't exist
@@ -175,13 +177,28 @@ class Platform:
     def run(self):
         asyncio.run(self.running())
 
+    def _get_current_time(self):
+        r"""Return the current simulation time.
+
+        Platforms that model real-world timestamps (Reddit, LinkedIn,
+        Facebook, Instagram, WhatsApp) use wall-clock time mapped through
+        ``sandbox_clock.time_transfer``.  Pure simulation platforms
+        (Twitter / TWHIN / RANDOM) use the integer time-step counter.
+        """
+        if self.recsys_type in (
+            RecsysType.REDDIT,
+            RecsysType.LINKEDIN,
+            RecsysType.FACEBOOK,
+            RecsysType.INSTAGRAM,
+            RecsysType.WHATSAPP,
+        ):
+            return self.sandbox_clock.time_transfer(datetime.now(),
+                                                    self.start_time)
+        return self.sandbox_clock.get_time_step()
+
     async def sign_up(self, agent_id, user_message):
         user_name, name, bio = user_message
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_insert_query = (
                 "INSERT INTO user (user_id, agent_id, user_name, name, "
@@ -219,11 +236,7 @@ class Platform:
 
     async def purchase_product(self, agent_id, purchase_message):
         product_name, purchase_num = purchase_message
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         # try:
         user_id = agent_id
         # Check if a like record already exists
@@ -257,11 +270,7 @@ class Platform:
 
     async def refresh(self, agent_id: int):
         # Retrieve posts for a specific id from the rec table
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
             # Retrieve all post_ids for a given user_id from the rec table
@@ -277,7 +286,7 @@ class Platform:
                 selected_post_ids = random.sample(selected_post_ids,
                                                   self.refresh_rec_post_count)
 
-            if self.recsys_type != RecsysType.REDDIT:
+            if self.recsys_type not in (RecsysType.REDDIT, RecsysType.WHATSAPP):
                 # Retrieve posts from following (in network)
                 # Modify the SQL query so that the refresh gets posts from
                 # people the user follows, sorted by the number of likes on
@@ -376,6 +385,22 @@ class Platform:
         elif self.recsys_type == RecsysType.REDDIT:
             new_rec_matrix = rec_sys_reddit(post_table, rec_matrix,
                                             self.max_rec_post_len)
+        elif self.recsys_type == RecsysType.LINKEDIN:
+            new_rec_matrix = rec_sys_linkedin(
+                user_table, post_table, rec_matrix, self.max_rec_post_len,
+                self.db_cursor)
+        elif self.recsys_type == RecsysType.FACEBOOK:
+            new_rec_matrix = rec_sys_facebook(
+                user_table, post_table, trace_table, rec_matrix,
+                self.max_rec_post_len, self.db_cursor)
+        elif self.recsys_type == RecsysType.INSTAGRAM:
+            new_rec_matrix = rec_sys_instagram(
+                user_table, post_table, rec_matrix, self.max_rec_post_len,
+                self.db_cursor)
+        elif self.recsys_type == RecsysType.WHATSAPP:
+            # WhatsApp has no public feed — discovery happens via groups.
+            # Skip populating the rec table.
+            return
         else:
             raise ValueError("Unsupported recommendation system type, please "
                              "check the `RecsysType`.")
@@ -398,11 +423,7 @@ class Platform:
         )
 
     async def create_post(self, agent_id: int, content: str):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
@@ -413,6 +434,15 @@ class Platform:
                 post_insert_query, (user_id, content, current_time, 0, 0, 0),
                 commit=True)
             post_id = self.db_cursor.lastrowid
+
+            # Extract and index hashtags for Instagram
+            if self.recsys_type == RecsysType.INSTAGRAM:
+                import re as _re
+                tags = _re.findall(r'#(\w+)', content)
+                for tag in tags:
+                    self.pl_utils._execute_db_command(
+                        "INSERT INTO hashtag (post_id, tag) VALUES (?, ?)",
+                        (post_id, tag.lower()), commit=True)
 
             action_info = {"content": content, "post_id": post_id}
             self.pl_utils._record_trace(user_id, ActionType.CREATE_POST.value,
@@ -428,11 +458,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def repost(self, agent_id: int, post_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
@@ -503,11 +529,7 @@ class Platform:
 
     async def quote_post(self, agent_id: int, quote_message: tuple):
         post_id, quote_content = quote_message
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
@@ -561,11 +583,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def like_post(self, agent_id: int, post_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             post_type_result = self.pl_utils._get_post_type(post_id)
             if post_type_result['type'] == 'repost':
@@ -665,11 +683,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def dislike_post(self, agent_id: int, post_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             post_type_result = self.pl_utils._get_post_type(post_id)
             if post_type_result['type'] == 'repost':
@@ -857,11 +871,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def follow(self, agent_id: int, followee_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
             # Check if a follow record already exists
@@ -964,11 +974,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def mute(self, agent_id: int, mutee_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
             # Check if a mute record already exists
@@ -1031,15 +1037,13 @@ class Platform:
         """
         Get the top K trending posts in the last num_days days.
         """
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
             # Calculate the start time for the search
-            if self.recsys_type == RecsysType.REDDIT:
+            if self.recsys_type in (
+                RecsysType.REDDIT, RecsysType.LINKEDIN, RecsysType.FACEBOOK,
+                RecsysType.INSTAGRAM, RecsysType.WHATSAPP):
                 start_time = current_time - timedelta(days=self.trend_num_days)
             else:
                 start_time = int(current_time) - self.trend_num_days * 24 * 60
@@ -1078,11 +1082,7 @@ class Platform:
 
     async def create_comment(self, agent_id: int, comment_message: tuple):
         post_id, content = comment_message
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             post_type_result = self.pl_utils._get_post_type(post_id)
             if post_type_result['type'] == 'repost':
@@ -1111,11 +1111,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def like_comment(self, agent_id: int, comment_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
@@ -1219,11 +1215,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def dislike_comment(self, agent_id: int, comment_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
@@ -1278,11 +1270,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def undo_dislike_comment(self, agent_id: int, comment_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
@@ -1330,11 +1318,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def do_nothing(self, agent_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
@@ -1356,11 +1340,7 @@ class Platform:
         Returns:
             dict: A dictionary with success status.
         """
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
@@ -1393,11 +1373,7 @@ class Platform:
 
     async def report_post(self, agent_id: int, report_message: tuple):
         post_id, report_reason = report_message
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
             post_type_result = self.pl_utils._get_post_type(post_id)
@@ -1447,11 +1423,7 @@ class Platform:
 
     async def send_to_group(self, agent_id: int, message: tuple):
         group_id, content = message
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
             # check if user is a member of the group
@@ -1495,11 +1467,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def create_group(self, agent_id: int, group_name: str):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
@@ -1529,11 +1497,7 @@ class Platform:
             return {"success": False, "error": str(e)}
 
     async def join_group(self, agent_id: int, group_id: int):
-        if self.recsys_type == RecsysType.REDDIT:
-            current_time = self.sandbox_clock.time_transfer(
-                datetime.now(), self.start_time)
-        else:
-            current_time = self.sandbox_clock.get_time_step()
+        current_time = self._get_current_time()
         try:
             user_id = agent_id
 
@@ -1638,5 +1602,287 @@ class Platform:
                 "joined_groups": joined_group_ids,
                 "messages": messages
             }
+        except Exception as e:
+            return {"success": False, "error": str(e)}
+
+    async def react_post(self, agent_id: int, message: tuple):
+        r"""React to a post with an emoji reaction.
+
+        For LinkedIn: reaction_type ∈ {like, celebrate, support, love,
+        insightful, funny}.
+        For Facebook: reaction_type ∈ {like, love, haha, wow, sad, angry}.
+
+        Args:
+            agent_id (int): The agent's user_id.
+            message (tuple): ``(post_id, reaction_type)``
+
+        Returns:
+            dict: ``{"success": bool}``
+        """
+        post_id, reaction_type = message
+        current_time = self._get_current_time()
+        try:
+            user_id = agent_id
+            upsert_query = (
+                "INSERT INTO reaction (post_id, user_id, reaction_type, "
+                "created_at) VALUES (?, ?, ?, ?) "
+                "ON CONFLICT(post_id, user_id) DO UPDATE SET "
+                "reaction_type=excluded.reaction_type, "
+                "created_at=excluded.created_at")
+            self.pl_utils._execute_db_command(
+                upsert_query,
+                (post_id, user_id, reaction_type, current_time),
+                commit=True,
+            )
+            action_info = {"post_id": post_id, "reaction_type": reaction_type}
+            self.pl_utils._record_trace(user_id, ActionType.REACT_POST.value,
+                                        action_info, current_time)
+            return {"success": True, "post_id": post_id,
+                    "reaction_type": reaction_type}
+        except Exception as e:
+            return {"success": False, "error": str(e)}
+
+    async def connect(self, agent_id: int, addressee_id: int):
+        r"""Send a LinkedIn connection request (or accept a pending one).
+
+        If no request exists, creates a *pending* connection.  If the
+        addressee already sent a request to ``agent_id``, both sides are
+        accepted and symmetric ``follow`` records are created.
+
+        Args:
+            agent_id (int): Requester user_id.
+            addressee_id (int): Target user_id.
+
+        Returns:
+            dict: ``{"success": bool, "status": "pending"|"accepted"}``
+        """
+        current_time = self._get_current_time()
+        try:
+            # Check for an existing request in either direction
+            check_query = (
+                "SELECT connection_id, requester_id, status FROM connection "
+                "WHERE (requester_id=? AND addressee_id=?) "
+                "OR (requester_id=? AND addressee_id=?)")
+            self.pl_utils._execute_db_command(
+                check_query,
+                (agent_id, addressee_id, addressee_id, agent_id))
+            row = self.db_cursor.fetchone()
+
+            if row is None:
+                # Create new pending request
+                insert_query = (
+                    "INSERT INTO connection (requester_id, addressee_id, "
+                    "status, created_at, updated_at) VALUES (?, ?, 'pending', "
+                    "?, ?)")
+                self.pl_utils._execute_db_command(
+                    insert_query,
+                    (agent_id, addressee_id, current_time, current_time),
+                    commit=True)
+                status = "pending"
+            elif row[2] == "pending" and row[1] == addressee_id:
+                # The other side already requested — accept
+                update_query = (
+                    "UPDATE connection SET status='accepted', updated_at=? "
+                    "WHERE connection_id=?")
+                self.pl_utils._execute_db_command(
+                    update_query, (current_time, row[0]), commit=True)
+                # Create symmetric follow records
+                for follower, followee in [(agent_id, addressee_id),
+                                           (addressee_id, agent_id)]:
+                    chk = ("SELECT 1 FROM follow WHERE follower_id=? "
+                           "AND followee_id=?")
+                    self.pl_utils._execute_db_command(chk,
+                                                      (follower, followee))
+                    if not self.db_cursor.fetchone():
+                        self.pl_utils._execute_db_command(
+                            "INSERT INTO follow (follower_id, followee_id) "
+                            "VALUES (?, ?)", (follower, followee), commit=True)
+                        self.pl_utils._execute_db_command(
+                            "UPDATE user SET num_followings=num_followings+1 "
+                            "WHERE user_id=?", (follower, ), commit=True)
+                        self.pl_utils._execute_db_command(
+                            "UPDATE user SET num_followers=num_followers+1 "
+                            "WHERE user_id=?", (followee, ), commit=True)
+                status = "accepted"
+            else:
+                return {"success": False,
+                        "error": "Connection already exists or already sent."}
+
+            action_info = {"addressee_id": addressee_id, "status": status}
+            self.pl_utils._record_trace(agent_id, ActionType.CONNECT.value,
+                                        action_info, current_time)
+            return {"success": True, "status": status}
+        except Exception as e:
+            return {"success": False, "error": str(e)}
+
+    async def save_post(self, agent_id: int, post_id: int):
+        r"""Bookmark / save a post (Instagram).
+
+        Args:
+            agent_id (int): The agent's user_id.
+            post_id (int): Post to save.
+
+        Returns:
+            dict: ``{"success": bool}``
+        """
+        current_time = self._get_current_time()
+        try:
+            user_id = agent_id
+            check_query = ("SELECT 1 FROM saved WHERE post_id=? "
+                           "AND user_id=?")
+            self.pl_utils._execute_db_command(check_query, (post_id, user_id))
+            if self.db_cursor.fetchone():
+                return {"success": False, "error": "Post already saved."}
+            insert_query = ("INSERT INTO saved (post_id, user_id, saved_at) "
+                            "VALUES (?, ?, ?)")
+            self.pl_utils._execute_db_command(
+                insert_query, (post_id, user_id, current_time), commit=True)
+            action_info = {"post_id": post_id}
+            self.pl_utils._record_trace(user_id, ActionType.SAVE_POST.value,
+                                        action_info, current_time)
+            return {"success": True, "post_id": post_id}
+        except Exception as e:
+            return {"success": False, "error": str(e)}
+
+    async def send_direct_message(self, agent_id: int, message: tuple):
+        r"""Send a 1-to-1 direct message (WhatsApp).
+
+        Args:
+            agent_id (int): Sender user_id.
+            message (tuple): ``(receiver_id, content)``
+
+        Returns:
+            dict: ``{"success": bool, "message_id": int}``
+        """
+        receiver_id, content = message
+        current_time = self._get_current_time()
+        try:
+            insert_query = (
+                "INSERT INTO direct_message (sender_id, receiver_id, "
+                "content, sent_at) VALUES (?, ?, ?, ?)")
+            self.pl_utils._execute_db_command(
+                insert_query,
+                (agent_id, receiver_id, content, current_time),
+                commit=True)
+            msg_id = self.db_cursor.lastrowid
+            action_info = {"receiver_id": receiver_id, "content": content}
+            self.pl_utils._record_trace(agent_id,
+                                        ActionType.SEND_DIRECT_MESSAGE.value,
+                                        action_info, current_time)
+            return {"success": True, "message_id": msg_id}
+        except Exception as e:
+            return {"success": False, "error": str(e)}
+
+    async def read_direct_messages(self, agent_id: int):
+        r"""Retrieve all DMs for an agent and mark them as read (WhatsApp).
+
+        Args:
+            agent_id (int): Receiver user_id.
+
+        Returns:
+            dict: ``{"success": bool, "messages": list}``
+        """
+        current_time = self._get_current_time()
+        try:
+            select_query = (
+                "SELECT message_id, sender_id, content, sent_at, read_at "
+                "FROM direct_message WHERE receiver_id = ? "
+                "ORDER BY sent_at ASC")
+            self.pl_utils._execute_db_command(select_query, (agent_id, ))
+            rows = self.db_cursor.fetchall()
+            messages = [{
+                "message_id": r[0],
+                "sender_id": r[1],
+                "content": r[2],
+                "sent_at": r[3],
+                "read_at": r[4],
+            } for r in rows]
+            # Mark all unread as read
+            update_query = (
+                "UPDATE direct_message SET read_at=? "
+                "WHERE receiver_id=? AND read_at IS NULL")
+            self.pl_utils._execute_db_command(
+                update_query, (current_time, agent_id), commit=True)
+            action_info = {"message_count": len(messages)}
+            self.pl_utils._record_trace(agent_id,
+                                        ActionType.READ_DIRECT_MESSAGES.value,
+                                        action_info, current_time)
+            return {"success": True, "messages": messages}
+        except Exception as e:
+            return {"success": False, "error": str(e)}
+
+    async def create_page(self, agent_id: int, page_message: tuple):
+        r"""Create a Facebook/LinkedIn Page (stored as a user with is_page=1).
+
+        Args:
+            agent_id (int): Creator's user_id.
+            page_message (tuple): ``(page_name, bio)``
+
+        Returns:
+            dict: ``{"success": bool, "page_id": int}``
+        """
+        page_name, bio = page_message
+        current_time = self._get_current_time()
+        # Page IDs are offset to avoid collisions with regular user IDs
+        PAGE_ID_OFFSET = 1_000_000
+        try:
+            page_id = PAGE_ID_OFFSET + agent_id
+            insert_query = (
+                "INSERT INTO user (user_id, agent_id, user_name, name, "
+                "bio, created_at, num_followings, num_followers, is_page) "
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, 1)")
+            self.pl_utils._execute_db_command(
+                insert_query,
+                (page_id, agent_id, page_name, page_name, bio,
+                 current_time, 0, 0),
+                commit=True)
+            action_info = {"page_id": page_id, "page_name": page_name}
+            self.pl_utils._record_trace(agent_id, ActionType.CREATE_PAGE.value,
+                                        action_info, current_time)
+            return {"success": True, "page_id": page_id}
+        except Exception as e:
+            return {"success": False, "error": str(e)}
+
+    async def follow_page(self, agent_id: int, page_id: int):
+        r"""Follow a Facebook/LinkedIn Page.
+
+        Follows the page user_id exactly like following a regular user.
+
+        Args:
+            agent_id (int): Follower user_id.
+            page_id (int): Page user_id (``is_page=1``).
+
+        Returns:
+            dict: ``{"success": bool}``
+        """
+        current_time = self._get_current_time()
+        try:
+            # Verify the page exists and is_page=1
+            check_page = ("SELECT user_id FROM user WHERE user_id=? "
+                          "AND is_page=1")
+            self.pl_utils._execute_db_command(check_page, (page_id, ))
+            if not self.db_cursor.fetchone():
+                return {"success": False, "error": "Page not found."}
+
+            check_follow = ("SELECT 1 FROM follow WHERE follower_id=? "
+                            "AND followee_id=?")
+            self.pl_utils._execute_db_command(check_follow,
+                                              (agent_id, page_id))
+            if self.db_cursor.fetchone():
+                return {"success": False, "error": "Already following page."}
+
+            self.pl_utils._execute_db_command(
+                "INSERT INTO follow (follower_id, followee_id) VALUES (?, ?)",
+                (agent_id, page_id), commit=True)
+            self.pl_utils._execute_db_command(
+                "UPDATE user SET num_followings=num_followings+1 "
+                "WHERE user_id=?", (agent_id, ), commit=True)
+            self.pl_utils._execute_db_command(
+                "UPDATE user SET num_followers=num_followers+1 "
+                "WHERE user_id=?", (page_id, ), commit=True)
+            action_info = {"page_id": page_id}
+            self.pl_utils._record_trace(agent_id, ActionType.FOLLOW_PAGE.value,
+                                        action_info, current_time)
+            return {"success": True, "page_id": page_id}
         except Exception as e:
             return {"success": False, "error": str(e)}

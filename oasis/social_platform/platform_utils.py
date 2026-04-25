@@ -200,7 +200,13 @@ class PlatformUtils:
         If only the trace table needs to record time, use the entry time into
         _record_trace as the time for the trace record.
         """
-        if self.recsys_type == RecsysType.REDDIT:
+        if self.recsys_type in (
+            RecsysType.REDDIT,
+            RecsysType.LINKEDIN,
+            RecsysType.FACEBOOK,
+            RecsysType.INSTAGRAM,
+            RecsysType.WHATSAPP,
+        ):
             current_time = self.sandbox_clock.time_transfer(
                 datetime.now(), self.start_time)
         else:

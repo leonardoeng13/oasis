@@ -1,5 +1,5 @@
 -- This is the schema definition for the user table
-CREATE TABLE user (
+CREATE TABLE IF NOT EXISTS user (
     user_id INTEGER PRIMARY KEY AUTOINCREMENT,
     agent_id INTEGER,
     user_name TEXT,
@@ -7,5 +7,6 @@ CREATE TABLE user (
     bio TEXT,
     created_at DATETIME,
     num_followings INTEGER DEFAULT 0,
-    num_followers INTEGER DEFAULT 0
+    num_followers INTEGER DEFAULT 0,
+    is_page INTEGER DEFAULT 0  -- 1 for Facebook/LinkedIn Pages
 );
