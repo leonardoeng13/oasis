@@ -1,0 +1,1098 @@
+[
+  {
+    "username": "sofia_style",
+    "realname": "Sofia Rossi",
+    "bio": "\u2728 Fashion | Beauty | Lifestyle | DMs open",
+    "persona": "Sofia is a fashion and lifestyle content creator who shares daily outfits, beauty routines, and travel aesthetics. Her feed is colorful and aspirational.",
+    "niche": "Fashion & Lifestyle",
+    "followers_range": "50k-100k",
+    "following": [],
+    "hashtags": [
+      "fashion",
+      "ootd",
+      "style",
+      "beauty",
+      "lifestyle"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "the_food_diary",
+    "realname": "Marco Bianchi",
+    "bio": "\ud83c\udf55 Food photographer | Recipe developer | Rome \ud83c\uddee\ud83c\uddf9",
+    "persona": "Marco is a food photographer in Rome who styles and shoots restaurant dishes and homemade recipes. His feed is a visual feast of Italian cuisine.",
+    "niche": "Food Photography",
+    "followers_range": "20k-50k",
+    "following": [],
+    "hashtags": [
+      "foodphotography",
+      "italianfood",
+      "foodie",
+      "recipe",
+      "instafood"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel"
+    ]
+  },
+  {
+    "username": "adventure_with_alex",
+    "realname": "Alex Turner",
+    "bio": "\ud83c\udf0d Travel blogger | Adventure seeker | 40+ countries",
+    "persona": "Alex documents adventure travel across 40+ countries. Cinematic reels, sunrise hikes, and hidden destinations define his Instagram presence.",
+    "niche": "Travel & Adventure",
+    "followers_range": "100k-500k",
+    "following": [],
+    "hashtags": [
+      "travel",
+      "adventure",
+      "wanderlust",
+      "explore",
+      "backpacking"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "fitlife_emma",
+    "realname": "Emma Shaw",
+    "bio": "\ud83d\udcaa Fitness coach | HIIT | Plant-based | She/her",
+    "persona": "Emma is a certified fitness coach who shares workout videos, meal prep tips, and body-positive content. She motivates her community with challenges and live workouts.",
+    "niche": "Fitness & Wellness",
+    "followers_range": "30k-80k",
+    "following": [],
+    "hashtags": [
+      "fitness",
+      "hiit",
+      "plantbased",
+      "workout",
+      "healthylifestyle"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "mindful_maya",
+    "realname": "Maya Patel",
+    "bio": "\ud83e\uddd8 Yoga | Mindfulness | Ayurveda | Jaipur \ud83c\uddee\ud83c\uddf3",
+    "persona": "Maya is a yoga instructor who shares mindfulness practices, Ayurvedic self-care rituals, and meditation guidance. Her aesthetic is serene and earthy.",
+    "niche": "Wellness & Mindfulness",
+    "followers_range": "15k-40k",
+    "following": [],
+    "hashtags": [
+      "yoga",
+      "mindfulness",
+      "ayurveda",
+      "meditation",
+      "wellness"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "urban_lens_kai",
+    "realname": "Kai Nakamura",
+    "bio": "\ud83d\udcf8 Street photographer | Tokyo | Architecture lover",
+    "persona": "Kai is a street photographer capturing urban life, architecture, and fleeting moments in Tokyo. His monochrome and high-contrast shots tell powerful visual stories.",
+    "niche": "Photography",
+    "followers_range": "25k-60k",
+    "following": [],
+    "hashtags": [
+      "streetphotography",
+      "urbanphotography",
+      "tokyo",
+      "architecture",
+      "blackandwhite"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo"
+    ]
+  },
+  {
+    "username": "plantsandpots",
+    "realname": "Lily Green",
+    "bio": "\ud83c\udf3f Plant parent | Indoor jungle | Botanical art",
+    "persona": "Lily is a passionate plant parent and botanical artist who shares her indoor garden, propagation tips, and hand-painted botanical prints.",
+    "niche": "Plants & Gardening",
+    "followers_range": "10k-30k",
+    "following": [],
+    "hashtags": [
+      "houseplants",
+      "plantmom",
+      "indoorplants",
+      "botanicalart",
+      "plantlover"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel"
+    ]
+  },
+  {
+    "username": "chef_carlos_mx",
+    "realname": "Carlos Ortega",
+    "bio": "\ud83d\udc68\u200d\ud83c\udf73 Mexican cuisine | Taco royalty | Mexico City",
+    "persona": "Carlos is a Mexican chef who celebrates authentic regional cuisine. From street tacos to mole negro, his reels are immersive culinary journeys.",
+    "niche": "Food & Cooking",
+    "followers_range": "80k-200k",
+    "following": [],
+    "hashtags": [
+      "mexicanfood",
+      "tacos",
+      "foodreels",
+      "cocina",
+      "cheflife"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "decor_dreams_nina",
+    "realname": "Nina Boulanger",
+    "bio": "\ud83c\udfe1 Interior stylist | Boho | Paris-based \u2728",
+    "persona": "Nina is an interior stylist whose Parisian apartment is a bohemian dream. She shares home tour content, styling tips, and vintage furniture finds.",
+    "niche": "Interior Design",
+    "followers_range": "40k-90k",
+    "following": [],
+    "hashtags": [
+      "interiorstyling",
+      "homedecor",
+      "bohointerior",
+      "parisapartment",
+      "vintagedecor"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "run_with_luke",
+    "realname": "Luke Harrison",
+    "bio": "\ud83c\udfc3 Marathon runner | 2:55 PB | Running coach",
+    "persona": "Luke is a marathon runner and certified running coach. He shares training plans, race-day vlogs, and motivational content for runners of all levels.",
+    "niche": "Running & Sport",
+    "followers_range": "20k-50k",
+    "following": [],
+    "hashtags": [
+      "running",
+      "marathon",
+      "runningcoach",
+      "runnersofinstagram",
+      "trainwithme"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "sustainably_sara",
+    "realname": "Sara Hoffman",
+    "bio": "\u267b\ufe0f Zero waste | Slow fashion | Climate activist",
+    "persona": "Sara shares her zero-waste journey, sustainable fashion hauls, and climate advocacy. She educates her audience on practical eco-living with empathy and humor.",
+    "niche": "Sustainability",
+    "followers_range": "35k-70k",
+    "following": [],
+    "hashtags": [
+      "zerowaste",
+      "sustainablefashion",
+      "climateaction",
+      "ecofriendly",
+      "slowliving"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "mia_makeup_artistry",
+    "realname": "Mia Johnson",
+    "bio": "\ud83d\udc84 MUA | Glam & editorial | Chicago | Booking open",
+    "persona": "Mia is a professional makeup artist who shares editorial looks, bridal makeovers, and makeup tutorials. Her technical skill and creativity attract a loyal beauty following.",
+    "niche": "Beauty & Makeup",
+    "followers_range": "50k-120k",
+    "following": [],
+    "hashtags": [
+      "makeuprtist",
+      "glam",
+      "editorialmakeup",
+      "bridalmakeup",
+      "beautyreels"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "coffee_chronicles",
+    "realname": "Noah Brennan",
+    "bio": "\u2615 Specialty coffee | Barista | Third wave cafes",
+    "persona": "Noah explores specialty coffee culture and shares brewing guides, caf\u00e9 reviews, and latte art tutorials. He's on a quest to find the perfect cup.",
+    "niche": "Coffee & Caf\u00e9s",
+    "followers_range": "12k-30k",
+    "following": [],
+    "hashtags": [
+      "specialtycoffee",
+      "coffeephotography",
+      "latteart",
+      "barista",
+      "cafecrawl"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel"
+    ]
+  },
+  {
+    "username": "skate_with_jay",
+    "realname": "Jay Rodriguez",
+    "bio": "\ud83d\udef9 Skater | DIY ramps | LA street spots",
+    "persona": "Jay is a street skater documenting tricks, DIY ramp builds, and the skateboarding community in Los Angeles. His raw, authentic style attracts skate culture followers.",
+    "niche": "Skateboarding",
+    "followers_range": "18k-45k",
+    "following": [],
+    "hashtags": [
+      "skateboarding",
+      "skatereels",
+      "streetskating",
+      "skatelife",
+      "losangelesskate"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "luna_bookstagram",
+    "realname": "Luna Kim",
+    "bio": "\ud83d\udcda Bookstagrammer | Fantasy lover | Seoul reader",
+    "persona": "Luna creates beautiful bookish content including aesthetic book photography, reviews, and reading vlogs. Her passion for fantasy and literary fiction shines through.",
+    "niche": "Books & Literature",
+    "followers_range": "22k-50k",
+    "following": [],
+    "hashtags": [
+      "bookstagram",
+      "bookreview",
+      "fantasybooksofinstagram",
+      "readersofinstagram",
+      "bookphotography"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "pawsandwags",
+    "realname": "Bella Torres",
+    "bio": "\ud83d\udc3e Dog photographer | Golden mom | Pet brand ambassador",
+    "persona": "Bella photographs her golden retrievers and other dogs in adorable lifestyle content. She partners with pet brands and advocates for rescue adoption.",
+    "niche": "Pets & Animals",
+    "followers_range": "60k-150k",
+    "following": [],
+    "hashtags": [
+      "dogsofinstagram",
+      "goldenretriever",
+      "dogphotography",
+      "petstagram",
+      "adoptdontshop"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "pixel_painter_drew",
+    "realname": "Drew Collins",
+    "bio": "\ud83c\udfa8 Digital artist | Concept art | Sci-fi worlds",
+    "persona": "Drew creates stunning sci-fi concept art and digital illustrations. He shares process videos, time-lapses, and digital art tutorials that inspire aspiring artists.",
+    "niche": "Digital Art",
+    "followers_range": "30k-70k",
+    "following": [],
+    "hashtags": [
+      "digitalart",
+      "conceptart",
+      "scifiart",
+      "procreate",
+      "artistsoninstagram"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel"
+    ]
+  },
+  {
+    "username": "the_vanlife_duo",
+    "realname": "Sam & Jo Rivera",
+    "bio": "\ud83d\ude90 Full-time van life | Road trip USA | Adventure couple",
+    "persona": "Sam and Jo document their full-time van life adventure across the USA, sharing van conversion tips, camper spots, and life on the road as a couple.",
+    "niche": "Van Life & Travel",
+    "followers_range": "70k-180k",
+    "following": [],
+    "hashtags": [
+      "vanlife",
+      "vanlifediaries",
+      "roadtrip",
+      "nomadlife",
+      "travelcouple"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "finance_with_fiona",
+    "realname": "Fiona Clark",
+    "bio": "\ud83d\udcb0 Personal finance | Investing | Wealth for all",
+    "persona": "Fiona simplifies personal finance and investing for young adults. She shares relatable money tips, investing basics, and financial empowerment content.",
+    "niche": "Personal Finance",
+    "followers_range": "45k-100k",
+    "following": [],
+    "hashtags": [
+      "personalfinance",
+      "investing",
+      "moneytips",
+      "wealthbuilding",
+      "financialfreedom"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "pottery_by_elena",
+    "realname": "Elena Vasquez",
+    "bio": "\ud83c\udffa Ceramic artist | Wheel throwing | Barcelona studio",
+    "persona": "Elena is a ceramic artist who shares her studio process, pottery techniques, and slow-living philosophy from her Barcelona workshop.",
+    "niche": "Ceramics & Craft Art",
+    "followers_range": "15k-35k",
+    "following": [],
+    "hashtags": [
+      "ceramics",
+      "pottery",
+      "wheelthrown",
+      "handmade",
+      "studioceramics"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel"
+    ]
+  },
+  {
+    "username": "grillmaster_jake",
+    "realname": "Jake Williams",
+    "bio": "\ud83d\udd25 BBQ enthusiast | Pitmaster | Smoke everything",
+    "persona": "Jake is a BBQ pitmaster who shares smoking techniques, brisket perfection tips, and backyard grilling competition content.",
+    "niche": "BBQ & Grilling",
+    "followers_range": "25k-55k",
+    "following": [],
+    "hashtags": [
+      "bbq",
+      "smokedmeat",
+      "pitmaster",
+      "grillmaster",
+      "brisket"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "surf_soul_kai",
+    "realname": "Kai Makoa",
+    "bio": "\ud83c\udfc4 Surfer | Ocean lover | Hawaii | Aloha vibes",
+    "persona": "Kai is a lifelong surfer from Hawaii who shares surf sessions, ocean conservation content, and the aloha spirit through beautiful coastal photography.",
+    "niche": "Surfing & Coastal Lifestyle",
+    "followers_range": "40k-90k",
+    "following": [],
+    "hashtags": [
+      "surfing",
+      "oceanlife",
+      "hawaii",
+      "surfer",
+      "surfphotography"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "interior_by_isabel",
+    "realname": "Isabel Fernandez",
+    "bio": "\ud83e\udeb4 Minimalist interiors | Natural light | Madrid designer",
+    "persona": "Isabel designs minimalist interiors and shares home transformation projects, mood boards, and styling tips rooted in Scandinavian and Mediterranean aesthetics.",
+    "niche": "Interior Design",
+    "followers_range": "55k-120k",
+    "following": [],
+    "hashtags": [
+      "minimalistinterior",
+      "homedesign",
+      "interiorinspiration",
+      "lightandbright",
+      "nordichome"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel"
+    ]
+  },
+  {
+    "username": "wildlife_watcher_ben",
+    "realname": "Ben Foster",
+    "bio": "\ud83d\udcf7 Wildlife photographer | National Geographic dreamer | Kenya",
+    "persona": "Ben is a wildlife photographer documenting Africa's most iconic animals. His dramatic wildlife portraits inspire conservation awareness.",
+    "niche": "Wildlife Photography",
+    "followers_range": "90k-250k",
+    "following": [],
+    "hashtags": [
+      "wildlifephotography",
+      "africanwildlife",
+      "natgeo",
+      "conservation",
+      "safariphotography"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel"
+    ]
+  },
+  {
+    "username": "diy_diana",
+    "realname": "Diana Wu",
+    "bio": "\ud83d\udee0\ufe0f DIY queen | Home improvement | Budget renovations",
+    "persona": "Diana documents her home renovation projects on a budget, sharing cost breakdowns, tool guides, and before-after transformations that inspire homeowners.",
+    "niche": "DIY & Home Improvement",
+    "followers_range": "35k-75k",
+    "following": [],
+    "hashtags": [
+      "diy",
+      "homeimprovement",
+      "diyrenovation",
+      "budgetreno",
+      "diyhomedecor"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "tech_tina",
+    "realname": "Tina Morgan",
+    "bio": "\ud83d\udcf1 Tech reviewer | App demos | Gadget unboxings",
+    "persona": "Tina reviews the latest smartphones, apps, and tech gadgets for her audience. Her honest unboxings and how-tos help followers make informed buying decisions.",
+    "niche": "Technology",
+    "followers_range": "20k-50k",
+    "following": [],
+    "hashtags": [
+      "techreview",
+      "gadgets",
+      "smartphone",
+      "appoftheday",
+      "techtok"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "hiking_hannah",
+    "realname": "Hannah Blake",
+    "bio": "\ud83e\udd7e Trail hiker | National parks | Leave no trace",
+    "persona": "Hannah hikes national parks across North America and shares trail guides, gear reviews, and stunning landscape photography.",
+    "niche": "Hiking & Outdoors",
+    "followers_range": "28k-60k",
+    "following": [],
+    "hashtags": [
+      "hiking",
+      "hikingadventures",
+      "nationalparks",
+      "leavenottrace",
+      "trailhiking"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "streetstyle_sam",
+    "realname": "Samuel Okafor",
+    "bio": "\ud83d\udc5f Streetwear | Drops | Sneakers | Lagos \u2192 London",
+    "persona": "Samuel is a streetwear enthusiast documenting limited-edition drops, style checks, and the intersection of African and European street fashion culture.",
+    "niche": "Streetwear Fashion",
+    "followers_range": "30k-70k",
+    "following": [],
+    "hashtags": [
+      "streetwear",
+      "sneakerhead",
+      "streetfashion",
+      "hypebeast",
+      "mensfashion"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "vegan_vida",
+    "realname": "Vida Nkosi",
+    "bio": "\ud83c\udf31 Vegan chef | Whole food plant-based | Johannesburg",
+    "persona": "Vida creates vibrant plant-based recipes inspired by African and global cuisines. She advocates for veganism as a health, ethical, and environmental choice.",
+    "niche": "Vegan Food & Lifestyle",
+    "followers_range": "18k-40k",
+    "following": [],
+    "hashtags": [
+      "vegan",
+      "plantbased",
+      "veganfood",
+      "veganrecipes",
+      "africancuisine"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "vintage_victor",
+    "realname": "Victor Saenz",
+    "bio": "\ud83c\udf9e\ufe0f Vintage photography | Film camera | Nostalgia",
+    "persona": "Victor shoots exclusively on film cameras and shares the analog photography experience \u2014 from developing rolls to sharing grain-filled photos rich with nostalgia.",
+    "niche": "Film Photography",
+    "followers_range": "12k-28k",
+    "following": [],
+    "hashtags": [
+      "filmphotography",
+      "analogphotography",
+      "vintagecamera",
+      "35mm",
+      "filmisnotdead"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo"
+    ]
+  },
+  {
+    "username": "parenthood_diaries",
+    "realname": "Jenny & Tom Walsh",
+    "bio": "\ud83d\udc76 New parents | Honest parenting content | Twin life",
+    "persona": "Jenny and Tom share the unfiltered reality of new parenthood with twins \u2014 the chaos, joy, and everything in between. Their relatable content resonates deeply.",
+    "niche": "Parenting & Family",
+    "followers_range": "25k-60k",
+    "following": [],
+    "hashtags": [
+      "parenting",
+      "twinmom",
+      "newborn",
+      "momlife",
+      "dadlife"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "baking_bliss_bea",
+    "realname": "Beatrice Moreau",
+    "bio": "\ud83e\uddc1 Pastry chef | French patisserie | Beautiful desserts",
+    "persona": "Bea is a trained French pastry chef who shares intricate dessert creations, baking tutorials, and the craft of French patisserie.",
+    "niche": "Baking & Pastry",
+    "followers_range": "45k-100k",
+    "following": [],
+    "hashtags": [
+      "pastry",
+      "frenchpatisserie",
+      "bakingreels",
+      "cakedesign",
+      "dessertphotography"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel"
+    ]
+  },
+  {
+    "username": "fashion_forward_fred",
+    "realname": "Fred Laurent",
+    "bio": "\ud83d\udc54 Men's fashion | Paris | Tailoring enthusiast",
+    "persona": "Fred is a Parisian menswear enthusiast who showcases classic tailoring, designer pieces, and the art of dressing well in everyday Parisian life.",
+    "niche": "Men's Fashion",
+    "followers_range": "20k-45k",
+    "following": [],
+    "hashtags": [
+      "mensfashion",
+      "tailoring",
+      "parisfashion",
+      "classicstyle",
+      "sprezzatura"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel"
+    ]
+  },
+  {
+    "username": "architecture_ara",
+    "realname": "Ara Hassan",
+    "bio": "\ud83c\udfdb\ufe0f Architecture lover | Geometric forms | Dubai to Barcelona",
+    "persona": "Ara photographs stunning architectural structures from around the world, with a focus on geometric patterns, sacred spaces, and contemporary design.",
+    "niche": "Architecture Photography",
+    "followers_range": "35k-80k",
+    "following": [],
+    "hashtags": [
+      "architecture",
+      "architecturephotography",
+      "geometricdesign",
+      "buildingphotography",
+      "modernarchitecture"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo"
+    ]
+  },
+  {
+    "username": "comic_artist_cel",
+    "realname": "Celeste Fontaine",
+    "bio": "\u270f\ufe0f Comic artist | Wholesome strips | Slice of life",
+    "persona": "Celeste draws wholesome slice-of-life comics about everyday moments, mental health, and finding joy. Her webcomics have a devoted global audience.",
+    "niche": "Comics & Illustration",
+    "followers_range": "80k-200k",
+    "following": [],
+    "hashtags": [
+      "comics",
+      "webcomics",
+      "illustration",
+      "artistsoninstagram",
+      "sliceoflife"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel"
+    ]
+  },
+  {
+    "username": "rock_climbing_rita",
+    "realname": "Rita Andersen",
+    "bio": "\ud83e\uddd7 Rock climber | Bouldering | Outdoors Norway",
+    "persona": "Rita documents her rock climbing adventures across Norway and beyond. She shares beta videos, training tips, and the mental challenges of climbing.",
+    "niche": "Rock Climbing & Outdoors",
+    "followers_range": "15k-35k",
+    "following": [],
+    "hashtags": [
+      "rockclimbing",
+      "bouldering",
+      "climbingphotography",
+      "outdoorclimbing",
+      "norwayoutdoors"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "language_learner_leo",
+    "realname": "Leo Dubois",
+    "bio": "\ud83c\udf10 Language lover | 7 languages | Polyglot tips",
+    "persona": "Leo is a polyglot who documents his language learning journey across 7 languages. He shares methods, funny mistakes, and cultural observations.",
+    "niche": "Language Learning",
+    "followers_range": "40k-90k",
+    "following": [],
+    "hashtags": [
+      "polyglot",
+      "languagelearning",
+      "languagetips",
+      "linguistics",
+      "learnalanguage"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "space_nerd_steph",
+    "realname": "Stephanie Moore",
+    "bio": "\ud83d\ude80 Space enthusiast | Astrophotography | NASA fan",
+    "persona": "Stephanie is an astrophotography hobbyist who shoots the night sky and shares space science news, telescope guides, and cosmic wonder.",
+    "niche": "Science & Astrophotography",
+    "followers_range": "22k-55k",
+    "following": [],
+    "hashtags": [
+      "astrophotography",
+      "space",
+      "astronomy",
+      "milkyway",
+      "nightsky"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel"
+    ]
+  },
+  {
+    "username": "jewellery_by_jade",
+    "realname": "Jade Wong",
+    "bio": "\ud83d\udc8e Jewellery designer | Handmade | Sustainable metals | HK",
+    "persona": "Jade handcrafts sustainable fine jewelry in Hong Kong and shares the design process, material stories, and custom commissions.",
+    "niche": "Jewellery & Accessories",
+    "followers_range": "10k-25k",
+    "following": [],
+    "hashtags": [
+      "jewellerydesign",
+      "handmadejewellery",
+      "sustainablejewellery",
+      "finejewellery",
+      "jewellerygram"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel"
+    ]
+  },
+  {
+    "username": "mindset_coach_raj",
+    "realname": "Raj Kumar",
+    "bio": "\ud83e\udde0 Life coach | Growth mindset | NLP practitioner",
+    "persona": "Raj shares mindset coaching content including positive affirmations, NLP techniques, and strategies for overcoming limiting beliefs and building confidence.",
+    "niche": "Coaching & Personal Development",
+    "followers_range": "30k-65k",
+    "following": [],
+    "hashtags": [
+      "mindset",
+      "lifecoach",
+      "growthmindset",
+      "nlp",
+      "personaldevelopment"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "tokyo_foodie_taro",
+    "realname": "Taro Yamamoto",
+    "bio": "\ud83c\udf5c Ramen obsessed | Tokyo restaurant guide | Umami hunter",
+    "persona": "Taro documents Tokyo's ramen scene with meticulous reviews, tasting notes, and queue-worthy shop discoveries that guide food pilgrims to Japan.",
+    "niche": "Japanese Food & Ramen",
+    "followers_range": "55k-130k",
+    "following": [],
+    "hashtags": [
+      "ramen",
+      "tokyofood",
+      "japanesefood",
+      "ramenshop",
+      "foodiesofinstagram"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel"
+    ]
+  },
+  {
+    "username": "dance_diva_dee",
+    "realname": "Dee Williams",
+    "bio": "\ud83d\udc83 Dancer | Choreographer | Afrobeats & Hip-hop | Atlanta",
+    "persona": "Dee is a dancer and choreographer who creates viral Afrobeats and hip-hop reels. She teaches dance classes online and inspires others to move freely.",
+    "niche": "Dance & Performing Arts",
+    "followers_range": "70k-200k",
+    "following": [],
+    "hashtags": [
+      "dance",
+      "choreography",
+      "afrobeats",
+      "hiphop",
+      "dancereels"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "sustainable_builder",
+    "realname": "Ivan Torres",
+    "bio": "\ud83c\udf31 Green architect | Sustainable building | LEED certified",
+    "persona": "Ivan is a LEED-certified architect who shares green building case studies, sustainable material innovations, and eco-architecture inspiration.",
+    "niche": "Architecture & Sustainability",
+    "followers_range": "18k-40k",
+    "following": [],
+    "hashtags": [
+      "greenarchitecture",
+      "sustainabledesign",
+      "leed",
+      "ecoarchitecture",
+      "greenbuilding"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel"
+    ]
+  },
+  {
+    "username": "comedy_cam",
+    "realname": "Cameron Reed",
+    "bio": "\ud83d\ude02 Comedy creator | Skits | Relatable life fails",
+    "persona": "Cameron creates comedic skits about relatable everyday moments. His self-deprecating humor and timing have earned a dedicated following for his Instagram Reels.",
+    "niche": "Comedy & Entertainment",
+    "followers_range": "150k-400k",
+    "following": [],
+    "hashtags": [
+      "comedy",
+      "funnyreels",
+      "comedyskit",
+      "relatable",
+      "humor"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "music_prod_max",
+    "realname": "Max Reyes",
+    "bio": "\ud83c\udfb5 Music producer | Beats from scratch | Free samples",
+    "persona": "Max is a music producer who shares beat-making tutorials, music theory tips, and free sample packs. He demystifies music production for aspiring artists.",
+    "niche": "Music Production",
+    "followers_range": "25k-60k",
+    "following": [],
+    "hashtags": [
+      "musicproducer",
+      "beatsmaking",
+      "musicproduction",
+      "hiphopbeats",
+      "musiciansofinsta"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "glamping_grace",
+    "realname": "Grace Olsen",
+    "bio": "\u26fa Glamping queen | Luxury camping | Nature with comfort",
+    "persona": "Grace documents glamping experiences and luxury camping setups that make outdoor living Instagram-worthy without sacrificing comfort.",
+    "niche": "Glamping & Outdoors",
+    "followers_range": "20k-45k",
+    "following": [],
+    "hashtags": [
+      "glamping",
+      "luxurycamping",
+      "outdoorliving",
+      "campvibes",
+      "glamcamping"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "entrepreneur_erin",
+    "realname": "Erin Matthews",
+    "bio": "\ud83d\udcbc Female entrepreneur | E-commerce | Empowering women",
+    "persona": "Erin built a six-figure e-commerce brand and now coaches other women to start businesses. She shares business tips, behind-the-scenes, and empowerment content.",
+    "niche": "Entrepreneurship",
+    "followers_range": "55k-120k",
+    "following": [],
+    "hashtags": [
+      "femaleentrepreneur",
+      "womeninbusiness",
+      "ecommerce",
+      "businesstips",
+      "girlboss"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "karate_kids_coach",
+    "realname": "Michelle Lee",
+    "bio": "\ud83e\udd4b Martial arts instructor | Kids training | Discipline & respect",
+    "persona": "Michelle coaches martial arts to kids and teenagers. She shares training highlights, belt ceremonies, and the character-building values of martial arts.",
+    "niche": "Martial Arts & Kids Sports",
+    "followers_range": "8k-20k",
+    "following": [],
+    "hashtags": [
+      "martialarts",
+      "karate",
+      "kidskarate",
+      "bjj",
+      "karatelife"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel"
+    ]
+  },
+  {
+    "username": "zen_garden_zara",
+    "realname": "Zara Hoshi",
+    "bio": "\ud83c\udf38 Japanese garden design | Ikebana | Wabi-sabi aesthetics",
+    "persona": "Zara shares the art of Japanese garden design, ikebana flower arranging, and wabi-sabi philosophy through meditative, beautifully composed imagery.",
+    "niche": "Japanese Aesthetics & Design",
+    "followers_range": "14k-32k",
+    "following": [],
+    "hashtags": [
+      "japanesegarden",
+      "ikebana",
+      "wabisabi",
+      "japaneseaesthetics",
+      "zengarden"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel"
+    ]
+  },
+  {
+    "username": "night_market_nomad",
+    "realname": "Priya Srinivasan",
+    "bio": "\ud83c\udf5c Street food explorer | Night markets | SE Asia",
+    "persona": "Priya documents Southeast Asian night markets and street food culture with vivid photography and storytelling that transports followers to Bangkok, Penang, and Saigon.",
+    "niche": "Street Food & Travel",
+    "followers_range": "60k-140k",
+    "following": [],
+    "hashtags": [
+      "streetfood",
+      "nightmarket",
+      "southeastasia",
+      "foodtravel",
+      "streetfoodlover"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel",
+      "story"
+    ]
+  },
+  {
+    "username": "crochet_cozy_claire",
+    "realname": "Claire Dubois",
+    "bio": "\ud83e\uddf6 Crochet designer | Cozy knitwear | Free patterns",
+    "persona": "Claire designs crochet patterns and shares free downloads with her cozy community. Her warm aesthetic and step-by-step tutorials attract crafters worldwide.",
+    "niche": "Crochet & Crafts",
+    "followers_range": "30k-70k",
+    "following": [],
+    "hashtags": [
+      "crochet",
+      "crochetpattern",
+      "knitting",
+      "cozylifestyle",
+      "handmadewithlove"
+    ],
+    "previous_posts": [],
+    "media_types": [
+      "photo",
+      "reel"
+    ]
+  }
+]

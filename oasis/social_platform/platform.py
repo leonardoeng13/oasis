@@ -30,7 +30,9 @@ from oasis.social_platform.database import (create_db,
 from oasis.social_platform.platform_utils import PlatformUtils
 from oasis.social_platform.recsys import (rec_sys_personalized_twh,
                                           rec_sys_personalized_with_trace,
-                                          rec_sys_random, rec_sys_reddit)
+                                          rec_sys_random, rec_sys_reddit,
+                                          rec_sys_linkedin, rec_sys_facebook,
+                                          rec_sys_instagram)
 from oasis.social_platform.typing import ActionType, RecsysType
 
 # Create log directory if it doesn't exist
@@ -383,14 +385,22 @@ class Platform:
         elif self.recsys_type == RecsysType.REDDIT:
             new_rec_matrix = rec_sys_reddit(post_table, rec_matrix,
                                             self.max_rec_post_len)
-        elif self.recsys_type in (
-            RecsysType.LINKEDIN,
-            RecsysType.FACEBOOK,
-            RecsysType.INSTAGRAM,
-            RecsysType.WHATSAPP,
-        ):
-            new_rec_matrix = rec_sys_random(post_table, rec_matrix,
-                                            self.max_rec_post_len)
+        elif self.recsys_type == RecsysType.LINKEDIN:
+            new_rec_matrix = rec_sys_linkedin(
+                user_table, post_table, rec_matrix, self.max_rec_post_len,
+                self.db_cursor)
+        elif self.recsys_type == RecsysType.FACEBOOK:
+            new_rec_matrix = rec_sys_facebook(
+                user_table, post_table, trace_table, rec_matrix,
+                self.max_rec_post_len, self.db_cursor)
+        elif self.recsys_type == RecsysType.INSTAGRAM:
+            new_rec_matrix = rec_sys_instagram(
+                user_table, post_table, rec_matrix, self.max_rec_post_len,
+                self.db_cursor)
+        elif self.recsys_type == RecsysType.WHATSAPP:
+            # WhatsApp has no public feed — discovery happens via groups.
+            # Skip populating the rec table.
+            return
         else:
             raise ValueError("Unsupported recommendation system type, please "
                              "check the `RecsysType`.")

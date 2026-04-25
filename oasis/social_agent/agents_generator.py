@@ -655,13 +655,14 @@ async def generate_linkedin_agent_graph(
                           ModelManager]] = None,
     available_actions: list[ActionType] = None,
 ) -> AgentGraph:
-    """Generate an AgentGraph from a LinkedIn user profile CSV file.
+    """Generate an AgentGraph from a LinkedIn user profile file.
 
-    The CSV must have columns: user_id, name, username,
-    following_agentid_list, previous_posts, user_char, description.
+    Accepts either a CSV (columns: user_id, name, username,
+    following_agentid_list, previous_posts, user_char, description) or a
+    JSON array of profile dicts (keys: username, realname, persona, …).
 
     Args:
-        profile_path (str): Path to the CSV file with user profiles.
+        profile_path (str): Path to the CSV or JSON profile file.
         model: LLM model(s) for the agents.
         available_actions: Actions available to agents. Defaults to
             :meth:`ActionType.get_default_linkedin_actions`.
@@ -672,34 +673,64 @@ async def generate_linkedin_agent_graph(
     if available_actions is None:
         available_actions = ActionType.get_default_linkedin_actions()
 
-    agent_info = pd.read_csv(profile_path)
     agent_graph = AgentGraph()
 
-    for agent_id in range(len(agent_info)):
-        profile = {
-            "nodes": [],
-            "edges": [],
-            "other_info": {},
-        }
-        profile["other_info"]["user_profile"] = agent_info["user_char"][
-            agent_id]
+    if profile_path.endswith(".json"):
+        with open(profile_path, "r") as f:
+            agents_data = json.load(f)
+        for agent_id, data in enumerate(agents_data):
+            profile = {
+                "nodes": [],
+                "edges": [],
+                "other_info": {
+                    "user_profile": data.get("persona", ""),
+                    "industry": data.get("industry", ""),
+                    "job_title": data.get("job_title", ""),
+                    "company": data.get("company", ""),
+                    "years_experience": data.get("years_experience", 0),
+                    "skills": data.get("skills", []),
+                },
+            }
+            user_info = UserInfo(
+                name=data.get("username", ""),
+                description=data.get("bio", ""),
+                profile=profile,
+                recsys_type="linkedin",
+            )
+            agent = SocialAgent(
+                agent_id=agent_id,
+                user_info=user_info,
+                model=model,
+                agent_graph=agent_graph,
+                available_actions=available_actions,
+            )
+            agent_graph.add_agent(agent)
+    else:
+        agent_info = pd.read_csv(profile_path)
+        for agent_id in range(len(agent_info)):
+            profile = {
+                "nodes": [],
+                "edges": [],
+                "other_info": {},
+            }
+            profile["other_info"]["user_profile"] = agent_info["user_char"][
+                agent_id]
 
-        user_info = UserInfo(
-            name=agent_info["username"][agent_id],
-            description=agent_info["description"][agent_id],
-            profile=profile,
-            recsys_type='linkedin',
-        )
+            user_info = UserInfo(
+                name=agent_info["username"][agent_id],
+                description=agent_info["description"][agent_id],
+                profile=profile,
+                recsys_type="linkedin",
+            )
+            agent = SocialAgent(
+                agent_id=agent_id,
+                user_info=user_info,
+                model=model,
+                agent_graph=agent_graph,
+                available_actions=available_actions,
+            )
+            agent_graph.add_agent(agent)
 
-        agent = SocialAgent(
-            agent_id=agent_id,
-            user_info=user_info,
-            model=model,
-            agent_graph=agent_graph,
-            available_actions=available_actions,
-        )
-
-        agent_graph.add_agent(agent)
     return agent_graph
 
 
@@ -709,13 +740,14 @@ async def generate_facebook_agent_graph(
                           ModelManager]] = None,
     available_actions: list[ActionType] = None,
 ) -> AgentGraph:
-    """Generate an AgentGraph from a Facebook user profile CSV file.
+    """Generate an AgentGraph from a Facebook user profile file.
 
-    The CSV must have columns: user_id, name, username,
-    following_agentid_list, previous_posts, user_char, description.
+    Accepts either a CSV (columns: user_id, name, username,
+    following_agentid_list, previous_posts, user_char, description) or a
+    JSON array of profile dicts (keys: username, realname, persona, …).
 
     Args:
-        profile_path (str): Path to the CSV file with user profiles.
+        profile_path (str): Path to the CSV or JSON profile file.
         model: LLM model(s) for the agents.
         available_actions: Actions available to agents. Defaults to
             :meth:`ActionType.get_default_facebook_actions`.
@@ -726,34 +758,64 @@ async def generate_facebook_agent_graph(
     if available_actions is None:
         available_actions = ActionType.get_default_facebook_actions()
 
-    agent_info = pd.read_csv(profile_path)
     agent_graph = AgentGraph()
 
-    for agent_id in range(len(agent_info)):
-        profile = {
-            "nodes": [],
-            "edges": [],
-            "other_info": {},
-        }
-        profile["other_info"]["user_profile"] = agent_info["user_char"][
-            agent_id]
+    if profile_path.endswith(".json"):
+        with open(profile_path, "r") as f:
+            agents_data = json.load(f)
+        for agent_id, data in enumerate(agents_data):
+            profile = {
+                "nodes": [],
+                "edges": [],
+                "other_info": {
+                    "user_profile": data.get("persona", ""),
+                    "gender": data.get("gender", ""),
+                    "age": data.get("age", 0),
+                    "location": data.get("location", ""),
+                    "interests": data.get("interests", []),
+                    "groups": data.get("groups", []),
+                },
+            }
+            user_info = UserInfo(
+                name=data.get("username", ""),
+                description=data.get("bio", ""),
+                profile=profile,
+                recsys_type="facebook",
+            )
+            agent = SocialAgent(
+                agent_id=agent_id,
+                user_info=user_info,
+                model=model,
+                agent_graph=agent_graph,
+                available_actions=available_actions,
+            )
+            agent_graph.add_agent(agent)
+    else:
+        agent_info = pd.read_csv(profile_path)
+        for agent_id in range(len(agent_info)):
+            profile = {
+                "nodes": [],
+                "edges": [],
+                "other_info": {},
+            }
+            profile["other_info"]["user_profile"] = agent_info["user_char"][
+                agent_id]
 
-        user_info = UserInfo(
-            name=agent_info["username"][agent_id],
-            description=agent_info["description"][agent_id],
-            profile=profile,
-            recsys_type='facebook',
-        )
+            user_info = UserInfo(
+                name=agent_info["username"][agent_id],
+                description=agent_info["description"][agent_id],
+                profile=profile,
+                recsys_type="facebook",
+            )
+            agent = SocialAgent(
+                agent_id=agent_id,
+                user_info=user_info,
+                model=model,
+                agent_graph=agent_graph,
+                available_actions=available_actions,
+            )
+            agent_graph.add_agent(agent)
 
-        agent = SocialAgent(
-            agent_id=agent_id,
-            user_info=user_info,
-            model=model,
-            agent_graph=agent_graph,
-            available_actions=available_actions,
-        )
-
-        agent_graph.add_agent(agent)
     return agent_graph
 
 
@@ -763,13 +825,14 @@ async def generate_instagram_agent_graph(
                           ModelManager]] = None,
     available_actions: list[ActionType] = None,
 ) -> AgentGraph:
-    """Generate an AgentGraph from an Instagram user profile CSV file.
+    """Generate an AgentGraph from an Instagram user profile file.
 
-    The CSV must have columns: user_id, name, username,
-    following_agentid_list, previous_posts, user_char, description.
+    Accepts either a CSV (columns: user_id, name, username,
+    following_agentid_list, previous_posts, user_char, description) or a
+    JSON array of profile dicts (keys: username, realname, persona, …).
 
     Args:
-        profile_path (str): Path to the CSV file with user profiles.
+        profile_path (str): Path to the CSV or JSON profile file.
         model: LLM model(s) for the agents.
         available_actions: Actions available to agents. Defaults to
             :meth:`ActionType.get_default_instagram_actions`.
@@ -780,34 +843,63 @@ async def generate_instagram_agent_graph(
     if available_actions is None:
         available_actions = ActionType.get_default_instagram_actions()
 
-    agent_info = pd.read_csv(profile_path)
     agent_graph = AgentGraph()
 
-    for agent_id in range(len(agent_info)):
-        profile = {
-            "nodes": [],
-            "edges": [],
-            "other_info": {},
-        }
-        profile["other_info"]["user_profile"] = agent_info["user_char"][
-            agent_id]
+    if profile_path.endswith(".json"):
+        with open(profile_path, "r") as f:
+            agents_data = json.load(f)
+        for agent_id, data in enumerate(agents_data):
+            profile = {
+                "nodes": [],
+                "edges": [],
+                "other_info": {
+                    "user_profile": data.get("persona", ""),
+                    "niche": data.get("niche", ""),
+                    "followers_range": data.get("followers_range", ""),
+                    "hashtags": data.get("hashtags", []),
+                    "media_types": data.get("media_types", ["photo"]),
+                },
+            }
+            user_info = UserInfo(
+                name=data.get("username", ""),
+                description=data.get("bio", ""),
+                profile=profile,
+                recsys_type="instagram",
+            )
+            agent = SocialAgent(
+                agent_id=agent_id,
+                user_info=user_info,
+                model=model,
+                agent_graph=agent_graph,
+                available_actions=available_actions,
+            )
+            agent_graph.add_agent(agent)
+    else:
+        agent_info = pd.read_csv(profile_path)
+        for agent_id in range(len(agent_info)):
+            profile = {
+                "nodes": [],
+                "edges": [],
+                "other_info": {},
+            }
+            profile["other_info"]["user_profile"] = agent_info["user_char"][
+                agent_id]
 
-        user_info = UserInfo(
-            name=agent_info["username"][agent_id],
-            description=agent_info["description"][agent_id],
-            profile=profile,
-            recsys_type='instagram',
-        )
+            user_info = UserInfo(
+                name=agent_info["username"][agent_id],
+                description=agent_info["description"][agent_id],
+                profile=profile,
+                recsys_type="instagram",
+            )
+            agent = SocialAgent(
+                agent_id=agent_id,
+                user_info=user_info,
+                model=model,
+                agent_graph=agent_graph,
+                available_actions=available_actions,
+            )
+            agent_graph.add_agent(agent)
 
-        agent = SocialAgent(
-            agent_id=agent_id,
-            user_info=user_info,
-            model=model,
-            agent_graph=agent_graph,
-            available_actions=available_actions,
-        )
-
-        agent_graph.add_agent(agent)
     return agent_graph
 
 
@@ -817,13 +909,14 @@ async def generate_whatsapp_agent_graph(
                           ModelManager]] = None,
     available_actions: list[ActionType] = None,
 ) -> AgentGraph:
-    """Generate an AgentGraph from a WhatsApp user profile CSV file.
+    """Generate an AgentGraph from a WhatsApp user profile file.
 
-    The CSV must have columns: user_id, name, username,
-    following_agentid_list, previous_posts, user_char, description.
+    Accepts either a CSV (columns: user_id, name, username,
+    following_agentid_list, previous_posts, user_char, description) or a
+    JSON array of profile dicts (keys: username, realname, persona, …).
 
     Args:
-        profile_path (str): Path to the CSV file with user profiles.
+        profile_path (str): Path to the CSV or JSON profile file.
         model: LLM model(s) for the agents.
         available_actions: Actions available to agents. Defaults to
             :meth:`ActionType.get_default_whatsapp_actions`.
@@ -834,32 +927,62 @@ async def generate_whatsapp_agent_graph(
     if available_actions is None:
         available_actions = ActionType.get_default_whatsapp_actions()
 
-    agent_info = pd.read_csv(profile_path)
     agent_graph = AgentGraph()
 
-    for agent_id in range(len(agent_info)):
-        profile = {
-            "nodes": [],
-            "edges": [],
-            "other_info": {},
-        }
-        profile["other_info"]["user_profile"] = agent_info["user_char"][
-            agent_id]
+    if profile_path.endswith(".json"):
+        with open(profile_path, "r") as f:
+            agents_data = json.load(f)
+        for agent_id, data in enumerate(agents_data):
+            profile = {
+                "nodes": [],
+                "edges": [],
+                "other_info": {
+                    "user_profile": data.get("persona", ""),
+                    "occupation": data.get("occupation", ""),
+                    "age": data.get("age", 0),
+                    "groups": data.get("groups", []),
+                    "communication_style": data.get(
+                        "communication_style", ""),
+                },
+            }
+            user_info = UserInfo(
+                name=data.get("username", ""),
+                description=data.get("bio", ""),
+                profile=profile,
+                recsys_type="whatsapp",
+            )
+            agent = SocialAgent(
+                agent_id=agent_id,
+                user_info=user_info,
+                model=model,
+                agent_graph=agent_graph,
+                available_actions=available_actions,
+            )
+            agent_graph.add_agent(agent)
+    else:
+        agent_info = pd.read_csv(profile_path)
+        for agent_id in range(len(agent_info)):
+            profile = {
+                "nodes": [],
+                "edges": [],
+                "other_info": {},
+            }
+            profile["other_info"]["user_profile"] = agent_info["user_char"][
+                agent_id]
 
-        user_info = UserInfo(
-            name=agent_info["username"][agent_id],
-            description=agent_info["description"][agent_id],
-            profile=profile,
-            recsys_type='whatsapp',
-        )
+            user_info = UserInfo(
+                name=agent_info["username"][agent_id],
+                description=agent_info["description"][agent_id],
+                profile=profile,
+                recsys_type="whatsapp",
+            )
+            agent = SocialAgent(
+                agent_id=agent_id,
+                user_info=user_info,
+                model=model,
+                agent_graph=agent_graph,
+                available_actions=available_actions,
+            )
+            agent_graph.add_agent(agent)
 
-        agent = SocialAgent(
-            agent_id=agent_id,
-            user_info=user_info,
-            model=model,
-            agent_graph=agent_graph,
-            available_actions=available_actions,
-        )
-
-        agent_graph.add_agent(agent)
     return agent_graph

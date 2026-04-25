@@ -93,12 +93,13 @@ async def test_search_user(setup_platform):
         cursor = conn.cursor()
         users_info = [
             (1, 1, "user1", "Alice", "Bio of Alice", "2023-01-01 12:00:00", 10,
-             5),
-            (2, 2, "user2", "Bob", "Bio of Bob", "2023-01-02 12:00:00", 15, 8),
+             5, 0),
+            (2, 2, "user2", "Bob", "Bio of Bob", "2023-01-02 12:00:00", 15, 8,
+             0),
             (3, 3, "user3", "Charlie", "Bio of Charlie", "2023-01-03 12:00:00",
-             20, 12),
+             20, 12, 0),
         ]
-        cursor.executemany("INSERT INTO user VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+        cursor.executemany("INSERT INTO user VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
                            users_info)
         posts_info = [
             # (user_id, content, created_at, num_likes)
