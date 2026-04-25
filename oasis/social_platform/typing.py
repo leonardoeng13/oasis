@@ -47,6 +47,13 @@ class ActionType(Enum):
     SEND_TO_GROUP = "send_to_group"
     CREATE_GROUP = "create_group"
     LISTEN_FROM_GROUP = "listen_from_group"
+    REACT_POST = "react_post"
+    CONNECT = "connect"
+    SAVE_POST = "save_post"
+    SEND_DIRECT_MESSAGE = "send_direct_message"
+    READ_DIRECT_MESSAGES = "read_direct_messages"
+    CREATE_PAGE = "create_page"
+    FOLLOW_PAGE = "follow_page"
 
     @classmethod
     def get_default_twitter_actions(cls):
